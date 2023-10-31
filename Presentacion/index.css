@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Raleway";
     font-size: 1.6rem;
     line-height: 1.5;
 
@@ -73,6 +73,7 @@ img {
 
 .counts:hover{
     text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    color: white;
 }
 .last{
     margin-left: 3rem;
@@ -80,6 +81,7 @@ img {
 
 .last:hover{
     text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    color: white;
 }
 
 
@@ -161,9 +163,7 @@ img {
 
 
 
-.container-stadistics{
-    background: #e4ebeb;
-}
+
 .fouroptions{
     display: flex;
     justify-content: center;
@@ -173,10 +173,13 @@ img {
     margin-top: 5rem;
     margin-bottom: 5rem;
     font-size: 2.3rem;
+    font-weight: 600;
 }
 
 
 .adopt{
+    display: flex;
+    align-items: center;
     background: transparent;
     border-top-left-radius: 18rem;
     border-bottom-left-radius: 18rem;
@@ -184,34 +187,131 @@ img {
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
-.seeIt{
-    background: transparent;
+.circleAdopt{
+    display: flex;
+    margin-left: 2rem;
+    width: 15rem;
+    height: 15rem;
+    background: url('../img/adoptIt.svg');
+    border-radius: 50%;
+    border: #864089 solid 0.2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
 
+
+.info{
+    display: flex;
+    width: 45rem;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.info button{
+    background: #9d3a7b;
+    color: white;
+    height: 3rem;
+    width: 12rem;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.info h3{
+    font-family: 'Raleway', sans-serif;
+    color: #08376b;
+    font-weight: 600;
+}
+
+.lost{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background: transparent;
     border-top-right-radius: 18rem;
     border-bottom-right-radius: 18rem;
     height: 18rem;
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
+
+.circleLost{
+    display: flex;
+    margin-right: 2.2rem;
+    width: 15rem;
+    height: 15rem;
+    background: url('../img/lost.svg');
+    border-radius: 50%;
+    border: #864089 solid 0.2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+
 
 .foundIt{
-
+    display: flex;
+    align-items: center;
     border-top-left-radius: 18rem;
     border-bottom-left-radius: 18rem;
     height: 18rem;
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
-.inAdopt{
+.circleFoundIt{
+    display: flex;
+    margin-left: 2.2rem; 
+    width: 15rem;
+    height: 15rem;
+    background: url('../img/findIt.svg');
+    border-radius: 50%;
+    border: #08376b solid 0.2rem;
+    justify-content: center;    
+    align-items: center;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
 
+
+.inAdopt{
+    display: flex;
+    justify-content: right;
+    align-items: center;
     border-top-right-radius: 18rem;
     border-bottom-right-radius: 18rem;
     height: 18rem;
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
+.circleInAdopt{
+    display: flex;
+    margin-right: 2.2rem;
+    width: 15rem;
+    height: 15rem;
+    background: url('../img/inAdoption.svg');
+    border-radius: 50%;
+    border: #2c42a0 solid 0.2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
 
 
 
+.stadistics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    color: #08376b;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-size: 2.3rem;
+    font-weight: 600;
+}
 
 
 
@@ -312,7 +412,7 @@ img {
 .content2 button{
     background: #9d3a7b;
     color: #f8f9f9;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Raleway', sans-serif;
     width: 7rem;
     height: 3rem;
     cursor: pointer;

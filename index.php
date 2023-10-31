@@ -36,29 +36,63 @@
 
         <div class="container-options flex-wrap">
 
-            <div class="adopt">
-                <p>a</p>
+            <div class="adopt flex-row">
+                <div class="circleAdopt">
+
+                </div>
+
+                <div class="info">
+                    <h3>Adoptar</h3>
+                    <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
+                    <button>Adopta</button>
+                </div>
+
             </div>
 
-            <div class="inAdopt">
-                <p>a</p>
+            <div class="inAdopt ">
+                <div class="info">
+                    <h3>En adopcion</h3>
+                    <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
+                    <button>Dar en adopcion</button>
+                </div>
+                <div class="circleInAdopt">
+
+                </div>
+
             </div>
 
-            <div class="foundIt">
-                <p>a</p>
+            <div class="foundIt  flex-row">
+                <div class="circleFoundIt">
+
+                </div>
+                <div class="info">
+                    <h3>Encontrados</h3>
+                    <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
+                    <button>Publicar</button>
+                </div>
+
             </div>
 
-            <div class="seeIt">
-                <p>a</p>
+            <div class="lost">
+                <div class="info">
+                    <h3>Perdidos</h3>
+                    <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
+                    <button>Adopta</button>
+                </div>
+                <div class="circleLost">
+
+                </div>
+
             </div>
+
 
         </div>
 
 
 
     </main>
-    <div class="container-stadistics fouroptions">
-        <h3>Estadisticas</h3>
+    <div class="">
+        <h3 class="fouroptions contenedor">Estadisticas</h3>
     </div>
 
 
@@ -77,21 +111,27 @@
                 <p>Facebook</p>
                 <p>Instagram</p>
                 <p>Twitter</p>
+                <p>Youtube</p>
 
             </div>
-            <div class="content2 sombra">
-                <h3>Dejanos un mensaje.</h3>
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Correo">
-                <div>
-                    <input type="text" placeholder="Asunto">
-                </div>
-                <div class="text">
-                    <textarea placeholder="Tu mensaje..."></textarea>
-                    <button>Enviar</button>
+
+            <form action="" method="post" onsubmit="return false;">
+                <div class="content2 sombra">
+                    <h3>Dejanos un mensaje.</h3>
+                    <input type="text" placeholder="Nombre">
+                    <input type="text" placeholder="Correo">
+                    <div>
+                        <input type="text" placeholder="Asunto">
+                    </div>
+                    <div class="text">
+                        <textarea placeholder="Tu mensaje..."></textarea>
+                        <button>Enviar</button>
+                    </div>
+
                 </div>
 
-            </div>
+            </form>
+
 
         </div>
 
