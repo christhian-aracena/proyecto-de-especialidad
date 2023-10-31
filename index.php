@@ -52,8 +52,8 @@
             <div class="inAdopt ">
                 <div class="info">
                     <h3>En adopcion</h3>
-                    <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
-                    <button>Dar en adopcion</button>
+                    <p>Publica tu mascota, de este modo la gente podrá enviarte solicitudes de adopcion y podrás aceptar a quién quieras.</p>
+                    <button>Da en adopcion</button>
                 </div>
                 <div class="circleInAdopt">
 
@@ -67,7 +67,7 @@
                 </div>
                 <div class="info">
                     <h3>Encontrados</h3>
-                    <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
+                    <p>Si has encontrado una mascota con collar, identificación o consideras que estas perdido, toma fotos y publica.</p>
                     <button>Publicar</button>
                 </div>
 
@@ -76,8 +76,8 @@
             <div class="lost">
                 <div class="info">
                     <h3>Perdidos</h3>
-                    <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
-                    <button>Adopta</button>
+                    <p>Si has extraviado a tu mascota, detalla información y realiza una publicación que ayude en su busqueda.</p>
+                    <button>Buscar</button>
                 </div>
                 <div class="circleLost">
 
@@ -91,8 +91,27 @@
 
 
     </main>
-    <div class="">
+    <div class="section">
         <h3 class="fouroptions contenedor">Estadisticas</h3>
+
+        <div class="flex-row flex-wrap contenedor">
+            <div class="boxAdopt">
+                <h4>19</h4>
+                <h3>Adoptados</h3>
+            </div>
+            <div class="boxAdoptIt">
+            <h4>19</h4>
+                <h3>Adoptados</h3>
+            </div>
+            <div class="boxFountIt">
+            <h4>19</h4>
+                <h3>Adoptados</h3>
+            </div>
+            <div class="boxLost">
+            <h4>19</h4>
+                <h3>Adoptados</h3>
+            </div>
+        </div>
     </div>
 
 
