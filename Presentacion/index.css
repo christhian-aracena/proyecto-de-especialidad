@@ -49,7 +49,8 @@ img {
     margin: 0 auto 0 auto;
     /*MARGIN AUTO EN LOS COSTADOS CENTRA EL CONTENEDOR*/
 }
-.contenedor-header{
+
+.contenedor-header {
     display: flex;
 }
 
@@ -60,38 +61,40 @@ img {
 .header-landing {
 
     align-items: center;
-    background: linear-gradient(to left,#c63671, #9d3a7b,#864089,#75428f,#684595);
+    background: linear-gradient(to left, #c63671, #9d3a7b, #864089, #75428f, #684595);
     user-select: none;
 
 }
 
-.counts, .last{
+.counts,
+.last {
     display: flex;
     color: whitesmoke;
-    
+
 }
 
-.counts:hover{
+.counts:hover {
     text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
     color: white;
 }
-.last{
+
+.last {
     margin-left: 3rem;
 }
 
-.last:hover{
+.last:hover {
     text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
     color: white;
 }
 
 
 
-.logo{
+.logo {
     max-width: 20.1rem;
     max-height: 7.8rem;
 }
 
-.title{
+.title {
     font-family: 'Freehand', cursive;
     font-size: 5rem;
     color: whitesmoke;
@@ -154,17 +157,17 @@ img {
 
 /* Inicio Main */
 
-.container-options{
+.container-options {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows:  repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 4rem;
+    margin: 1rem;
 }
 
 
 
-
-.fouroptions{
+.fouroptions {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,7 +180,7 @@ img {
 }
 
 
-.adopt{
+.adopt {
     display: flex;
     align-items: center;
     background: transparent;
@@ -187,7 +190,7 @@ img {
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
-.circleAdopt{
+.circleAdopt {
     display: flex;
     margin-left: 2rem;
     width: 15rem;
@@ -201,7 +204,7 @@ img {
 }
 
 
-.info{
+.info {
     display: flex;
     width: 45rem;
     height: 100%;
@@ -211,8 +214,8 @@ img {
     padding: 1rem;
 }
 
-.info button{
-    background: #9d3a7b;
+.info button {
+    background: #156886;
     color: white;
     height: 3rem;
     width: 12rem;
@@ -221,13 +224,13 @@ img {
     cursor: pointer;
 }
 
-.info h3{
+.info h3 {
     font-family: 'Raleway', sans-serif;
     color: #08376b;
     font-weight: 600;
 }
 
-.lost{
+.lost {
     display: flex;
     justify-content: right;
     align-items: center;
@@ -238,7 +241,7 @@ img {
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
-.circleLost{
+.circleLost {
     display: flex;
     margin-right: 2.2rem;
     width: 15rem;
@@ -253,7 +256,7 @@ img {
 
 
 
-.foundIt{
+.foundIt {
     display: flex;
     align-items: center;
     border-top-left-radius: 18rem;
@@ -262,21 +265,21 @@ img {
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
-.circleFoundIt{
+.circleFoundIt {
     display: flex;
-    margin-left: 2.2rem; 
+    margin-left: 2.2rem;
     width: 15rem;
     height: 15rem;
     background: url('../img/findIt.svg');
     border-radius: 50%;
     border: #08376b solid 0.2rem;
-    justify-content: center;    
+    justify-content: center;
     align-items: center;
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
 
-.inAdopt{
+.inAdopt {
     display: flex;
     justify-content: right;
     align-items: center;
@@ -286,7 +289,7 @@ img {
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
-.circleInAdopt{
+.circleInAdopt {
     display: flex;
     margin-right: 2.2rem;
     width: 15rem;
@@ -301,17 +304,7 @@ img {
 
 
 
-.stadistics{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Raleway', sans-serif;
-    color: #08376b;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    font-size: 2.3rem;
-    font-weight: 600;
-}
+
 
 
 
@@ -321,20 +314,172 @@ img {
 
 /* section */
 
-.section{
+.section {
+    background: #eeeee4;
+    padding-top: 1rem;
+    margin-top: 8rem;
+    padding-bottom: 5rem;     font-family: 'Raleway', sans-serif;
+    color: #08376b;
+
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+
+.stadistics {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    color: #08376b;
+
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+.stadistic-p{
+    font-family: 'Raleway', sans-serif;
+    color: #120713;
+    margin-bottom: 5rem;
+    font-size: 1.6rem;
+
+}
+
+.boxAdopt img, .boxAdoptIt img, .boxFountIt img, .boxLost img{
+    width: 8rem;
+    height: 8rem;
+    
+}
+
+.boxAdopt, .boxAdoptIt, .boxFountIt, .boxLost{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    
+}
+
+
+
+
+
+
+
+
+/* DONACIONES */
+
+
+
+.donations{
     background: #eeeee4;
 }
 
 
 
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para el botón de cierre */
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para el iframe dentro del modal */
+  iframe {
+    width: 100%;
+    height: 40rem; /* Ajusta la altura según tus necesidades */
+    border: none;
+  }
+  
 
 
-.footer{
+
+  #donate-button img {
+    width: 15rem; /* Define el ancho deseado en píxeles */
+    height: auto; /* La propiedad "height" se ajusta automáticamente para mantener la relación de aspecto original */
+    transition: opacity 0.3s; /* Agregar una transición de 0.3 segundos para suavizar el efecto */
+}
+
+#donate-button img:hover {
+    opacity: 0.8; /* Cambiar la opacidad cuando el usuario pasa el cursor sobre el botón */
+
+}
+
+
+
+/* Estilos para la sección de donación */
+.donation-section {
+    background-color: #f7f7f7; /* Fondo de la sección */
+    padding: 50px 0; /* Espaciado interno */
+    text-align: center; /* Centrar el contenido */
+}
+
+.donation-section h2 {
+    font-size: 2.5rem; /* Tamaño del título */
+    color: #333; /* Color del título */
+}
+
+.donation-section p {
+    font-size: 1.2rem; /* Tamaño del texto */
+    color: #666; /* Color del texto */
+    margin: 20px 0; /* Espaciado entre párrafos */
+}
+
+/* Estilos para el botón de donación */
+.donate-button-container {
+    margin: 30px 0; /* Espaciado entre el texto y el botón */
+}
+
+#donate-button img {
+    width: 200px; /* Ancho de la imagen del botón */
+    height: auto; /* Altura automática para mantener la relación de aspecto */
+}
+
+/* Estilos para el llamado a la acción */
+.donation-section p:last-child {
+    font-weight: bold; /* Texto en negrita para el llamado a la acción */
+    color: #ff5733; /* Color destacado para el llamado a la acción */
+}
+
+
+
+
+
+
+
+
+
+.footer {
     background-color: #08376b;
     color: #f8f9f9;
 }
 
-.footer-container{
+.footer-container {
     padding-top: 5rem;
     padding-bottom: 0;
     display: flex;
@@ -346,7 +491,7 @@ img {
 
 
 
-.content2 input{
+.content2 input {
     background-color: #08376b;
     border: #08376b;
     border: none;
@@ -357,17 +502,17 @@ img {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.content2 textarea::placeholder{
+.content2 textarea::placeholder {
     background-color: #08376b;
-     color: #ffffff;
-     font-size: 1.6rem;
-     outline: none;
-     border: #08376b;
-     font-family: Verdana, Geneva, Tahoma, sans-serif;
-     border: none;
+    color: #ffffff;
+    font-size: 1.6rem;
+    outline: none;
+    border: #08376b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
 }
 
-.content2 textarea{
+.content2 textarea {
     background-color: #08376b;
     color: #f8f9f9;
     font-size: 1.6rem;
@@ -379,42 +524,46 @@ img {
     min-height: 10rem;
 }
 
-.content2 textarea::placeholder{
+.content2 textarea::placeholder {
     color: #758080;
 }
 
-.content2 h3{
+.content2 h3 {
     margin-bottom: 3rem;
 }
 
-.content1 h3{
+.content1 h3 {
     margin-bottom: 3rem;
 
 }
-.content1 p, .content2 input{
+
+.content1 p,
+.content2 input {
     margin-bottom: 1.5rem;
 }
 
-.content2 input{
+.content2 input {
     margin-bottom: 1.5rem;
 }
 
-.text{
+.text {
     margin-top: 1rem;
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
     overflow-y: hidden;
 }
-.text button{
+
+.text button {
     margin-left: 1.5rem;
 }
 
-.content1, .content2{
-        margin: 1rem;
+.content1,
+.content2 {
+    margin: 1rem;
 }
 
-.content2 button{
+.content2 button {
     background: #9d3a7b;
     color: #f8f9f9;
     font-family: 'Raleway', sans-serif;
@@ -422,16 +571,78 @@ img {
     height: 3rem;
     cursor: pointer;
     border-radius: 1rem;
-    
+
 }
-.content2 button:hover{
+
+.content2 button:hover {
     background: #c63671;
 }
 
-.powered{
+.powered {
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgb(105, 118, 131);
     padding-bottom: 0.5rem;
+}
+
+
+.flag{
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1326px) {
+    .container-options {
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 4rem;
+    }
+
+
+    .adopt {
+        border-top-left-radius: 18rem;
+        border-bottom-left-radius: 18rem;
+        height: 18rem;
+        box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+    }
+
+}
+
+
+@media screen and (max-width: 650px) {
+
+    .circleAdopt, .circleFoundIt, .circleInAdopt, .circleLost {
+        display: none;
+
+    }
+    .adopt, .inAdopt, .foundIt, .lost {
+        display: flex;
+        justify-content: center;
+        border-radius: 0rem;
+        border-radius: 0rem;
+
+    }
+    .info{
+        width: 33rem;
+        text-align: justify;
+    }
+
 }
