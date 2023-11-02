@@ -144,10 +144,10 @@
 
     <!-- DONACIONES -->
 
-    <section class="donation-section">
-        <div class="container">
+    <section class="donation-section sombra">
+        <div class="container contenedor    ">
             <h2>¡Ayúdanos a Mejorar!</h2>
-            <p>Tu generosidad hace posible que sigamos rescatando y cuidando a animales en situaciones críticas. Cada donación cuenta y contribuye a nuestro esfuerzo por brindar un mejor servicio y salvar vidas.</p>
+            <p>Tu ayuda hace posible que sigamos rescatando y cuidando a animales en situaciones críticas. Cada donación cuenta y contribuye a nuestro esfuerzo por brindar un mejor servicio y salvar vidas.</p>
 
             <div class="donate-button-container">
                 <div id="donate-button"></div>
@@ -214,10 +214,7 @@
 
 
 
-        <!-- ESTE BOTON SE RENDERIZA EN LA SECCION DONACIONES -->
-    <div class="">
-        <button class="btn">Realizar aporte</button>
-    </div>
+    <!-- ESTE BOTON SE RENDERIZA EN LA SECCION DONACIONES -->
     <div id="donate-button-container">
         <div id="donate-button"></div>
         <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
@@ -226,13 +223,16 @@
                 env: 'production',
                 hosted_button_id: '83V9N2D7YRQRC',
                 image: {
-                    src: 'https://pics.paypal.com/00/s/MjJjNmVjZDYtYmU0ZS00ODIwLWIzZjItZTM5NzdmYTY4YTZh/file.PNG',
+                    src: 'https://pics.paypal.com/00/s/ZWY5ZTI4OTYtMWQ2Yy00NmQ5LWI5MTMtZDc0YjFjM2RiMzYy/file.PNG',
                     alt: 'Donate with PayPal button',
                     title: 'PayPal - The safer, easier way to pay online!',
                 }
             }).render('#donate-button');
         </script>
     </div>
+
+
+
 
 </body>
 

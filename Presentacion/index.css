@@ -52,6 +52,7 @@ img {
 
 .contenedor-header {
     display: flex;
+    align-items: center;
 }
 
 
@@ -90,8 +91,8 @@ img {
 
 
 .logo {
-    max-width: 20.1rem;
-    max-height: 7.8rem;
+    max-width: 18.1rem;
+    max-height: 5.8rem;
 }
 
 .title {
@@ -165,6 +166,11 @@ img {
     margin: 1rem;
 }
 
+
+.container{
+    background: linear-gradient(to bottom, white); /* Fondo de la sección */
+    
+}
 
 
 .fouroptions {
@@ -315,9 +321,9 @@ img {
 /* section */
 
 .section {
-    background: #eeeee4;
+    background: linear-gradient(to top, #eeeee4, white);
     padding-top: 1rem;
-    margin-top: 8rem;
+    margin-top: 1rem;
     padding-bottom: 5rem;     font-family: 'Raleway', sans-serif;
     color: #08376b;
 
@@ -376,49 +382,6 @@ img {
 }
 
 
-
-/* Estilos para el modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
-  .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Estilos para el botón de cierre */
-  .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  /* Estilos para el iframe dentro del modal */
-  iframe {
-    width: 100%;
-    height: 40rem; /* Ajusta la altura según tus necesidades */
-    border: none;
-  }
-  
-
-
-
   #donate-button img {
     width: 15rem; /* Define el ancho deseado en píxeles */
     height: auto; /* La propiedad "height" se ajusta automáticamente para mantener la relación de aspecto original */
@@ -434,9 +397,11 @@ img {
 
 /* Estilos para la sección de donación */
 .donation-section {
-    background-color: #f7f7f7; /* Fondo de la sección */
+
     padding: 50px 0; /* Espaciado interno */
     text-align: center; /* Centrar el contenido */
+    background: linear-gradient(to bottom, #eeeee4, white);
+
 }
 
 .donation-section h2 {
@@ -445,9 +410,10 @@ img {
 }
 
 .donation-section p {
-    font-size: 1.2rem; /* Tamaño del texto */
-    color: #666; /* Color del texto */
-    margin: 20px 0; /* Espaciado entre párrafos */
+    font-size: 1.7rem; /* Tamaño del texto */
+    color: #25323b; /* Color del texto */
+    margin: 5rem 0; /* Espaciado entre párrafos */
+    font-weight: bold;
 }
 
 /* Estilos para el botón de donación */
@@ -456,14 +422,14 @@ img {
 }
 
 #donate-button img {
-    width: 200px; /* Ancho de la imagen del botón */
+    width: 14rem; /* Ancho de la imagen del botón */
     height: auto; /* Altura automática para mantener la relación de aspecto */
 }
 
 /* Estilos para el llamado a la acción */
 .donation-section p:last-child {
     font-weight: bold; /* Texto en negrita para el llamado a la acción */
-    color: #ff5733; /* Color destacado para el llamado a la acción */
+    color: #c73515; /* Color destacado para el llamado a la acción */
 }
 
 
@@ -564,18 +530,18 @@ img {
 }
 
 .content2 button {
-    background: #9d3a7b;
+    background: #156886;
     color: #f8f9f9;
     font-family: 'Raleway', sans-serif;
-    width: 7rem;
+    width: 8rem;
     height: 3rem;
     cursor: pointer;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 
 }
 
 .content2 button:hover {
-    background: #c63671;
+    background: #167597;
 }
 
 .powered {
@@ -584,6 +550,7 @@ img {
     justify-content: center;
     color: rgb(105, 118, 131);
     padding-bottom: 0.5rem;
+    user-select: none;
 }
 
 
