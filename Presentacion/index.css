@@ -112,6 +112,9 @@ img {
 .sombra {
     text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
 }
+.centrar-texto{
+    text-align: center;
+}
 
 
 .flex-row {
@@ -150,6 +153,8 @@ img {
 .display-none {
     display: none;
 }
+
+
 
 /* FIN UTILIDAD */
 
@@ -228,6 +233,13 @@ img {
     font-family: 'Raleway', sans-serif;
     border-radius: 0.5rem;
     cursor: pointer;
+    transition: opacity 0.3s; /* Agregar una transición de 0.3 segundos para suavizar el efecto */
+
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.info button:hover{
+    opacity: 0.8; /* Cambiar la opacidad cuando el usuario pasa el cursor sobre el botón */
 }
 
 .info h3 {
@@ -348,7 +360,31 @@ img {
     color: #120713;
     margin-bottom: 5rem;
     font-size: 1.6rem;
+    text-align: center;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
+
+}
+
+.don{
+    width: 9rem;
+    height: 9rem;
+    background: url("../img/corazon-de-caja.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hov{
+    color: white;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.hov:hover{
+    color: #156886;
 }
 
 .boxAdopt img, .boxAdoptIt img, .boxFountIt img, .boxLost img{
@@ -386,6 +422,8 @@ img {
     width: 15rem; /* Define el ancho deseado en píxeles */
     height: auto; /* La propiedad "height" se ajusta automáticamente para mantener la relación de aspecto original */
     transition: opacity 0.3s; /* Agregar una transición de 0.3 segundos para suavizar el efecto */
+
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
 #donate-button img:hover {
@@ -404,17 +442,23 @@ img {
 
 }
 
+
 .donation-section h2 {
     font-size: 2.5rem; /* Tamaño del título */
-    color: #333; /* Color del título */
+    color: #08376b; /* Color del título */
+    font-weight: bolder;
 }
 
 .donation-section p {
     font-size: 1.7rem; /* Tamaño del texto */
-    color: #25323b; /* Color del texto */
+    color: #010407; /* Color del texto */
     margin: 5rem 0; /* Espaciado entre párrafos */
     font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
+
+
 
 /* Estilos para el botón de donación */
 .donate-button-container {
@@ -429,8 +473,10 @@ img {
 /* Estilos para el llamado a la acción */
 .donation-section p:last-child {
     font-weight: bold; /* Texto en negrita para el llamado a la acción */
-    color: #c73515; /* Color destacado para el llamado a la acción */
+    color: #425699; /* Color destacado para el llamado a la acción */
 }
+
+
 
 
 
@@ -563,13 +609,68 @@ img {
 
 
 
+.content1 img{
+    min-width: 3rem;
+    max-width: 3rem;
+    height: 3rem;
+}
+
+
+.fb .fb-image {
+    min-width: 2rem;
+    max-width: 2rem;
+    height: 2rem;
+    transition: src 0.3s;
+    margin-right: 1rem;
+}
+
+.fb:hover .fb-image {
+    content: url("../img/fb-hover.png");
+
+}
 
 
 
 
+.insta .insta-image {
+    min-width: 2rem;
+    max-width: 2rem;
+    height: 2rem;
+    transition: src 0.3s;
+    margin-right: 1rem;
+}
+
+.insta:hover .insta-image {
+    content: url("../img/insta-hover.png");
+}
 
 
 
+.twitter .twitter-image {
+    min-width: 2rem;
+    max-width: 2rem;
+    height: 2rem;
+    transition: src 0.3s;
+    margin-right: 1rem;
+}
+
+.twitter:hover .twitter-image {
+    content: url("../img/twitter-hover.png");
+}
+
+
+
+.youtube .youtube-image {
+    min-width: 2rem;
+    max-width: 2rem;
+    height: 2rem;
+    transition: src 0.3s;
+    margin-right: 1rem;
+}
+
+.youtube:hover .youtube-image {
+    content: url("../img/youtube-hover.png");
+}
 
 
 
@@ -610,6 +711,11 @@ img {
     .info{
         width: 33rem;
         text-align: justify;
+    }
+
+    .content2 textarea{
+        width: 19rem;
+        
     }
 
 }

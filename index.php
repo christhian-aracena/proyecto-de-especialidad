@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="Presentacion/index.css">
 
 
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
+    <script src="https://kit.fontawesome.com/58b7154440.js" crossorigin="anonymous"></script>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
 
@@ -42,7 +45,7 @@
 
     <main class="contenedor">
 
-        <h3 class="fouroptions">Tienes 4 opciones para la gestión de mascotas:</h3>
+        <h3 class="fouroptions centrar-texto">Tienes 4 opciones para la gestión de mascotas:</h3>
 
         <div class="container-options flex-wrap">
 
@@ -87,7 +90,7 @@
                 <div class="info">
                     <h3>Perdidos</h3>
                     <p>Si has extraviado a tu mascota, detalla información y realiza una publicación que ayude en su busqueda.</p>
-                    <button>Buscar</button>
+                    <button>Publicar</button>
                 </div>
                 <div class="circleLost">
 
@@ -101,9 +104,9 @@
 
 
     </main>
-    <div class="section">
-        <h3 class="fouroptions  stadistics sombra">Estadisticas</h3>
-        <p class="stadistic-p contenedor flex-centrar-item sombra">Ayúdanos en la contribucion por un Chile libre de sufrimiento animal. Las cifras a continuación dependen de todos nosotros.</p>
+    <div class="section ">
+        <h3 class="fouroptions  stadistics sombra ">Estadisticas</h3>
+        <p class="stadistic-p contenedor flex-centrar-item sombra contenedor">Ayúdanos en la contribucion por un Chile libre de sufrimiento animal. Las cifras a continuación dependen de todos nosotros.</p>
 
         <div class="flex-row flex-wrap contenedor stadistics flex-centrar-item">
             <div class="boxAdopt">
@@ -145,19 +148,23 @@
     <!-- DONACIONES -->
 
     <section class="donation-section sombra">
-        <div class="container contenedor    ">
+        <div class="container contenedor">
             <h2>¡Ayúdanos a Mejorar!</h2>
-            <p>Tu ayuda hace posible que sigamos rescatando y cuidando a animales en situaciones críticas. Cada donación cuenta y contribuye a nuestro esfuerzo por brindar un mejor servicio y salvar vidas.</p>
+            <p class="stadistic-p contenedor flex-centrar-item sombra">Tu ayuda hace posible que sigamos rescatando y cuidando a animales en situaciones críticas. Cada donación cuenta y contribuye a nuestro esfuerzo por brindar un mejor servicio y salvar vidas.</p>
+            <div class="flex-centrar-item">
+                            <div class="don"></div>
+            </div>
+
 
             <div class="donate-button-container">
                 <div id="donate-button"></div>
             </div>
 
-            <p>Únete a nuestra causa y realiza una donación segura a través de PayPal. Tu apoyo es esencial para nuestro trabajo.</p>
+            <p > Únete a nuestra causa y realiza una donación segura a través de PayPal. Tu apoyo es esencial para nuestro trabajo.</p>
+
         </div>
     </section>
     <!-- FIN DONACIONES -->
-
     </div>
 
 
@@ -165,18 +172,18 @@
         <div class="footer-container contenedor">
             <div class="content1 sombra">
                 <h3>Informate</h3>
-                <p>Casos de exito</p>
-                <p>Preguntas frecuentes</p>
-                <p>Quienes Somos</p>
-                <p>Donaciones</p>
+                <p class="cursor-pointer hov">Principal</p>
+                <p class="cursor-pointer hov">Preguntas frecuentes</p>
+                <p class="cursor-pointer hov">Quienes Somos</p>
+                <p class="cursor-pointer hov">Donaciones</p>
             </div>
 
             <div class="content1 sombra">
                 <h3>Mantente conectado</h3>
-                <p>Facebook</p>
-                <p>Instagram</p>
-                <p>Twitter</p>
-                <p>Youtube</p>
+                <p class="cursor-pointer hov fb"><img class="fb-image" src="img/fb-black.png" alt="" srcset="">Facebook</p>
+                <p class="cursor-pointer hov insta"> <img class="insta-image" src="img/insta-white.png" alt="" srcset="">Instagram</p>
+                <p class="cursor-pointer hov twitter"> <img class="twitter-image" src="img/twitter-white.png" alt="" srcset="">Twitter</p>
+                <p class="cursor-pointer hov youtube"> <img class="youtube-image" src="img/youtube-white.png" alt="" srcset="">Youtube</p>
 
             </div>
 
