@@ -43,14 +43,18 @@
 
     </header>
 
-    <main class="contenedor">
-    <h1>¡Gracias por tu donación!</h1>
-    <p>Tu generosa donación ayudará a salvar y cuidar a más mascotas necesitadas. Te agradecemos por tu apoyo.</p>
-    <p>Recuerda que cada contribución marca la diferencia en la vida de estos animales.</p>
+    <main class="contenedor thanks flex-centrar-item flex-col">
+        <h1>¡Gracias por tu donación!</h1>
+        <h3>Tu aporte es una luz de esperanza para aquellos que más lo necesitan.</h3>
+        <div class="imgpets"></div>
+        <div class="info-complete">
+            <p>Queremos expresar nuestro más sincero agradecimiento por tu generosa donación. Con tu apoyo, estamos más cerca de salvar y cuidar a las mascotas necesitadas.</p>
+            <p>Recuerda que cada contribución marca la diferencia en la vida de estos animales.</p>
+        </div>
+        <a href="https://noxious-slit.000webhostapp.com/">Volver</a>
+
 
     </main>
-  
-    <a href="fb.html">fb</a>
 
     <footer class="footer">
         <div class="footer-container contenedor">
@@ -101,7 +105,7 @@
 
     <script src="Negocio/js/count1.js"></script>
 
-    
+
 
 
 

@@ -112,7 +112,8 @@ img {
 .sombra {
     text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
 }
-.centrar-texto{
+
+.centrar-texto {
     text-align: center;
 }
 
@@ -172,9 +173,10 @@ img {
 }
 
 
-.container{
-    background: linear-gradient(to bottom, white); /* Fondo de la sección */
-    
+.container {
+    background: linear-gradient(to bottom, white);
+    /* Fondo de la sección */
+
 }
 
 
@@ -233,13 +235,15 @@ img {
     font-family: 'Raleway', sans-serif;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: opacity 0.3s; /* Agregar una transición de 0.3 segundos para suavizar el efecto */
+    transition: opacity 0.3s;
+    /* Agregar una transición de 0.3 segundos para suavizar el efecto */
 
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
-.info button:hover{
-    opacity: 0.8; /* Cambiar la opacidad cuando el usuario pasa el cursor sobre el botón */
+.info button:hover {
+    opacity: 0.8;
+    /* Cambiar la opacidad cuando el usuario pasa el cursor sobre el botón */
 }
 
 .info h3 {
@@ -333,10 +337,11 @@ img {
 /* section */
 
 .section {
-    background:  linear-gradient(to bottom, white, rgb(240, 227, 227));
+    background: linear-gradient(to bottom, white, rgb(240, 227, 227));
     padding-top: 1rem;
     margin-top: 1rem;
-    padding-bottom: 5rem;     font-family: 'Raleway', sans-serif;
+    padding-bottom: 5rem;
+    font-family: 'Raleway', sans-serif;
     color: #08376b;
 
     font-size: 2.3rem;
@@ -355,7 +360,7 @@ img {
     font-weight: 600;
 }
 
-.stadistic-p{
+.stadistic-p {
     font-family: 'Raleway', sans-serif;
     color: #120713;
     margin-bottom: 5rem;
@@ -368,7 +373,7 @@ img {
 
 }
 
-.don{
+.don {
     width: 9rem;
     height: 9rem;
     background: url("../img/corazon-de-caja.png");
@@ -376,30 +381,37 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.hov{
+
+.hov {
     color: white;
     transition: color 0.3s;
     display: flex;
     align-items: center;
 }
 
-.hov:hover{
+.hov:hover {
     color: #156886;
 }
 
-.boxAdopt img, .boxAdoptIt img, .boxFountIt img, .boxLost img{
+.boxAdopt img,
+.boxAdoptIt img,
+.boxFountIt img,
+.boxLost img {
     width: 8rem;
     height: 8rem;
-    
+
 }
 
-.boxAdopt, .boxAdoptIt, .boxFountIt, .boxLost{
+.boxAdopt,
+.boxAdoptIt,
+.boxFountIt,
+.boxLost {
 
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1rem;
-    
+
 }
 
 
@@ -413,21 +425,25 @@ img {
 
 
 
-.donations{
+.donations {
     background: #eeeee4;
 }
 
 
-  #donate-button img {
-    width: 15rem; /* Define el ancho deseado en píxeles */
-    height: auto; /* La propiedad "height" se ajusta automáticamente para mantener la relación de aspecto original */
-    transition: opacity 0.3s; /* Agregar una transición de 0.3 segundos para suavizar el efecto */
+#donate-button img {
+    width: 15rem;
+    /* Define el ancho deseado en píxeles */
+    height: auto;
+    /* La propiedad "height" se ajusta automáticamente para mantener la relación de aspecto original */
+    transition: opacity 0.3s;
+    /* Agregar una transición de 0.3 segundos para suavizar el efecto */
 
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
 #donate-button img:hover {
-    opacity: 0.8; /* Cambiar la opacidad cuando el usuario pasa el cursor sobre el botón */
+    opacity: 0.8;
+    /* Cambiar la opacidad cuando el usuario pasa el cursor sobre el botón */
 
 }
 
@@ -436,44 +452,120 @@ img {
 /* Estilos para la sección de donación */
 .donation-section {
 
-    padding: 5rem 0; /* Espaciado interno */
-    text-align: center; /* Centrar el contenido */
+    padding: 5rem 0;
+    /* Espaciado interno */
+    text-align: center;
+    /* Centrar el contenido */
     background: linear-gradient(to bottom, #eeeee4, white);
 
 }
 
 
+.imgpets {
+    width: 35rem;
+    height: 35rem;
+    background: url("../img/cat-and-dog.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.thanks a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+
+    margin: 1rem;
+
+    cursor: pointer;
+
+
+
+}
+
+.thanks a:hover{
+    text-decoration: underline;
+    color: #156886;
+}
+
+.thanks {
+    height: 70vh;
+    justify-content: space-around;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.thanks p,
+.thanks h1,
+.thanks h3 {
+    margin: 1rem;
+}
+
+.thanks h1 {
+    color: rgb(96, 218, 66);
+    text-shadow: 0 10px 20px rgba(68, 134, 23, 0.5);
+}
+
+.thanks img {}
+
+.thanks button {
+    margin: 2rem;
+}
+
+.info-complete {
+    background: linear-gradient(to left, white, #e8eee4, white);
+}
+
 .donation-section h2 {
-    font-size: 2.5rem; /* Tamaño del título */
-    color: #08376b; /* Color del título */
+    font-size: 2.5rem;
+    /* Tamaño del título */
+    color: #08376b;
+    /* Color del título */
     font-weight: bolder;
 }
 
 .donation-section p {
-    font-size: 1.7rem; /* Tamaño del texto */
-    color: #010407; /* Color del texto */
-    margin: 5rem 0; /* Espaciado entre párrafos */
+    font-size: 1.7rem;
+    /* Tamaño del texto */
+    color: #010407;
+    /* Color del texto */
+    margin: 5rem 0;
+    /* Espaciado entre párrafos */
     font-weight: bold;
     margin-left: 1rem;
     margin-right: 1rem;
+
 }
 
 
 
 /* Estilos para el botón de donación */
 .donate-button-container {
-    margin: 30px 0; /* Espaciado entre el texto y el botón */
+    margin: 30px 0;
+    /* Espaciado entre el texto y el botón */
 }
 
 #donate-button img {
-    width: 14rem; /* Ancho de la imagen del botón */
-    height: auto; /* Altura automática para mantener la relación de aspecto */
+    width: 14rem;
+    /* Ancho de la imagen del botón */
+    height: auto;
+    /* Altura automática para mantener la relación de aspecto */
 }
 
 /* Estilos para el llamado a la acción */
 .donation-section p:last-child {
-    font-weight: bold; /* Texto en negrita para el llamado a la acción */
-    color: #425699; /* Color destacado para el llamado a la acción */
+    font-weight: bold;
+    /* Texto en negrita para el llamado a la acción */
+    color: #425699;
+    /* Color destacado para el llamado a la acción */
 }
 
 
@@ -600,7 +692,7 @@ img {
 }
 
 
-.flag{
+.flag {
     width: 2rem;
     height: 2rem;
     margin-left: 1rem;
@@ -609,7 +701,7 @@ img {
 
 
 
-.content1 img{
+.content1 img {
     min-width: 3rem;
     max-width: 3rem;
     height: 3rem;
@@ -697,25 +789,33 @@ img {
 
 @media screen and (max-width: 650px) {
 
-    .circleAdopt, .circleFoundIt, .circleInAdopt, .circleLost {
+    .circleAdopt,
+    .circleFoundIt,
+    .circleInAdopt,
+    .circleLost {
         display: none;
 
     }
-    .adopt, .inAdopt, .foundIt, .lost {
+
+    .adopt,
+    .inAdopt,
+    .foundIt,
+    .lost {
         display: flex;
         justify-content: center;
         border-radius: 0rem;
         border-radius: 0rem;
 
     }
-    .info{
+
+    .info {
         width: 33rem;
         text-align: justify;
     }
 
-    .content2 textarea{
+    .content2 textarea {
         width: 19rem;
-        
+
     }
 
 }

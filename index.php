@@ -171,8 +171,6 @@
     <!-- FIN DONACIONES -->
     </div>
 
-    <a href="fb.html">fb</a>
-
     <footer class="footer">
         <div class="footer-container contenedor">
             <div class="content1 sombra">
