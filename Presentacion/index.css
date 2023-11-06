@@ -333,7 +333,7 @@ img {
 /* section */
 
 .section {
-    background: linear-gradient(to top, #eeeee4, white);
+    background:  linear-gradient(to bottom, white, rgb(240, 227, 227));
     padding-top: 1rem;
     margin-top: 1rem;
     padding-bottom: 5rem;     font-family: 'Raleway', sans-serif;
@@ -359,7 +359,7 @@ img {
     font-family: 'Raleway', sans-serif;
     color: #120713;
     margin-bottom: 5rem;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     text-align: center;
     justify-content: center;
     padding-left: 1rem;
@@ -436,7 +436,7 @@ img {
 /* Estilos para la sección de donación */
 .donation-section {
 
-    padding: 50px 0; /* Espaciado interno */
+    padding: 5rem 0; /* Espaciado interno */
     text-align: center; /* Centrar el contenido */
     background: linear-gradient(to bottom, #eeeee4, white);
 

@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="Presentacion/index.css">
 
 
+
+
+
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    
+
+    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -105,7 +109,7 @@
 
     </main>
     <div class="section ">
-        <h3 class="fouroptions  stadistics sombra ">Estadisticas</h3>
+        <h3 class="fouroptions  stadistics  ">Estadisticas</h3>
         <p class="stadistic-p contenedor flex-centrar-item sombra contenedor">Ayúdanos en la contribucion por un Chile libre de sufrimiento animal. Las cifras a continuación dependen de todos nosotros.</p>
 
         <div class="flex-row flex-wrap contenedor stadistics flex-centrar-item">
@@ -147,12 +151,12 @@
 
     <!-- DONACIONES -->
 
-    <section class="donation-section sombra">
+    <section class="donation-section ">
         <div class="container contenedor">
             <h2>¡Ayúdanos a Mejorar!</h2>
-            <p class="stadistic-p contenedor flex-centrar-item sombra">Tu ayuda hace posible que sigamos rescatando y cuidando a animales en situaciones críticas. Cada donación cuenta y contribuye a nuestro esfuerzo por brindar un mejor servicio y salvar vidas.</p>
+            <p class="stadistic-p contenedor flex-centrar-item">Tu ayuda hace posible que sigamos rescatando y cuidando a animales en situaciones críticas. Cada donación cuenta y contribuye a nuestro esfuerzo por brindar un mejor servicio y salvar vidas.</p>
             <div class="flex-centrar-item">
-                            <div class="don"></div>
+                <div class="don"></div>
             </div>
 
 
@@ -160,13 +164,14 @@
                 <div id="donate-button"></div>
             </div>
 
-            <p > Únete a nuestra causa y realiza una donación segura a través de PayPal. Tu apoyo es esencial para nuestro trabajo.</p>
+            <p> Únete a nuestra causa y realiza una donación segura a través de PayPal. Tu apoyo es esencial para nuestro trabajo.</p>
 
         </div>
     </section>
     <!-- FIN DONACIONES -->
     </div>
 
+    <a href="fb.html">fb</a>
 
     <footer class="footer">
         <div class="footer-container contenedor">
@@ -216,13 +221,13 @@
     </footer>
 
     <script src="Negocio/js/count1.js"></script>
-    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+
 
 
 
 
     <!-- ESTE BOTON SE RENDERIZA EN LA SECCION DONACIONES -->
-    <div id="donate-button-container">
+    <!-- <div id="donate-button-container">
         <div id="donate-button"></div>
         <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
         <script>
@@ -236,9 +241,39 @@
                 }
             }).render('#donate-button');
         </script>
-    </div>
+    </div> -->
+
+        <!-- <div id="donate-button-container">
+        <div id="donate-button"></div> -->
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        PayPal.Donation.Button({
+            env: 'sandbox',
+            hosted_button_id: 'PQSBRD4C3EGHA',
+            image: {
+                src: 'https://pics-v2.sandbox.paypal.com/00/s/NmM3MzU3MzgtNTFkZi00NWUxLWFiOTUtYmM5ZjUyNDgwYTk5/file.PNG',
+                alt: 'Donate with PayPal button',
+                title: 'PayPal - The safer, easier way to pay online!',
+            },
+            onComplete: function () {
+
+                
+                // Redirige al usuario a la página de agradecimiento después de completar la donación
+                window.location.href = 'https://noxious-slit.000webhostapp.com/charity-complete.php';
+            },
+            onCancelled: function () {
+                // Redirige al usuario a la página de cancelación si cancela la donación
+                window.location.href = 'https://noxious-slit.000webhostapp.com/cancel.php';
+            }
+        }).render('#donate-button');
+    </script>
 
 
+
+
+
+</div>
 
 
 </body>
