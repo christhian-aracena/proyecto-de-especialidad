@@ -767,6 +767,104 @@ img {
 
 
 
+
+
+
+
+
+
+
+
+/* PREGUNTAS FRECUENTES */
+
+.faq {
+    max-width: 100%;
+    margin: 0 auto;
+    margin: 2.5rem;
+}
+
+.question h2{
+    font-size: 1.9rem;
+}
+
+.question {
+    background: linear-gradient(to left,white, #eeeee4, #c8d8d3);
+    border: 1rem thick #ddd;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.question h2 {
+    cursor: pointer;
+}
+
+.answer {
+    display: none;
+    padding: 1rem;
+}
+
+/* Estilo para hacer que las respuestas se desplieguen al hacer clic en la pregunta */
+.question.active .answer {
+    display: block;
+}
+
+
+.faq2{
+    background: linear-gradient(to left,white, #eeeee4, #d5c8d8);
+}
+
+.faq3{
+    background: linear-gradient(to left,white, #eeeee4, #d8d4c8);
+}
+
+.faq4{
+    background: linear-gradient(to left,white, #eeeee4, #d8c8c8);
+}
+
+.faq5{
+    background: linear-gradient(to left,white, #eeeee4, #c8d8cb);
+}
+
+.faq6{
+    background: linear-gradient(to left,white, #eeeee4, #d5d8c8);
+}
+
+.faq7{
+    background: linear-gradient(to left,white, #eeeee4, #d8c8c8);
+}
+
+.faq8{
+    background: linear-gradient(to left,white, #eeeee4, #cec8d8);
+}
+
+.containertitle{
+    margin-top: 5rem;
+}
+.titlefaq{
+    text-align: center;
+    color: #08376b;
+}
+
+
+
+.imgfaq{
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background: url('../img/questions-amico.svg');
+}
+
+.faqcontainer{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+
+
 @media screen and (max-width: 1326px) {
     .container-options {
 

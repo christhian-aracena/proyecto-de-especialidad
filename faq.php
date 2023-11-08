@@ -8,6 +8,7 @@
 
 
 
+    <script src="Negocio/js/faq.js"></script>
 
 
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -49,134 +50,138 @@
 
     <main class="contenedor">
 
-        <h3 class="fouroptions centrar-texto">Tienes 4 opciones para la gestión de mascotas:</h3>
 
-        <div class="container-options flex-wrap">
-
-            <div class="adopt flex-row">
-                <div class="circleAdopt">
-
-                </div>
-
-                <div class="info">
-                    <h3>Adoptar</h3>
-                    <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
-                    <button>Adopta</button>
-                </div>
-
-            </div>
-
-            <div class="inAdopt ">
-                <div class="info">
-                    <h3>En adopcion</h3>
-                    <p>Publica una mascota, de este modo la gente podrá enviarte solicitudes de adopcion y podrás aceptar a quién desees.</p>
-                    <button>Da en adopcion</button>
-                </div>
-                <div class="circleInAdopt">
-
-                </div>
-
-            </div>
-
-            <div class="foundIt  flex-row">
-                <div class="circleFoundIt">
-
-                </div>
-                <div class="info">
-                    <h3>Encontrados</h3>
-                    <p>Si has encontrado una mascota con collar, identificación o consideras que está perdido, toma fotos y publica.</p>
-                    <button>Publicar</button>
-                </div>
-
-            </div>
-
-            <div class="lost">
-                <div class="info">
-                    <h3>Perdidos</h3>
-                    <p>Si has extraviado a tu mascota, detalla información y realiza una publicación que ayude en su busqueda.</p>
-                    <button>Publicar</button>
-                </div>
-                <div class="circleLost">
-
-                </div>
-
-            </div>
-
+        <div class="flex-row flex-centrar-item containertitle">
+            <div class="imgfaq"></div>
+            <h2 class="titlefaq">Preguntas Frecuentes</h2>
 
         </div>
 
+
+
+        <div class="faqcontainer">
+            <div class="faq">
+                <div class="question">
+                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
+                    <div class="answer">
+                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="faq">
+                <div class="question faq2">
+                    <h2 class="toggle sombra">¿Cuántas mascotas puedo publicar?</h2>
+                    <div class="answer">
+                        <p>No hay un límite de publicaciones, puedes publicar cuantas quieras.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="faq">
+                <div class="question faq3">
+                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
+                    <div class="answer">
+                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="faq">
+                <div class="question faq4">
+                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
+                    <div class="answer">
+                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="faq">
+                <div class="question faq5">
+                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
+                    <div class="answer">
+                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="faq">
+                <div class="question faq6">
+                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
+                    <div class="answer">
+                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="faq">
+                <div class="question faq7">
+                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
+                    <div class="answer">
+                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="faq">
+                <div class="question faq8">
+                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
+                    <div class="answer">
+                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="faq">
+                <div class="question faq9">
+                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
+                    <div class="answer">
+                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
     </main>
-    <div class="section ">
-        <h3 class="fouroptions  stadistics  ">Estadisticas</h3>
-        <p class="stadistic-p contenedor flex-centrar-item sombra contenedor">Ayúdanos en la contribucion por un Chile libre de sufrimiento animal. Las cifras a continuación dependen de todos nosotros.</p>
 
-        <div class="flex-row flex-wrap contenedor stadistics flex-centrar-item">
-            <div class="boxAdopt">
-                <img src="img/adoptados.png" alt="" srcset="">
-                <div class="flex-row">
-                    <h2 class="count1 sombra">0</h2>
-                    <h2>+</h2>
-                </div>
-
-                <h3 class="sombra">Adoptados</h3>
-            </div>
-            <div class="boxAdoptIt">
-                <img src="img/en adopcion.png" alt="" srcset="">
-                <div class="flex-row">
-                    <h2 class="count2 sombra">0</h2>
-                    <h2>+</h2>
-                </div>
-                <h3 class="sombra">En Adopción</h3>
-            </div>
-            <div class="boxFountIt">
-                <img src="img/encontrados.png" alt="" srcset="">
-                <div class="flex-row">
-                    <h2 class="count3 sombra">0</h2>
-                    <h2>+</h2>
-                </div>
-                <h3 class="sombra">Encontrados</h3>
-            </div>
-            <div class="boxLost">
-                <img src="img/perdidos.png" alt="" srcset="">
-                <div class="flex-row">
-                    <h2 class="count4 sombra">0</h2>
-                    <h2>+</h2>
-                </div>
-                <h3 class="sombra">Perdidos</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- DONACIONES -->
-
-    <section class="donation-section ">
-        <div class="container contenedor">
-            <h2>¡Ayúdanos a Mejorar!</h2>
-            <p class="stadistic-p contenedor flex-centrar-item">Tu ayuda hace posible que sigamos rescatando y cuidando a animales en situaciones críticas. Cada donación cuenta y contribuye a nuestro esfuerzo por brindar un mejor servicio y salvar vidas.</p>
-            <div class="flex-centrar-item">
-                <div class="don"></div>
-            </div>
-
-
-            <div class="donate-button-container">
-                <div id="donate-button"></div>
-            </div>
-
-            <p> Únete a nuestra causa y realiza una donación segura a través de PayPal. Tu apoyo es esencial para nuestro trabajo.</p>
-
-        </div>
-    </section>
-    <!-- FIN DONACIONES -->
-    </div>
 
     <footer class="footer">
         <div class="footer-container contenedor">
             <div class="content1 sombra">
                 <h3>Informate</h3>
                 <p class="cursor-pointer hov">Principal</p>
-                <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq.php">Preguntas frecuentes</a> </p>
+                <p class="cursor-pointer hov">Preguntas frecuentes</p>
                 <p class="cursor-pointer hov">Quienes Somos</p>
                 <p class="cursor-pointer hov">Donaciones</p>
             </div>
@@ -241,11 +246,11 @@
         </script>
     </div> -->
 
-        <!-- <div id="donate-button-container">
+    <!-- <div id="donate-button-container">
         <div id="donate-button"></div> -->
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
         PayPal.Donation.Button({
             env: 'sandbox',
             hosted_button_id: 'PQSBRD4C3EGHA',
@@ -254,13 +259,13 @@
                 alt: 'Donate with PayPal button',
                 title: 'PayPal - The safer, easier way to pay online!',
             },
-            onComplete: function () {
+            onComplete: function() {
 
-                
+
                 // Redirige al usuario a la página de agradecimiento después de completar la donación
                 window.location.href = 'https://noxious-slit.000webhostapp.com/charity-complete.php';
             },
-            onCancelled: function () {
+            onCancelled: function() {
                 // Redirige al usuario a la página de cancelación si cancela la donación
                 window.location.href = 'https://noxious-slit.000webhostapp.com/cancel.php';
             }
@@ -271,7 +276,7 @@
 
 
 
-</div>
+    </div>
 
 
 </body>
