@@ -24,21 +24,23 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Donación Realizada</title>
 </head>
 
 <body>
     <header class="header-landing flex-row flex-wrap">
         <div class="contenedor-header contenedor">
 
-            <p class="title sombra">Rescatamigos</p>
-            <img class="logo" src="img/logo1_v2-removebg-preview.png" alt="" srcset="">
+            <p><a class="title sombra cursor-pointer" href="https://www.rescatamigos.cl/index">Rescatamigos</a></p>
+            <a href="https://www.rescatamigos.cl/index">
+                <img class="logo cursor-pointer" src="img/logo1_v2-removebg-preview.png" alt="" srcset="">
+            </a>
 
         </div>
 
         <div class="contenedor flex-row ">
             <p class="counts cursor-pointer">Crea tu cuenta</p>
-            <p class="last cursor-pointer">Iniciar sesion</p>
+            <p ><a class="last cursor-pointer" href="login">Iniciar sesion</a></p>
         </div>
 
     </header>
@@ -51,7 +53,7 @@
             <p>Queremos expresar nuestro más sincero agradecimiento por tu generosa donación. Con tu apoyo, estamos más cerca de salvar y cuidar a las mascotas necesitadas.</p>
             <p>Recuerda que cada contribución marca la diferencia en la vida de estos animales.</p>
         </div>
-        <a href="https://noxious-slit.000webhostapp.com/">Volver</a>
+        <a href="https://www.rescatamigos.cl/index">Volver</a>
 
 
     </main>
@@ -60,10 +62,10 @@
         <div class="footer-container contenedor">
             <div class="content1 sombra">
                 <h3>Informate</h3>
-                <p class="cursor-pointer hov">Principal</p>
-                <p class="cursor-pointer hov">Preguntas frecuentes</p>
-                <p class="cursor-pointer hov">Quienes Somos</p>
-                <p class="cursor-pointer hov">Donaciones</p>
+                <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="privacy-policy">Politicas de privacidad</a> </p>
+                <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas frecuentes</a> </p>
+                <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Quienes Somos</a> </p>
+                <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos y Condiciones</a> </p>
             </div>
 
             <div class="content1 sombra">
@@ -75,17 +77,17 @@
 
             </div>
 
-            <form action="" method="post" onsubmit="return false;">
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="content2 sombra">
                     <h3>Dejanos un mensaje.</h3>
-                    <input type="text" placeholder="Nombre">
-                    <input type="text" placeholder="Correo">
+                    <input type="text" placeholder="Nombre" name="nombre" required>
+                    <input type="text" placeholder="Correo" name="correo" required>
                     <div>
-                        <input type="text" placeholder="Asunto">
+                        <input type="text" placeholder="Asunto" name="asunto" required>
                     </div>
                     <div class="text">
-                        <textarea placeholder="Tu mensaje..."></textarea>
-                        <button>Enviar</button>
+                        <textarea placeholder="Tu mensaje..." name="mensaje" required></textarea>
+                        <button id="sendFooter">Enviar</button>
                     </div>
 
                 </div>
@@ -93,23 +95,24 @@
             </form>
 
 
+
         </div>
 
 
         <div class="flex-row">
-            <small class="contenedor powered sombra">© 2023 Powered By Christhian Aracena. <img class="flag" src="img/Flag_of_Chile.svg" alt="" srcset=""></small>
+        <small class="contenedor powered sombra">&copy; 2023 Todos los derechos reservados. Powered By Christhian Aracena. <img class="flag" src="img/Flag_of_Chile.svg" alt="" srcset=""></small>
 
         </div>
 
     </footer>
 
     <script src="Negocio/js/count1.js"></script>
+    <script src="Negocio/js/ajax.js"></script>
 
 
 
 
-
-
+    <div id="successMessage">Mensaje enviado con éxito</div>
 
 </body>
 

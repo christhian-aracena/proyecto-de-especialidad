@@ -24,42 +24,44 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Pago Cancelado</title>
 </head>
 
 <body>
     <header class="header-landing flex-row flex-wrap">
         <div class="contenedor-header contenedor">
 
-            <p class="title sombra">Rescatamigos</p>
-            <img class="logo" src="img/logo1_v2-removebg-preview.png" alt="" srcset="">
+        <p><a class="title sombra cursor-pointer" href="https://www.rescatamigos.cl/index">Rescatamigos</a></p>
+            <a href="https://www.rescatamigos.cl/index">
+                <img class="logo cursor-pointer" src="img/logo1_v2-removebg-preview.png" alt="" srcset="">
+            </a>
 
         </div>
 
         <div class="contenedor flex-row ">
             <p class="counts cursor-pointer">Crea tu cuenta</p>
-            <p class="last cursor-pointer">Iniciar sesion</p>
+            <p ><a class="last cursor-pointer" href="login">Iniciar sesion</a></p>
         </div>
 
     </header>
 
     <main class="contenedor">
-    <h1>Lo sentimos, tu donación no pudo ser procesada</h1>
-    <p>Algo salió mal al procesar tu donación. Por favor, verifica la información de pago o inténtalo de nuevo más tarde.</p>
-    <p>Tu apoyo es importante para ayudar a las mascotas necesitadas, y esperamos que puedas intentarlo nuevamente.</p>
+        <h1>Lo sentimos, tu donación no pudo ser procesada</h1>
+        <p>Algo salió mal al procesar tu donación. Por favor, verifica la información de pago o inténtalo de nuevo más tarde.</p>
+        <p>Tu apoyo es importante para ayudar a las mascotas necesitadas, y esperamos que puedas intentarlo nuevamente.</p>
 
     </main>
-  
+
     <a href="fb.html">fb</a>
 
     <footer class="footer">
         <div class="footer-container contenedor">
             <div class="content1 sombra">
                 <h3>Informate</h3>
-                <p class="cursor-pointer hov">Principal</p>
-                <p class="cursor-pointer hov">Preguntas frecuentes</p>
-                <p class="cursor-pointer hov">Quienes Somos</p>
-                <p class="cursor-pointer hov">Donaciones</p>
+                <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="privacy-policy">Politicas de privacidad</a> </p>
+                <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas frecuentes</a> </p>
+                <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Quienes Somos</a> </p>
+                <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos y Condiciones</a> </p>
             </div>
 
             <div class="content1 sombra">
@@ -70,18 +72,17 @@
                 <p class="cursor-pointer hov youtube"> <img class="youtube-image" src="img/youtube-white.png" alt="" srcset="">Youtube</p>
 
             </div>
-
-            <form action="" method="post" onsubmit="return false;">
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="content2 sombra">
                     <h3>Dejanos un mensaje.</h3>
-                    <input type="text" placeholder="Nombre">
-                    <input type="text" placeholder="Correo">
+                    <input type="text" placeholder="Nombre" name="nombre" required>
+                    <input type="text" placeholder="Correo" name="correo" required>
                     <div>
-                        <input type="text" placeholder="Asunto">
+                        <input type="text" placeholder="Asunto" name="asunto" required>
                     </div>
                     <div class="text">
-                        <textarea placeholder="Tu mensaje..."></textarea>
-                        <button>Enviar</button>
+                        <textarea placeholder="Tu mensaje..." name="mensaje" required></textarea>
+                        <button id="sendFooter">Enviar</button>
                     </div>
 
                 </div>
@@ -93,7 +94,7 @@
 
 
         <div class="flex-row">
-            <small class="contenedor powered sombra">© 2023 Powered By Christhian Aracena. <img class="flag" src="img/Flag_of_Chile.svg" alt="" srcset=""></small>
+        <small class="contenedor powered sombra">&copy; 2023 Todos los derechos reservados. Powered By Christhian Aracena. <img class="flag" src="img/Flag_of_Chile.svg" alt="" srcset=""></small>
 
         </div>
 
@@ -101,7 +102,7 @@
 
     <script src="Negocio/js/count1.js"></script>
 
-    
+
 
 
 

@@ -1,13 +1,61 @@
+<?php
+require_once 'vendor/autoload.php';
+require_once 'config.php';
+
+$client = new Google_Client();
+$client->setClientId($ClientID);
+$client->setClientSecret($ClientSecret);
+$client->setRedirectUri($redirectURI);
+$client->addScope("email");
+$client->addScope("profile");
+
+session_start();
+
+if (isset($_GET['code'])) {
+    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+
+    if (isset($token['access_token'])) {
+        $client->setAccessToken($token);
+
+        // Verifica el estado de la sesión
+        if (isset($_SESSION['state']) && $_SESSION['state'] == $_GET['state']) {
+            // Obtener información del perfil
+            $google_oauth = new Google\Service\Oauth2($client);
+            $google_account_info = $google_oauth->userinfo->get();
+            $email = $google_account_info->email;
+            $name = $google_account_info->name;
+            $profileImage = $google_account_info->picture;
+
+            // Imprimir información
+            echo $email . '<br>';
+            echo $name;
+            echo '<img src="' . $profileImage . '" alt="" srcset="">';
+        } else {
+            echo "Error en la verificación del estado de la sesión.";
+        }
+    } else {
+        echo "Error al obtener el token de acceso.";
+        var_dump($token);
+    }
+} else {
+    // echo "Código de autorización no presente en la URL.";
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Presentacion/index.css">
+    <link rel="stylesheet" href="Presentacion/main.css">
 
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -32,17 +80,17 @@
 </head>
 
 <body>
-    <header class="header-landing flex-row flex-wrap">
-        <div class="contenedor-header contenedor">
+    <header class="header-landing">
+        <div class="flex-row logomain">
 
             <p class="title sombra">Rescatamigos</p>
             <img class="logo" src="img/logo1_v2-removebg-preview.png" alt="" srcset="">
 
         </div>
 
-        <div class="contenedor flex-row ">
-            <p class="counts cursor-pointer">Crea tu cuenta</p>
-            <p class="last cursor-pointer">Iniciar sesion</p>
+        <div class="flex-row noty">
+            <i class="fa-solid fa-comments"></i>
+            <i class="fa-solid fa-bell"></i>
         </div>
 
     </header>
@@ -51,57 +99,13 @@
 
 
 
-       
-
 
 
     </main>
-    
+
 
     <footer class="footer">
-        <div class="footer-container contenedor">
-            <div class="content1 sombra">
-                <h3>Informate</h3>
-                <p class="cursor-pointer hov">Principal</p>
-                <p class="cursor-pointer hov">Preguntas frecuentes</p>
-                <p class="cursor-pointer hov">Quienes Somos</p>
-                <p class="cursor-pointer hov">Donaciones</p>
-            </div>
 
-            <div class="content1 sombra">
-                <h3>Mantente conectado</h3>
-                <p class="cursor-pointer hov fb"><img class="fb-image" src="img/fb-black.png" alt="" srcset="">Facebook</p>
-                <p class="cursor-pointer hov insta"> <img class="insta-image" src="img/insta-white.png" alt="" srcset="">Instagram</p>
-                <p class="cursor-pointer hov twitter"> <img class="twitter-image" src="img/twitter-white.png" alt="" srcset="">Twitter</p>
-                <p class="cursor-pointer hov youtube"> <img class="youtube-image" src="img/youtube-white.png" alt="" srcset="">Youtube</p>
-
-            </div>
-
-            <form action="" method="post" onsubmit="return false;">
-                <div class="content2 sombra">
-                    <h3>Dejanos un mensaje.</h3>
-                    <input type="text" placeholder="Nombre">
-                    <input type="text" placeholder="Correo">
-                    <div>
-                        <input type="text" placeholder="Asunto">
-                    </div>
-                    <div class="text">
-                        <textarea placeholder="Tu mensaje..."></textarea>
-                        <button>Enviar</button>
-                    </div>
-
-                </div>
-
-            </form>
-
-
-        </div>
-
-
-        <div class="flex-row">
-            <small class="contenedor powered sombra">© 2023 Powered By Christhian Aracena. <img class="flag" src="img/Flag_of_Chile.svg" alt="" srcset=""></small>
-
-        </div>
 
     </footer>
 
@@ -128,11 +132,11 @@
         </script>
     </div> -->
 
-        <!-- <div id="donate-button-container">
+    <!-- <div id="donate-button-container">
         <div id="donate-button"></div> -->
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
         PayPal.Donation.Button({
             env: 'sandbox',
             hosted_button_id: 'PQSBRD4C3EGHA',
@@ -141,13 +145,13 @@
                 alt: 'Donate with PayPal button',
                 title: 'PayPal - The safer, easier way to pay online!',
             },
-            onComplete: function () {
+            onComplete: function() {
 
-                
+
                 // Redirige al usuario a la página de agradecimiento después de completar la donación
                 window.location.href = 'https://noxious-slit.000webhostapp.com/charity-complete.php';
             },
-            onCancelled: function () {
+            onCancelled: function() {
                 // Redirige al usuario a la página de cancelación si cancela la donación
                 window.location.href = 'https://noxious-slit.000webhostapp.com/cancel.php';
             }
@@ -158,7 +162,7 @@
 
 
 
-</div>
+    </div>
 
 
 </body>

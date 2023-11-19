@@ -39,6 +39,29 @@ img {
 }
 
 
+/* Estilo para campos de entrada normales y autocompletados */
+input,
+input:-webkit-autofill {
+    background-color: #08376b;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    font-size: 1.6rem;
+    border-bottom: #2c42a0 solid 0.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Estilo específico para campos autocompletados */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100rem #08376b inset ; /* Fondo azul */
+    color: #ffffff; /* Color del texto en blanco */
+}
+/* Estilo específico para campos autocompletados (incluyendo texto) */
+input:-webkit-autofill {
+    -webkit-text-fill-color: #ffffff; 
+
+
+}
 
 
 
@@ -160,7 +183,118 @@ img {
 /* FIN UTILIDAD */
 
 
+/* LOGIN */
+.login-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    width: 30rem;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0.9;
+    margin: 10rem 1rem;
+}
 
+.login-container h2 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    background-color: #f8f8f8;
+    transition: 0.3s;
+    color: #010407;
+}
+
+.login-container input:focus {
+    border-color: #3498db;
+    outline: none;
+    background-color: #e0e0e0;
+    color: #010407;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #2980b9;
+}
+
+.forgot-password {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    color: #3498db;
+
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #b95e29;
+    text-decoration: underline;
+}
+
+.or-divider {
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.or-divider::before {
+    content: "";
+    display: block;
+    border-top: 0.1rem solid #ccc;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: -1;
+}
+
+.or-text {
+    background-color: #fff;
+    padding: 0 0.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.google-button {
+    background-color: #fff;
+    color: #333;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem1;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.google-button:hover {
+    background-color: #f0f0f0;
+}
+
+.google-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 1rem;
+}
 
 /* Inicio Main */
 
@@ -226,6 +360,8 @@ img {
     align-items: center;
     padding: 1rem;
 }
+
+
 
 .info button {
     background: #156886;
@@ -524,6 +660,108 @@ img {
     background: linear-gradient(to left, white, #e8eee4, white);
 }
 
+.gotoback a{
+    text-decoration: none;
+
+    color: inherit;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+
+    margin: 1rem;
+
+    cursor: pointer;
+
+    text-align: center;
+}
+
+.gotoback{
+    text-align: center;
+    margin: 1rem;
+}
+
+.gotoback a:hover{
+    text-decoration: underline;
+    color: #156886;
+}
+
+.quienes-somos {
+    max-width: 80rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.quienes-somos h2 {
+    color: #08376b;
+}
+
+.quienes-somos p {
+    line-height: 1.6;
+}
+
+.quienes-somos ul {
+    list-style-type: none; /* Elimina los números predeterminados */
+    padding: 0; /* Elimina el espacio de relleno predeterminado */
+}
+
+.quienes-somos li::before {
+    content: '\2022'; /* Utiliza un punto como viñeta */
+    color: #3498db; /* Puedes cambiar el color según tu preferencia */
+    font-size: 2.5rem; /* Ajusta el tamaño de la viñeta */
+    margin-right: 0.5em; /* Ajusta el espacio entre la viñeta y el texto */
+}
+
+/* Estilos para la sección de consejos */
+.consejos {
+    background-color: #f5f5f5;
+    padding: 5rem;
+    margin: 2rem;
+    border-radius: 8rem;
+    
+}
+
+.consejos h2, .consejos h3, .consejos h4 {
+    color: #333;
+}
+
+.consejos h2{
+    color: #08376b;
+}
+
+.consejos h3, .consejos h4 {
+    margin-top: 1.5rem;
+}
+
+.consejos p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Estilos específicos para la adopción responsable */
+.consejos h3:nth-of-type(1),
+.consejos h3:nth-of-type(4),
+.consejos h3:nth-of-type(7) {
+    color: #007bff; /* Azul brillante, puedes cambiarlo según tu paleta de colores */
+}
+
+/* Estilos para los puntos específicos */
+.consejos h4 {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Añadir un poco de espacio entre los puntos */
+.consejos p {
+    margin-bottom: 10px;
+}
+
+
+
 .donation-section h2 {
     font-size: 2.5rem;
     /* Tamaño del título */
@@ -554,7 +792,7 @@ img {
 }
 
 #donate-button img {
-    width: 14rem;
+    width: 12.4rem;
     /* Ancho de la imagen del botón */
     height: auto;
     /* Altura automática para mantener la relación de aspecto */
@@ -570,13 +808,31 @@ img {
 
 
 
+.policy{
+    display: flex;
 
+}
+.policy section {
+    max-width: 80rem;
+    /* margin: 2rem auto; */
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+}
 
+.policy h1{
+    color: #425699;
+    text-align: center;
+}
 
+.policy h2 {
+    color: #333;
+}
 
-
-
-
+.policy h1, .policy h2, .policy p{
+    margin-bottom: 2rem;
+}
 
 .footer {
     background-color: #08376b;
@@ -584,8 +840,8 @@ img {
 }
 
 .footer-container {
-    padding-top: 5rem;
-    padding-bottom: 0;
+    padding-top: 10rem;
+    padding-bottom: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -687,7 +943,8 @@ img {
     align-items: center;
     justify-content: center;
     color: rgb(105, 118, 131);
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    padding-top: 5rem;
     user-select: none;
 }
 
@@ -778,9 +1035,18 @@ img {
 /* PREGUNTAS FRECUENTES */
 
 .faq {
-    max-width: 100%;
+
+    width: 100%;
     margin: 0 auto;
-    margin: 2.5rem;
+
+
+
+    /* margin: 2rem auto; */
+    background: linear-gradient(to left, white, rgb(207, 230, 76));
+    padding: 0rem;
+    box-shadow: 0 0 30rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+
 }
 
 .question h2{
@@ -788,11 +1054,12 @@ img {
 }
 
 .question {
-    background: linear-gradient(to left,white, #eeeee4, #c8d8d3);
+    background: #175a91;
+    color: white;
     border: 1rem thick #ddd;
     margin: 1rem;
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 0.8rem;
 }
 
 .question h2 {
@@ -810,40 +1077,20 @@ img {
 }
 
 
-.faq2{
-    background: linear-gradient(to left,white, #eeeee4, #d5c8d8);
+.faq2, .faq3, .faq4, .faq5, .faq6, .faq7, .faq8{
+    background: #175a91;
+    color: white;
 }
 
-.faq3{
-    background: linear-gradient(to left,white, #eeeee4, #d8d4c8);
-}
-
-.faq4{
-    background: linear-gradient(to left,white, #eeeee4, #d8c8c8);
-}
-
-.faq5{
-    background: linear-gradient(to left,white, #eeeee4, #c8d8cb);
-}
-
-.faq6{
-    background: linear-gradient(to left,white, #eeeee4, #d5d8c8);
-}
-
-.faq7{
-    background: linear-gradient(to left,white, #eeeee4, #d8c8c8);
-}
-
-.faq8{
-    background: linear-gradient(to left,white, #eeeee4, #cec8d8);
-}
 
 .containertitle{
     margin-top: 5rem;
 }
 .titlefaq{
     text-align: center;
-    color: #08376b;
+    color: #425699;
+    font-size: 2.6rem;
+
 }
 
 
@@ -862,6 +1109,38 @@ img {
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
+
+
+
+.update{
+    max-width: 80rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    
+}
+
+
+
+
+/* 
+footer form */
+
+#successMessage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+
 
 
 
@@ -884,8 +1163,27 @@ img {
 
 }
 
+@media screen and (max-width: 350px) {
+
+    .adopt, .inAdopt, .foundIt, .lost{
+        width: 27rem;
+    }
+    .container-options{
+        justify-items: center;
+        margin: 1rem;
+    }
+
+}
 
 @media screen and (max-width: 650px) {
+
+    .contenedor-header {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
 
     .circleAdopt,
     .circleFoundIt,

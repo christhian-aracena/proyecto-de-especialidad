@@ -1,8 +1,8 @@
 <?php
 $nombreServidor = "localhost";
-$nombreUsuario = "id20999016_root"; 
-$contrasenia = "Reincidentes86!";
-$nombreBD = "id20999016_adopcionesv2";
+$nombreUsuario = "root"; 
+$contrasenia = "";
+$nombreBD = "adopcionesv2";
 
 
 
