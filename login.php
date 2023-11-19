@@ -1,8 +1,14 @@
 // login.php
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 session_start();
 require_once("vendor/autoload.php");
 include("config.php");
+
+echo "Script iniciado";  // Agrega esto para verificar hasta dónde llega el script
 
 $client = new Google_Client();
 $client->setClientId($ClientID);
@@ -14,6 +20,11 @@ $client->addScope("profile");
 // Establecer el estado de la sesión
 $_SESSION['state'] = sha1(openssl_random_pseudo_bytes(1024));
 $client->setState($_SESSION['state']);
+
+echo "Configuración del cliente completada";  // Agrega esto para verificar hasta dónde llega el script
+
+// Resto del código...
+
 ?>
 
 
