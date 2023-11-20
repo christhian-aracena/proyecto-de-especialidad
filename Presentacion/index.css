@@ -53,12 +53,15 @@ input:-webkit-autofill {
 
 /* Estilo específico para campos autocompletados */
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 100rem #08376b inset ; /* Fondo azul */
-    color: #ffffff; /* Color del texto en blanco */
+    -webkit-box-shadow: 0 0 0 100rem #08376b inset;
+    /* Fondo azul */
+    color: #ffffff;
+    /* Color del texto en blanco */
 }
+
 /* Estilo específico para campos autocompletados (incluyendo texto) */
 input:-webkit-autofill {
-    -webkit-text-fill-color: #ffffff; 
+    -webkit-text-fill-color: #ffffff;
 
 
 }
@@ -189,7 +192,7 @@ input:-webkit-autofill {
     padding: 2rem;
     border-radius: 0.8rem;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
-    width: 30rem;
+    width: 35rem;
     text-align: center;
     overflow: hidden;
     opacity: 0.9;
@@ -296,6 +299,75 @@ input:-webkit-autofill {
     margin-right: 1rem;
 }
 
+.container-register input {
+    width: 100%;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    background-color: #f8f8f8;
+    transition: 0.3s;
+    color: #010407;
+}
+.container-register h2{
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.container-register button{
+    background: #167c1a;
+
+    width: 100%;
+    padding: 1.2rem;
+
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: 0.3s;
+}
+
+
+.container-register button:hover {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: #135813;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: 0.3s;
+}
+
+
+.container-register {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    width: 35rem;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0.9;
+    margin: 10rem 1rem;
+}
+
+.contenedor-register {
+    background-color: #fff;
+
+
+    width: 50rem;
+
+
+    opacity: 0.9;
+    margin: 0 auto 0 auto;
+}
+.form-group label{
+    text-align: left;
+}
 /* Inicio Main */
 
 .container-options {
@@ -626,7 +698,7 @@ input:-webkit-autofill {
 
 }
 
-.thanks a:hover{
+.thanks a:hover {
     text-decoration: underline;
     color: #156886;
 }
@@ -647,10 +719,10 @@ input:-webkit-autofill {
 
 .thanks h1 {
     color: rgb(96, 218, 66);
-    text-shadow: 0 10px 20px rgba(68, 134, 23, 0.5);
+    text-shadow: 0 10px 20px rgba(27, 59, 5, 0.5);
 }
 
-.thanks img {}
+
 
 .thanks button {
     margin: 2rem;
@@ -660,7 +732,7 @@ input:-webkit-autofill {
     background: linear-gradient(to left, white, #e8eee4, white);
 }
 
-.gotoback a{
+.gotoback a {
     text-decoration: none;
 
     color: inherit;
@@ -678,12 +750,12 @@ input:-webkit-autofill {
     text-align: center;
 }
 
-.gotoback{
+.gotoback {
     text-align: center;
     margin: 1rem;
 }
 
-.gotoback a:hover{
+.gotoback a:hover {
     text-decoration: underline;
     color: #156886;
 }
@@ -705,15 +777,21 @@ input:-webkit-autofill {
 }
 
 .quienes-somos ul {
-    list-style-type: none; /* Elimina los números predeterminados */
-    padding: 0; /* Elimina el espacio de relleno predeterminado */
+    list-style-type: none;
+    /* Elimina los números predeterminados */
+    padding: 0;
+    /* Elimina el espacio de relleno predeterminado */
 }
 
 .quienes-somos li::before {
-    content: '\2022'; /* Utiliza un punto como viñeta */
-    color: #3498db; /* Puedes cambiar el color según tu preferencia */
-    font-size: 2.5rem; /* Ajusta el tamaño de la viñeta */
-    margin-right: 0.5em; /* Ajusta el espacio entre la viñeta y el texto */
+    content: '\2022';
+    /* Utiliza un punto como viñeta */
+    color: #3498db;
+    /* Puedes cambiar el color según tu preferencia */
+    font-size: 2.5rem;
+    /* Ajusta el tamaño de la viñeta */
+    margin-right: 0.5em;
+    /* Ajusta el espacio entre la viñeta y el texto */
 }
 
 /* Estilos para la sección de consejos */
@@ -722,18 +800,21 @@ input:-webkit-autofill {
     padding: 5rem;
     margin: 2rem;
     border-radius: 8rem;
-    
+
 }
 
-.consejos h2, .consejos h3, .consejos h4 {
+.consejos h2,
+.consejos h3,
+.consejos h4 {
     color: #333;
 }
 
-.consejos h2{
+.consejos h2 {
     color: #08376b;
 }
 
-.consejos h3, .consejos h4 {
+.consejos h3,
+.consejos h4 {
     margin-top: 1.5rem;
 }
 
@@ -746,7 +827,8 @@ input:-webkit-autofill {
 .consejos h3:nth-of-type(1),
 .consejos h3:nth-of-type(4),
 .consejos h3:nth-of-type(7) {
-    color: #007bff; /* Azul brillante, puedes cambiarlo según tu paleta de colores */
+    color: #007bff;
+    /* Azul brillante, puedes cambiarlo según tu paleta de colores */
 }
 
 /* Estilos para los puntos específicos */
@@ -808,10 +890,11 @@ input:-webkit-autofill {
 
 
 
-.policy{
+.policy {
     display: flex;
 
 }
+
 .policy section {
     max-width: 80rem;
     /* margin: 2rem auto; */
@@ -821,7 +904,7 @@ input:-webkit-autofill {
     margin: 1rem;
 }
 
-.policy h1{
+.policy h1 {
     color: #425699;
     text-align: center;
 }
@@ -830,7 +913,9 @@ input:-webkit-autofill {
     color: #333;
 }
 
-.policy h1, .policy h2, .policy p{
+.policy h1,
+.policy h2,
+.policy p {
     margin-bottom: 2rem;
 }
 
@@ -1049,7 +1134,7 @@ input:-webkit-autofill {
 
 }
 
-.question h2{
+.question h2 {
     font-size: 1.9rem;
 }
 
@@ -1077,16 +1162,23 @@ input:-webkit-autofill {
 }
 
 
-.faq2, .faq3, .faq4, .faq5, .faq6, .faq7, .faq8{
+.faq2,
+.faq3,
+.faq4,
+.faq5,
+.faq6,
+.faq7,
+.faq8 {
     background: #175a91;
     color: white;
 }
 
 
-.containertitle{
+.containertitle {
     margin-top: 5rem;
 }
-.titlefaq{
+
+.titlefaq {
     text-align: center;
     color: #425699;
     font-size: 2.6rem;
@@ -1095,7 +1187,7 @@ input:-webkit-autofill {
 
 
 
-.imgfaq{
+.imgfaq {
     display: flex;
     width: 10rem;
     height: 10rem;
@@ -1105,20 +1197,20 @@ input:-webkit-autofill {
     background: url('../img/questions-amico.svg');
 }
 
-.faqcontainer{
+.faqcontainer {
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
 
 
 
-.update{
+.update {
     max-width: 80rem;
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    
+
 }
 
 
@@ -1138,7 +1230,7 @@ footer form */
     padding: 2rem;
     text-align: center;
     font-size: 1.8rem;
-  }
+}
 
 
 
@@ -1165,10 +1257,14 @@ footer form */
 
 @media screen and (max-width: 350px) {
 
-    .adopt, .inAdopt, .foundIt, .lost{
+    .adopt,
+    .inAdopt,
+    .foundIt,
+    .lost {
         width: 27rem;
     }
-    .container-options{
+
+    .container-options {
         justify-items: center;
         margin: 1rem;
     }

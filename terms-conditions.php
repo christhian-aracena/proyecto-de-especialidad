@@ -35,16 +35,16 @@
     <header class="header-landing flex-row flex-wrap">
         <div class="contenedor-header contenedor">
 
-            <p><a class="title sombra cursor-pointer" href="https://www.rescatamigos.cl/index">Rescatamigos</a></p>
-            <a href="https://www.rescatamigos.cl/index">
+            <p><a class="title sombra cursor-pointer" href="index">Rescatamigos</a></p>
+            <a href="index">
                 <img class="logo cursor-pointer" src="img/logo1_v2-removebg-preview.png" alt="" srcset="">
             </a>
 
         </div>
 
         <div class="contenedor flex-row ">
-            <p class="counts cursor-pointer">Crea tu cuenta</p>
-            <p ><a class="last cursor-pointer" href="login">Iniciar sesion</a></p>
+            <p><a class="counts cursor-pointer" href="register">Crea tu cuenta</a></p>
+            <p><a class="last cursor-pointer" href="login">Iniciar sesion</a></p>
         </div>
 
     </header>
@@ -53,7 +53,7 @@
         <main class="contenedor flex-centrar-item">
             <section class="">
                 <h1>Términos y Condiciones. </h1>
-                <small >Última actualización: 16/11/2023</small>
+                <small>Última actualización: 16/11/2023</small>
                 <p> Al acceder a nuestro sitio web www.rescatamigos.cl, usted acepta cumplir con estos términos y condiciones de uso. Lea detenidamente estos Términos antes de usar nuestro Sitio.</p>
 
                 <h2>1. Uso del Sitio</h2>
@@ -79,7 +79,7 @@
 
     <div class="gotoback">
         <a href="https://www.rescatamigos.cl/index">Volver</a>
-        </div>
+    </div>
     </main>
 
     </div>

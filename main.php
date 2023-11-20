@@ -2,45 +2,71 @@
 require_once 'vendor/autoload.php';
 require_once 'config.php';
 
+use Google\Client as Google_Client;
+use Google\Service\Oauth2;
+
 $client = new Google_Client();
 $client->setClientId($ClientID);
 $client->setClientSecret($ClientSecret);
 $client->setRedirectUri($redirectURI);
 $client->addScope("email");
 $client->addScope("profile");
+$client->addScope("https://www.googleapis.com/auth/userinfo.profile"); // Añadir el alcance necesario
 
 session_start();
 
-if (isset($_GET['code'])) {
+// Revocar el token si existe y se recibe un parámetro en la URL indicando la revocación
+if (isset($_GET['revoke']) && isset($_SESSION['access_token'])) {
+    $client->revokeToken($_SESSION['access_token']);
+    unset($_SESSION['access_token']);
+    header('Location: ' . $redirectURI);
+    exit;
+}
+
+// Obtener un nuevo token de acceso o utilizar el existente
+if (isset($_SESSION['access_token'])) {
+    $client->setAccessToken($_SESSION['access_token']);
+} elseif (isset($_GET['code'])) {
+    // Obtener un nuevo token de acceso
     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
 
     if (isset($token['access_token'])) {
+        // Almacenar el token en la sesión
+        $_SESSION['access_token'] = $token['access_token'];
         $client->setAccessToken($token);
-
-        // Verifica el estado de la sesión
-        if (isset($_SESSION['state']) && $_SESSION['state'] == $_GET['state']) {
-            // Obtener información del perfil
-            $google_oauth = new Google\Service\Oauth2($client);
-            $google_account_info = $google_oauth->userinfo->get();
-            $email = $google_account_info->email;
-            $name = $google_account_info->name;
-            $profileImage = $google_account_info->picture;
-
-            // Imprimir información
-            echo $email . '<br>';
-            echo $name;
-            echo '<img src="' . $profileImage . '" alt="" srcset="">';
-        } else {
-            echo "Error en la verificación del estado de la sesión.";
-        }
     } else {
         echo "Error al obtener el token de acceso.";
         var_dump($token);
+        exit;
     }
 } else {
-    // echo "Código de autorización no presente en la URL.";
+    // Redirigir a la autorización completa si no hay token de acceso ni código presente
+    header('Location: ' . $client->createAuthUrl());
+    exit;
+}
+
+// Obtener información del perfil
+$google_oauth = new Oauth2($client);
+$google_account_info = $google_oauth->userinfo->get();
+$email = $google_account_info->email;
+$name = $google_account_info->name;
+$profileImage = $google_account_info->picture;
+
+// Imprimir información
+echo $email . '<br>';
+echo $name;
+
+// Verificar si la imagen del perfil está presente y mostrarla
+if (!empty($profileImage)) {
+    echo '<img src="' . $profileImage . '" alt="" srcset="">';
+} else {
+    echo 'Imagen de perfil no disponible.';
 }
 ?>
+
+
+
+
 
 
 
@@ -83,9 +109,11 @@ if (isset($_GET['code'])) {
     <header class="header-landing">
         <div class="flex-row logomain">
 
-            <p class="title sombra">Rescatamigos</p>
-            <img class="logo" src="img/logo1_v2-removebg-preview.png" alt="" srcset="">
-
+            <p><a class="title sombra cursor-pointer" href="main">Rescatamigos</a></p>
+            <a href="main">
+                <img class="logo cursor-pointer" src="img/logo1_v2-removebg-preview.png" alt="" srcset="">
+            </a>
+            <a href="logout.php">Salir</a>
         </div>
 
         <div class="flex-row noty">
@@ -110,57 +138,6 @@ if (isset($_GET['code'])) {
     </footer>
 
     <script src="Negocio/js/count1.js"></script>
-
-
-
-
-
-    <!-- ESTE BOTON SE RENDERIZA EN LA SECCION DONACIONES -->
-    <!-- <div id="donate-button-container">
-        <div id="donate-button"></div>
-        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-        <script>
-            PayPal.Donation.Button({
-                env: 'production',
-                hosted_button_id: '83V9N2D7YRQRC',
-                image: {
-                    src: 'https://pics.paypal.com/00/s/ZWY5ZTI4OTYtMWQ2Yy00NmQ5LWI5MTMtZDc0YjFjM2RiMzYy/file.PNG',
-                    alt: 'Donate with PayPal button',
-                    title: 'PayPal - The safer, easier way to pay online!',
-                }
-            }).render('#donate-button');
-        </script>
-    </div> -->
-
-    <!-- <div id="donate-button-container">
-        <div id="donate-button"></div> -->
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        PayPal.Donation.Button({
-            env: 'sandbox',
-            hosted_button_id: 'PQSBRD4C3EGHA',
-            image: {
-                src: 'https://pics-v2.sandbox.paypal.com/00/s/NmM3MzU3MzgtNTFkZi00NWUxLWFiOTUtYmM5ZjUyNDgwYTk5/file.PNG',
-                alt: 'Donate with PayPal button',
-                title: 'PayPal - The safer, easier way to pay online!',
-            },
-            onComplete: function() {
-
-
-                // Redirige al usuario a la página de agradecimiento después de completar la donación
-                window.location.href = 'https://noxious-slit.000webhostapp.com/charity-complete.php';
-            },
-            onCancelled: function() {
-                // Redirige al usuario a la página de cancelación si cancela la donación
-                window.location.href = 'https://noxious-slit.000webhostapp.com/cancel.php';
-            }
-        }).render('#donate-button');
-    </script>
-
-
-
-
 
     </div>
 

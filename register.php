@@ -31,24 +31,43 @@
     <header class="header-landing flex-row flex-wrap">
         <div class="contenedor-header contenedor">
 
-            <p><a class="title sombra cursor-pointer" href="https://www.rescatamigos.cl/index">Rescatamigos</a></p>
-            <a href="https://www.rescatamigos.cl/index">
+            <p><a class="title sombra cursor-pointer" href="index">Rescatamigos</a></p>
+            <a href="index">
                 <img class="logo cursor-pointer" src="img/logo1_v2-removebg-preview.png" alt="" srcset="">
             </a>
 
         </div>
 
         <div class="contenedor flex-row ">
-            <p class="counts cursor-pointer">Crea tu cuenta</p>
-            <p ><a class="last cursor-pointer" href="login">Iniciar sesion</a></p>
+            <p><a class="counts cursor-pointer" href="register">Crea tu cuenta</a></p>
+            <p><a class="last cursor-pointer" href="login">Iniciar sesion</a></p>
         </div>
 
     </header>
 
-    <main class="contenedor thanks flex-centrar-item flex-col">
-      
-        <div class="container-login-form display-flex-row">
-            <img src="" alt="">
+    <main class="flex-centrar-item">
+
+        <div class="container-register">
+            <h2>Registrate</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" required placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="apellido" name="apellido" required placeholder="apellido">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="correo" name="correo" required placeholder="correo">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="contrasena" name="contrasena" required placeholder="contraseña">
+                </div>
+                <div class="form-group">
+                    <label for="avatar">Foto de Perfil (opcional):</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
+                </div>
+                <button type="submit">Registrarse</button>
+            </form>
         </div>
 
 
@@ -96,7 +115,7 @@
 
 
         <div class="flex-row">
-        <small class="contenedor powered sombra">&copy; 2023 Todos los derechos reservados. Powered By Christhian Aracena. <img class="flag" src="img/Flag_of_Chile.svg" alt="" srcset=""></small>
+            <small class="contenedor powered sombra">&copy; 2023 Todos los derechos reservados. Powered By Christhian Aracena. <img class="flag" src="img/Flag_of_Chile.svg" alt="" srcset=""></small>
 
         </div>
 
