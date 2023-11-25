@@ -12,7 +12,8 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-    overflow: scroll;
+    overflow: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
@@ -40,7 +41,7 @@ img {
 
 
 /* Estilo para campos de entrada normales y autocompletados */
-input,
+/* input,
 input:-webkit-autofill {
     background-color: #08376b;
     border: none;
@@ -49,19 +50,19 @@ input:-webkit-autofill {
     font-size: 1.6rem;
     border-bottom: #2c42a0 solid 0.1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+} */
 
 /* Estilo específico para campos autocompletados */
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 100rem #08376b inset ; /* Fondo azul */
-    color: #ffffff; /* Color del texto en blanco */
-}
+/* input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100rem #08376b inset ; 
+    color: #ffffff; 
+} */
 /* Estilo específico para campos autocompletados (incluyendo texto) */
-input:-webkit-autofill {
+/* input:-webkit-autofill {
     -webkit-text-fill-color: #ffffff; 
 
 
-}
+} */
 
 
 
@@ -69,7 +70,7 @@ input:-webkit-autofill {
 .contenedor {
     width: 100%;
     /** esto es equivalente a 1300px **/
-    margin: 1rem;
+    margin: 0;
     /*MARGIN AUTO EN LOS COSTADOS CENTRA EL CONTENEDOR*/
 }
 
@@ -84,7 +85,30 @@ input:-webkit-autofill {
     justify-content: space-between;
     background: linear-gradient(to left, #c63671, #9d3a7b, #864089, #75428f, #684595);
     user-select: none;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
 }
+
+
+.nombre{
+    display: flex;
+    align-items: center;
+}
+
+.avatar{
+    width: 4rem;
+    height: 4rem;
+
+    position: relative;
+    overflow: hidden;
+    margin-left: 1rem;
+}
+
+.avatar img{
+    border-radius: 50%;
+}
+
 
 .logomain{
     margin: 1rem;
@@ -93,6 +117,8 @@ input:-webkit-autofill {
 .noty{
     margin: 1rem;
     color: white;
+    display: flex;
+    align-items: center;
 
 }
 .noty i{
@@ -177,6 +203,10 @@ input:-webkit-autofill {
     display: flex;
     flex-wrap: wrap;
 }
+.flex-nowrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
 
 .cursor-pointer {
     cursor: pointer;
@@ -185,7 +215,9 @@ input:-webkit-autofill {
 .no-seleccionar {
     user-select: none;
 }
-
+.seleccionar{
+    user-select: text;
+}
 .display-none {
     display: none;
 }
@@ -193,3 +225,263 @@ input:-webkit-autofill {
 
 
 /* FIN UTILIDAD */
+
+
+
+.publicar{      
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 1rem;
+    padding: 1rem;
+    /* padding-left: 0.5rem; */
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+
+    min-width: 19.3rem;
+    /* padding-bottom: 0.5rem;
+    padding-top: 0.5rem; */
+
+}
+
+.publicar:hover{
+    background: #f2f2f2;
+    border-radius: 0.8rem;
+    text-shadow: 0 1rem 2rem rgba(0, 0, 0, .5);
+    color: black;
+    
+}
+
+.publicar:hover img{
+
+
+    box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.7);
+    color: black;
+    opacity: 100%;
+}
+.publicar img{
+    opacity: 70%;
+}
+
+.publicar i{
+    margin-right: 1rem;
+    font-size: 1.9rem;
+    text-shadow: 0 1rem 2rem rgba(0, 0, 0, .5);
+}
+
+.menu{
+    display: flex;
+    position: sticky;
+    top: 10rem;
+    left: 0;
+    justify-content: space-between;
+    min-width: 13%;
+    margin-top: 2rem;
+    flex-wrap: nowrap;
+    
+}
+
+
+.menu img{
+    width: 3rem;
+    height: 3rem;margin-right: 1rem;
+}
+
+.footer{
+   padding: 0 1rem;
+   display: flex;
+   flex-direction: column;
+}
+.hr{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2.8rem;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    min-height: 84vh;
+}
+
+.principal{
+    min-width: 85%;
+    overflow-y: auto;
+    max-height: 92vh;
+    padding: 1rem;
+}
+
+.flag{
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+
+
+.menu-desplegable{
+    display: none;
+}
+
+
+@media screen and (max-width: 1500px) {
+    .menu {
+        display: none;
+        position: relative; /* Agregamos esta propiedad para posicionar correctamente el icono sobre el menú */
+        overflow: auto;
+        
+    }
+
+    .hr {
+        display: none;
+    }
+
+    .principal {
+        min-width: 85%;
+        max-width: 85%;
+        overflow-y: auto;
+        max-height: 88vh;
+        display: flex;
+        margin: 2rem auto 1rem auto;
+        padding-top: 2rem;
+    }
+
+    .hamburguesa {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        margin-left: 1.5rem;
+        padding: 1rem;
+        position: fixed; /* Posiciona el icono hamburguesa de manera absoluta sobre el menú */
+        z-index: 2; /* Asegura que el icono esté por encima del contenido del menú */
+    }
+
+    .barra {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 3px 0;
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Agregamos transición para el cambio de color */
+        background: #75428f;
+        color: #c63671;
+    }
+
+    /* Estilos para el menú desplegable */
+    .menu-desplegable {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -26rem;
+        width: 25rem;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 2rem;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s ease-in-out;
+        margin-top: 7.5rem;
+        padding-top: 5rem;
+    }
+
+    .menu-desplegable a {
+        display: block;
+        color: #fff;
+        margin-bottom: 10px;
+        text-decoration: none;
+        font-size: 1.8rem;
+
+    }
+
+    .publicar img {
+        width: 2.2rem;
+        filter: brightness(0) invert(1);
+        margin-right: 1rem;
+    }
+
+    .publicar:hover img{
+
+
+        box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.7);
+        color: black;
+        opacity: 100%;
+        filter: brightness(0) invert(0);
+    }
+
+
+
+    .hamburguesa-abierto .barra {
+        background-color: #fff; /* Cambiamos el color de la hamburguesa al abrir el menú */
+    }
+
+    .hamburguesa-abierto .barra:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 9px);
+        margin-right: -13rem;
+    }
+
+    .hamburguesa-abierto .barra:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguesa-abierto .barra:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+        margin-right: -13rem;
+    }
+}
+@media screen and (max-width: 533px) {
+    .menu-desplegable {
+        display: block;
+        position: fixed;
+        top: 10rem;
+        left: -25rem;
+        width: 25rem;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 2rem;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s ease-in-out;
+        margin-top: 3.5rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    .header-landing{
+        justify-content: center;
+    }
+
+
+    .principal {
+        min-width: 85%;
+        max-width: 85%;
+        overflow-y: auto;
+        max-height: 76vh;
+        display: flex;
+        margin: 2rem auto 2rem auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+
+}
+@media screen and (max-width: 289px) {
+    .menu-desplegable {
+        display: block;
+        position: fixed;
+        top: 10rem;
+        left: -25rem;
+        width: 25rem;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 2rem;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s ease-in-out;
+        margin-top: 4.3rem;
+        padding-top: 5rem;
+    }
+
+    .principal {
+        min-width: 85%;
+        max-width: 85%;
+        overflow-y: auto;
+        max-height: 75vh;
+        display: flex;
+        margin: 2rem auto 2rem auto;
+    }
+}

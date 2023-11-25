@@ -28,7 +28,7 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Consejos</title>
+    <title>Términos y Condiciones</title>
 </head>
 
 <body>

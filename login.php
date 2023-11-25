@@ -1,9 +1,12 @@
 <!-- // login.php -->
 <?php
 session_start();
+session_destroy();
+session_reset();
+session_unset();
+session_start();
 require_once("vendor/autoload.php");
 include("config.php");
-
 $client = new Google_Client();
 $client->setClientId($ClientID);
 $client->setClientSecret($ClientSecret);
@@ -44,7 +47,7 @@ $client->setState($_SESSION['state']);
 
 
     <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Donación Realizada</title>
+    <title>Iniciar Sesión</title>
 </head>
 
 <body>
@@ -59,7 +62,7 @@ $client->setState($_SESSION['state']);
         </div>
 
         <div class="contenedor flex-row ">
-        <p ><a class="counts cursor-pointer" href="register">Crea tu cuenta</a></p>
+            <p><a class="counts cursor-pointer" href="register">Crea tu cuenta</a></p>
             <p><a class="last cursor-pointer" href="login">Iniciar sesion</a></p>
         </div>
 
@@ -70,9 +73,9 @@ $client->setState($_SESSION['state']);
         <div class="login-container">
             <h2>Inicia sesion</h2>
             <form action="" method="post">
-                <input type="text" name="username" placeholder="Usuario" required>
+                <input type="text" name="correo" placeholder="correo" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
-                <button type="submit">Iniciar sesión</button>
+                <button id="btnlogin">Iniciar sesión</button>
             </form>
             <div class="forgot-password">¿Olvidaste tu contraseña?</div>
             <div class="or-divider">
@@ -80,10 +83,10 @@ $client->setState($_SESSION['state']);
             </div>
             <!-- <div class="google-button"> -->
 
-                <?php
-                    echo "<a class='google-button' href= '".$client->createAuthUrl()."'><img src='https://img.icons8.com/color/48/000000/google-logo.png' alt='Google Icon' class='google-icon'>Iniciar sesión con Google</a>"
-                ?>
-                <!-- <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Icon" class="google-icon">
+            <?php
+            echo "<a class='google-button' href= '" . $client->createAuthUrl() . "'><img src='https://img.icons8.com/color/48/000000/google-logo.png' alt='Google Icon' class='google-icon'>Iniciar sesión con Google</a>"
+            ?>
+            <!-- <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Icon" class="google-icon">
                 Iniciar sesión con Google
             </div> -->
         </div>
