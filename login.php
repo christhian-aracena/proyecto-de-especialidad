@@ -17,6 +17,11 @@ $client->addScope("profile");
 // Establecer el estado de la sesión
 $_SESSION['state'] = sha1(openssl_random_pseudo_bytes(1024));
 $client->setState($_SESSION['state']);
+
+
+foreach ($_COOKIE as $key => $value) {
+    setcookie($key, '', time() - 3600, '/');
+}
 ?>
 
 

@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+foreach ($_COOKIE as $key => $value) {
+    setcookie($key, '', time() - 3600, '/');
+}
 // Obtén el token de acceso de la sesión
 $googleAccessToken = isset($_SESSION['access_token']) ? $_SESSION['access_token'] : null;
 
