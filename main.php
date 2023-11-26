@@ -160,7 +160,7 @@ if (isset($_SESSION['email'])) {
             <i class="fa-solid fa-bell cursor-pointer"></i>
             <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
             <?php if (isset($_SESSION['email'])) {
-                echo '<img class="img-circulo" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil">';
+                echo '<img class="avatar cursor-pointer" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil">';
             } else {
                 // Si es una sesión de Google, mostrar la imagen directamente
                 echo '<div class="avatar cursor-pointer"><img src="' . $profileImage . '" alt="" srcset=""></div>';
