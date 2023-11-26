@@ -13,6 +13,9 @@ $array = mysqli_fetch_array($consulta);
 if ($array['count'] > 0) {
     $_SESSION['email'] = $correo;
     $response = array('success' => true, 'message' => 'Bienvenido');
+    foreach ($_COOKIE as $key => $value) {
+        setcookie($key, '', time() - 3600, '/');
+    }
 } else {
     $response = array('success' => false, 'message' => 'Correo o contraseña incorrectas, vuelve a intentar.');
 }

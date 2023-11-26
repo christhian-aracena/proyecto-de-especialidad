@@ -104,6 +104,7 @@ input:-webkit-autofill {
     position: relative;
     overflow: hidden;
     margin-left: 1rem;
+    border-radius: 50%;
 }
 
 .avatar img{

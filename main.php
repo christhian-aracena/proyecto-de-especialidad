@@ -1,4 +1,6 @@
 <?php
+
+
 require_once 'vendor/autoload.php';
 require_once 'config.php';
 if (session_status() == PHP_SESSION_NONE) {
@@ -162,6 +164,7 @@ if (isset($_SESSION['email'])) {
             <?php if (isset($_SESSION['email'])) {
                 echo '<img class="avatar cursor-pointer" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil">';
             } else {
+                
                 // Si es una sesión de Google, mostrar la imagen directamente
                 echo '<div class="avatar cursor-pointer"><img src="' . $profileImage . '" alt="" srcset=""></div>';
             } ?>
