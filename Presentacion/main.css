@@ -88,6 +88,7 @@ input:-webkit-autofill {
     flex-wrap: wrap;
     position: sticky;
     top: 0;
+    max-height: 13.5rem;
 }
 
 
@@ -320,6 +321,14 @@ input:-webkit-autofill {
     display: none;
 }
 
+.img-circulo{
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    overflow: hidden;
+    margin-left: 1rem;
+}
+
 
 @media screen and (max-width: 1500px) {
     .menu {
@@ -424,7 +433,7 @@ input:-webkit-autofill {
         margin-right: -13rem;
     }
 }
-@media screen and (max-width: 533px) {
+@media screen and (max-width: 700px) {
     .menu-desplegable {
         display: block;
         position: fixed;
@@ -437,12 +446,15 @@ input:-webkit-autofill {
         padding: 2rem;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         transition: left 0.3s ease-in-out;
-        margin-top: 3.5rem;
+        margin-top: 4.5rem;
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
     .header-landing{
         justify-content: center;
+        max-height: 14.5rem;
+        min-height: 14.5rem;
+        flex-direction: column;
     }
 
 
@@ -460,7 +472,7 @@ input:-webkit-autofill {
 
 }
 @media screen and (max-width: 289px) {
-    .menu-desplegable {
+    /* .menu-desplegable {
         display: block;
         position: fixed;
         top: 10rem;
@@ -474,8 +486,8 @@ input:-webkit-autofill {
         transition: left 0.3s ease-in-out;
         margin-top: 4.3rem;
         padding-top: 5rem;
-    }
-
+    } */
+/* 
     .principal {
         min-width: 85%;
         max-width: 85%;
@@ -483,5 +495,5 @@ input:-webkit-autofill {
         max-height: 75vh;
         display: flex;
         margin: 2rem auto 2rem auto;
-    }
+    } */
 }

@@ -1,5 +1,8 @@
 <?php
-session_start();
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}   
 foreach ($_COOKIE as $key => $value) {
     setcookie($key, '', time() - 3600, '/');
 }
@@ -41,4 +44,5 @@ if (ini_get("session.use_cookies")) {
 // Redirigir a la página de inicio de sesión u otra página
 header("Location: index");
 exit();
+
 ?>

@@ -1,7 +1,5 @@
 <?php
-foreach ($_COOKIE as $key => $value) {
-    setcookie($key, '', time() - 3600, '/');
-}
+
 require 'Datos/conexion.php';
 session_start();
 
@@ -22,4 +20,5 @@ if ($array['count'] > 0) {
 // Devuelve la respuesta en formato JSON
 header('Content-Type: application/json');
 echo json_encode($response);
+
 ?>

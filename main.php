@@ -1,28 +1,33 @@
 <?php
 require_once 'vendor/autoload.php';
 require_once 'config.php';
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 use Google\Client as Google_Client;
 use Google\Service\Oauth2;
 
 // Función para actualizar el token de acceso usando el token de actualización
-function refreshAccessToken($client) {
+function refreshAccessToken($client)
+{
     $refreshToken = $client->getRefreshToken();
     $client->fetchAccessTokenWithRefreshToken($refreshToken);
 }
 
 // Verificar si hay una sesión activa de la aplicación
 if (isset($_SESSION['email'])) {
+
+
     // Existe una sesión de la aplicación, puedes incluir el contenido de tu página principal aquí
     $nombreCorto = $_SESSION['email'];
-    echo "<p>Bienvenido, $nombreCorto (sesión de la aplicación).</p>";
-
+    // echo "<p>Bienvenido, $nombreCorto (sesión de la aplicación).</p>";
+    include("Negocio/get-avatar.php");
     // Puedes incluir el resto de tu contenido aquí...
 
 } else {
     // No hay sesión de la aplicación, proceder con la lógica de Google
-    
+
     $client = new Google_Client();
     $client->setClientId($ClientID);
     $client->setClientSecret($ClientSecret);
@@ -80,7 +85,8 @@ if (isset($_SESSION['email'])) {
         $nombreCorto = implode(" ", array_slice($nombre, 0, 2));
 
         // Aquí colocas el contenido de tu página principal cuando la sesión es de Google
-        echo "<p>Bienvenido, $nombreCorto (sesión de Google).</p>";
+        // echo "<p>Bienvenido, $nombreCorto (sesión de Google).</p>";
+
 
         // Puedes incluir el resto de tu contenido aquí...
     } else {
@@ -153,7 +159,12 @@ if (isset($_SESSION['email'])) {
             <i class="fa-solid fa-comments cursor-pointer"></i>
             <i class="fa-solid fa-bell cursor-pointer"></i>
             <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
-            <div class="avatar cursor-pointer"> <?php echo '<img src="' . $profileImage . '" alt="" srcset="">' ?></div>
+            <?php if (isset($_SESSION['email'])) {
+                echo '<img class="img-circulo" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil">';
+            } else {
+                // Si es una sesión de Google, mostrar la imagen directamente
+                echo '<div class="avatar cursor-pointer"><img src="' . $profileImage . '" alt="" srcset=""></div>';
+            } ?>
         </div>
 
     </header>
