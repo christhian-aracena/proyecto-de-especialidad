@@ -187,12 +187,12 @@ if (isset($_SESSION['email'])) {
             <div class="menu flex-col">
 
                 <div class="flex-col">
-                    <div class="publicar flex-nowrap"><img src="Img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
-                    <div class="publicar flex-nowrap"><img src="Img/perdido.png" alt="Img/" srcset="">Mis publicaciones</div>
-                    <div class="publicar flex-nowrap"><img src="Img/en adopcion.png" alt="" srcset="">En Adopción</div>
-                    <div class="publicar flex-nowrap"><img src="Img/perdidos.png" alt="" srcset="">Perdidos</div>
-                    <div class="publicar flex-nowrap"><img src="Img/encontrados.png" alt="" srcset="">Encontrados</div>
-                    <div class="publicar"><img src="Img/donacion.png" alt="" srcset="">Donar</div>
+                    <div class="publicar flex-nowrap"><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
+                    <div class="publicar flex-nowrap"><img src="img/perdido.png" alt="Img/" srcset="">Mis publicaciones</div>
+                    <div class="publicar flex-nowrap"><img src="img/en adopcion.png" alt="" srcset="">En Adopción</div>
+                    <div class="publicar flex-nowrap"><img src="img/perdidos.png" alt="" srcset="">Perdidos</div>
+                    <div class="publicar flex-nowrap"><img src="img/encontrados.png" alt="" srcset="">Encontrados</div>
+                    <div class="publicar"><img src="img/donacion.png" alt="" srcset="">Donar</div>
                 </div>
 
 
@@ -229,12 +229,12 @@ if (isset($_SESSION['email'])) {
     </div>
     <!-- Menú desplegable -->
     <div class="menu-desplegable" id="menu-desplegable">
-        <div class="publicar flex-nowrap"><img src="Img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
-        <div class="publicar flex-nowrap"><img src="Img/perdido.png" alt="Img/" srcset="">Mis publicaciones</div>
-        <div class="publicar flex-nowrap"><img src="Img/en adopcion.png" alt="" srcset="">En Adopción</div>
-        <div class="publicar flex-nowrap"><img src="Img/perdidos.png" alt="" srcset="">Perdidos</div>
-        <div class="publicar flex-nowrap"><img src="Img/encontrados.png" alt="" srcset="">Encontrados</div>
-        <div class="publicar"><img src="Img/donacion.png" alt="" srcset="">Donar</div>
+        <div class="publicar flex-nowrap"><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
+        <div class="publicar flex-nowrap"><img src="img/perdido.png" alt="Img/" srcset="">Mis publicaciones</div>
+        <div class="publicar flex-nowrap"><img src="img/en adopcion.png" alt="" srcset="">En Adopción</div>
+        <div class="publicar flex-nowrap"><img src="img/perdidos.png" alt="" srcset="">Perdidos</div>
+        <div class="publicar flex-nowrap"><img src="img/encontrados.png" alt="" srcset="">Encontrados</div>
+        <div class="publicar"><img src="img/donacion.png" alt="" srcset="">Donar</div>
     </div>
     <script src="Negocio/js/ajax-main.js"></script>
 
