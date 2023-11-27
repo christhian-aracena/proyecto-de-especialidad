@@ -47,6 +47,9 @@ if (isset($_SESSION['email'])) {
 
             // Verificar si el token de acceso ha expirado
             if ($client->isAccessTokenExpired() && $client->getRefreshToken()) {
+                foreach ($_COOKIE as $key => $value) {
+                    setcookie($key, '', time() - 3600, '/');
+                }
                 // Actualizar el token de acceso
                 refreshAccessToken($client);
                 // Guardar el token actualizado en la cookie
@@ -97,6 +100,7 @@ if (isset($_SESSION['email'])) {
         exit;
     }
 }
+
 ?>
 
 
@@ -233,6 +237,8 @@ if (isset($_SESSION['email'])) {
         <div class="publicar"><img src="Img/donacion.png" alt="" srcset="">Donar</div>
     </div>
     <script src="Negocio/js/ajax-main.js"></script>
+
+    
 </body>
 
 </html>
