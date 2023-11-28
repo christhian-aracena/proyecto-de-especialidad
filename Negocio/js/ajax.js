@@ -189,7 +189,7 @@ $(document).ready(function () {
         // Puedes realizar acciones adicionales después de enviar el correo si es necesario
         if (response.success) {
           // Muestra el mensaje antes de enviar el correo
-          mostrarMensaje("Mensaje enviado con éxito", "success");
+          mostrarMensaje("Bienvenido a su sesión", "success");
           window.location.href = "main.php";
         } else {
           // Muestra un mensaje de error al usuario
