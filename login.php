@@ -155,7 +155,7 @@ $client->setState($_SESSION['state']);
 
 
 
-    <div id="successMessage">Mensaje enviado con éxito</div>
+    <div id="successMessage">Solicitud Aceptada</div>
 
 </body>
 
