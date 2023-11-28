@@ -601,6 +601,10 @@ input:-webkit-autofill {
         padding-top: 0rem;
     }
 
+    .container-register{
+        min-height: 50rem;
+    }
+
     .hamburguesa {
         cursor: pointer;
         display: flex;
