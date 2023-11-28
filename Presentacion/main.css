@@ -311,8 +311,12 @@ input:-webkit-autofill {
     align-items: center;
     position: absolute;
 
-    min-height: 5rem;
-    max-height: 5rem;
+    min-height: 10vh;
+    max-height: 10vh;
+
+
+    min-width: 50%;
+    max-width: 50%;
 
 }
 
