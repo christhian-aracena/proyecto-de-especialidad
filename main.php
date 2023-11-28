@@ -177,10 +177,10 @@ if (isset($_SESSION['email'])) {
 
     </header>
     <div class="hamburguesa" id="hamburguesa">
-            <div class="barra"></div>
-            <div class="barra"></div>
-            <div class="barra"></div>
-        </div>
+        <div class="barra"></div>
+        <div class="barra"></div>
+        <div class="barra"></div>
+    </div>
     <main class="contenedor flex-row main">
 
 
@@ -271,7 +271,13 @@ if (isset($_SESSION['email'])) {
     </main>
 
 
-    <footer class="footer">
+    <footer >
+        <div class="footer">
+            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="privacy-policy">Politicas de privacidad</a> </p>
+            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas frecuentes</a> </p>
+            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Quienes Somos</a> </p>
+            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos y Condiciones</a> </p>
+        </div>
 
 
     </footer>
