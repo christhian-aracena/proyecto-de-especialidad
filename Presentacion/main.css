@@ -640,7 +640,7 @@ input:-webkit-autofill {
         min-width: 85%;
         max-width: 85%; 
         overflow-y: auto;
-        max-height: 95vh;
+        max-height: 93vh;
         display: flex;
         align-items: stretch;
         margin: -10rem auto 1rem auto;
