@@ -273,9 +273,9 @@ if (isset($_SESSION['email'])) {
 
     <footer >
         <div class="footer">
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="privacy-policy">Politicas de privacidad</a> </p>
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas frecuentes</a> </p>
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Quienes Somos</a> </p>
+            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="privacy-policy">Privacidad</a> </p>
+            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas</a> </p>
+            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Nosotros</a> </p>
             <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos y Condiciones</a> </p>
         </div>
 

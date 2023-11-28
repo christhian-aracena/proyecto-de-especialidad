@@ -311,7 +311,9 @@ input:-webkit-autofill {
     justify-content: space-evenly;
     align-items: center;
     position: absolute;
+    width: 100%;
     bottom: 0;
+    background: #333;
 
 }
 
@@ -326,9 +328,13 @@ input:-webkit-autofill {
 
 .hov {
     color: rgb(77, 74, 74);
+    background: #333;
+    color: white;
     transition: color 0.3s;
     display: flex;
     align-items: center;
+    padding: 1rem;
+    max-height: 10rem;
 }
 
 .hov:hover {
@@ -341,7 +347,7 @@ input:-webkit-autofill {
     min-width: 87%;
     max-width: 87%;
     overflow-y: auto;
-    max-height: 88vh;
+    max-height: 83vh;
     display: flex;
     align-items: stretch;
     justify-content: center;
@@ -745,17 +751,13 @@ input:-webkit-autofill {
     }
 
 
-    /* .principal {
-        min-width: 85%;
-        max-width: 85%;
-        overflow-y: auto;
+    .principal {
+
         max-height: 76vh;
         display: flex;
         justify-content: center;
-        margin: 2rem auto 2rem auto;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    } */
+
+    }
     .container-options {
 
         display: grid;
