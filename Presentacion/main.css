@@ -310,7 +310,7 @@ input:-webkit-autofill {
     justify-content: space-evenly;
     align-items: center;
     position: absolute;
-    border-bottom: 10rem;
+
     min-height: 5rem;
     max-height: 5rem;
 
