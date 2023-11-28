@@ -72,6 +72,7 @@ input:-webkit-autofill {
     /** esto es equivalente a 1300px **/
     margin: 0;
     /*MARGIN AUTO EN LOS COSTADOS CENTRA EL CONTENEDOR*/
+    overflow-y: auto;
 }
 
 .main {
@@ -310,13 +311,7 @@ input:-webkit-autofill {
     justify-content: space-evenly;
     align-items: center;
     position: absolute;
-
-    min-height: 10vh;
-    max-height: 10vh;
-
-
-    min-width: 50%;
-    max-width: 50%;
+    bottom: 0;
 
 }
 
@@ -744,8 +739,8 @@ input:-webkit-autofill {
 
     .header-landing {
         justify-content: center;
-        max-height: 12.5rem;
-        min-height: 12.5rem;
+        max-height: 14.5rem;
+        min-height: 14.5rem;
         flex-direction: column;
     }
 
