@@ -315,6 +315,7 @@ input:-webkit-autofill {
     height: 5%;
     bottom: 0;
     background: #333;
+    margin-bottom: 0rem;
 
 }
 
