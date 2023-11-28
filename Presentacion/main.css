@@ -316,12 +316,12 @@ input:-webkit-autofill {
         min-width: 85%;
         max-width: 85%; 
         overflow-y: auto;
-        max-height: 99vh;
+        max-height: 88vh;
         display: flex;
         align-items: stretch;
         justify-content: center;
         margin: 0rem auto 1rem auto;
-        padding-top: 1rem;
+        padding-top: 2rem;
         overflow-y: auto;
 }
 
