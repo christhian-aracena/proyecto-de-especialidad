@@ -312,6 +312,7 @@ input:-webkit-autofill {
     align-items: center;
     position: absolute;
     width: 100%;
+    height: 5%;
     bottom: 0;
     background: #333;
 
@@ -351,7 +352,7 @@ input:-webkit-autofill {
     display: flex;
     align-items: stretch;
     justify-content: center;
-    margin: 0rem auto 1rem auto;
+
     padding-top: 2rem;
     overflow-y: auto;
 }
