@@ -316,12 +316,12 @@ input:-webkit-autofill {
         min-width: 85%;
         max-width: 85%; 
         overflow-y: auto;
-        max-height: 88vh;
+        max-height: 99vh;
         display: flex;
         align-items: stretch;
         justify-content: center;
         margin: 0rem auto 1rem auto;
-        padding-top: 2rem;
+        padding-top: 1rem;
         overflow-y: auto;
 }
 
@@ -771,7 +771,9 @@ input:-webkit-autofill {
         margin-top: 13rem;
 
     }
-
+    .container-register{
+        min-height: 50rem;
+    }
 
     .adopt {
         border-top-left-radius: 18rem;
