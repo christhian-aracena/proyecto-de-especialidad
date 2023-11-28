@@ -276,7 +276,7 @@ if (isset($_SESSION['email'])) {
             <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="privacy-policy">Privacidad</a> </p>
             <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas</a> </p>
             <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Nosotros</a> </p>
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos y Condiciones</a> </p>
+            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos</a> </p>
         </div>
 
 
