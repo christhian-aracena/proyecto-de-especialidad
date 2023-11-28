@@ -744,8 +744,8 @@ input:-webkit-autofill {
 
     .header-landing {
         justify-content: center;
-        max-height: 14.5rem;
-        min-height: 14.5rem;
+        max-height: 12.5rem;
+        min-height: 12.5rem;
         flex-direction: column;
     }
 
