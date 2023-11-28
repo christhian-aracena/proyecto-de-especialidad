@@ -300,8 +300,9 @@ input:-webkit-autofill {
 .footer{
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
+   justify-content: space-evenly;
    align-items: center;
+    margin-bottom: 2rem;
 
 }
 .hr{
@@ -311,6 +312,18 @@ input:-webkit-autofill {
     border-color: rgb(255, 255, 255);
     background-color: rgb(255, 255, 255);
     min-height: 84vh;
+}
+
+.hov {
+    color: rgb(77, 74, 74);
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.hov:hover {
+    color: #156886;
+    text-shadow: 0 1rem 2rem rgba(0, 0, 0, .5);
 }
 
 .principal{
