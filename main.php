@@ -20,9 +20,10 @@ function refreshAccessToken($client)
 // Verificar si hay una sesión activa de la aplicación
 if (isset($_SESSION['email'])) {
 
-
+    include("Negocio/get-nombre-app.php");
     // Existe una sesión de la aplicación, puedes incluir el contenido de tu página principal aquí
-    $nombreCorto = $_SESSION['email'];
+    $correoSesionApp = $_SESSION['email'];
+    $nombreCorto = $nombre;
     // echo "<p>Bienvenido, $nombreCorto (sesión de la aplicación).</p>";
     include("Negocio/get-avatar.php");
     // Puedes incluir el resto de tu contenido aquí...
@@ -87,7 +88,7 @@ if (isset($_SESSION['email'])) {
         $profileImage = $google_account_info->picture;
 
         $nombre = explode(" ", $name);
-        $nombreCorto = implode(" ", array_slice($nombre, 0, 2));
+        $nombreCorto = implode(" ", array_slice($nombre, 0, 1));
 
         // Aquí colocas el contenido de tu página principal cuando la sesión es de Google
         // echo "<p>Bienvenido, $nombreCorto (sesión de Google).</p>";
