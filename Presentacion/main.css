@@ -564,7 +564,7 @@ input:-webkit-autofill {
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
     width: 35rem;
     text-align: center;
-    overflow: auto;
+    overflow: initial;
     opacity: 0.9;
     margin: 10rem 1rem;
 }
@@ -632,13 +632,14 @@ input:-webkit-autofill {
         overflow-y: auto;
         max-height: 83vh;
         display: flex;
-        align-items: stretch;
+        align-items: flex-start;
         margin: -10rem auto 1rem auto;
         padding-top: 0rem;
     }
 
     .container-register {
         min-height: 50rem;
+        max-height: 60rem;
     }
 
     .hamburguesa {
