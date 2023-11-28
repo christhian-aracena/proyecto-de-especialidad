@@ -271,7 +271,7 @@ if (isset($_SESSION['email'])) {
     </main>
 
 
-    <footer >
+
         <div class="footer">
             <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="privacy-policy">Privacidad</a> </p>
             <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas</a> </p>
@@ -280,7 +280,7 @@ if (isset($_SESSION['email'])) {
         </div>
 
 
-    </footer>
+
 
     <script src="Negocio/js/count1.js"></script>
 
