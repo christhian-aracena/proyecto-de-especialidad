@@ -73,7 +73,8 @@ input:-webkit-autofill {
     margin: 0;
     /*MARGIN AUTO EN LOS COSTADOS CENTRA EL CONTENEDOR*/
 }
-.main{
+
+.main {
     display: flex;
     justify-content: center;
 }
@@ -95,12 +96,12 @@ input:-webkit-autofill {
 }
 
 
-.nombre{
+.nombre {
     display: flex;
     align-items: center;
 }
 
-.avatar{
+.avatar {
     min-width: 4rem;
     min-height: 4rem;
     max-width: 4rem;
@@ -111,23 +112,24 @@ input:-webkit-autofill {
     border-radius: 50%;
 }
 
-.avatar img{
+.avatar img {
     border-radius: 50%;
 }
 
 
-.logomain{
+.logomain {
     margin: 1rem;
 }
 
-.noty{
+.noty {
     margin: 1rem;
     color: white;
     display: flex;
     align-items: center;
 
 }
-.noty i{
+
+.noty i {
     margin: 1rem;
     font-size: 2rem;
 }
@@ -209,6 +211,7 @@ input:-webkit-autofill {
     display: flex;
     flex-wrap: wrap;
 }
+
 .flex-nowrap {
     display: flex;
     flex-wrap: nowrap;
@@ -221,9 +224,11 @@ input:-webkit-autofill {
 .no-seleccionar {
     user-select: none;
 }
-.seleccionar{
+
+.seleccionar {
     user-select: text;
 }
+
 .display-none {
     display: none;
 }
@@ -234,7 +239,7 @@ input:-webkit-autofill {
 
 
 
-.publicar{      
+.publicar {
 
     display: flex;
     align-items: center;
@@ -252,32 +257,33 @@ input:-webkit-autofill {
 
 }
 
-.publicar:hover{
+.publicar:hover {
     background: #f2f2f2;
     border-radius: 0.8rem;
     text-shadow: 0 1rem 2rem rgba(0, 0, 0, .5);
     color: black;
-    
+
 }
 
-.publicar:hover img{
+.publicar:hover img {
 
 
     box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.7);
     color: black;
     opacity: 100%;
 }
-.publicar img{
+
+.publicar img {
     opacity: 70%;
 }
 
-.publicar i{
+.publicar i {
     margin-right: 1rem;
     font-size: 1.9rem;
     text-shadow: 0 1rem 2rem rgba(0, 0, 0, .5);
 }
 
-.menu{
+.menu {
     display: flex;
     position: sticky;
     top: 10rem;
@@ -288,24 +294,27 @@ input:-webkit-autofill {
     margin-top: 2rem;
     flex-wrap: nowrap;
     margin-left: 1.5rem;
-    
+
 }
 
 
-.menu img{
+.menu img {
     width: 3rem;
-    height: 3rem;margin-right: 1rem;
+    height: 3rem;
+    margin-right: 1rem;
 }
 
-.footer{
-   display: flex;
-   flex-direction: row;
-   justify-content: space-evenly;
-   align-items: center;
-    margin-bottom: 2rem;
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 
 }
-.hr{
+
+.hr {
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 2.8rem;
@@ -326,31 +335,31 @@ input:-webkit-autofill {
     text-shadow: 0 1rem 2rem rgba(0, 0, 0, .5);
 }
 
-.principal{
+.principal {
 
-        min-width: 87%;
-        max-width: 87%; 
-        overflow-y: auto;
-        max-height: 88vh;
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-        margin: 0rem auto 1rem auto;
-        padding-top: 2rem;
-        overflow-y: auto;
+    min-width: 87%;
+    max-width: 87%;
+    overflow-y: auto;
+    max-height: 88vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin: 0rem auto 1rem auto;
+    padding-top: 2rem;
+    overflow-y: auto;
 }
 
-.flag{
+.flag {
     width: 1.5rem !important;
     height: 1.5rem !important;
 }
 
 
-.menu-desplegable{
+.menu-desplegable {
     display: none;
 }
 
-.img-circulo{
+.img-circulo {
     width: 4rem;
     height: 4rem;
     position: relative;
@@ -534,6 +543,7 @@ input:-webkit-autofill {
     margin: 1rem;
 
 }
+
 .container-register {
     display: flex;
     flex-direction: column;
@@ -561,12 +571,13 @@ input:-webkit-autofill {
     transition: 0.3s;
     color: #010407;
 }
-.container-register h2{
+
+.container-register h2 {
     color: #333;
     margin-bottom: 2rem;
 }
 
-.container-register button{
+.container-register button {
     background: #167c1a;
 
     width: 100%;
@@ -596,9 +607,10 @@ input:-webkit-autofill {
 @media screen and (max-width: 1500px) {
     .menu {
         display: none;
-        position: relative; /* Agregamos esta propiedad para posicionar correctamente el icono sobre el menú */
+        position: relative;
+        /* Agregamos esta propiedad para posicionar correctamente el icono sobre el menú */
         overflow: auto;
-        
+
     }
 
     .hr {
@@ -607,7 +619,7 @@ input:-webkit-autofill {
 
     .principal {
         min-width: 85%;
-        max-width: 85%; 
+        max-width: 85%;
         overflow-y: auto;
         max-height: 87vh;
         display: flex;
@@ -616,7 +628,7 @@ input:-webkit-autofill {
         padding-top: 0rem;
     }
 
-    .container-register{
+    .container-register {
         min-height: 50rem;
     }
 
@@ -626,8 +638,10 @@ input:-webkit-autofill {
         flex-direction: column;
         margin-left: 1.5rem;
         padding: 1rem;
-        position: fixed; /* Posiciona el icono hamburguesa de manera absoluta sobre el menú */
-        z-index: 2; /* Asegura que el icono esté por encima del contenido del menú */
+        position: fixed;
+        /* Posiciona el icono hamburguesa de manera absoluta sobre el menú */
+        z-index: 2;
+        /* Asegura que el icono esté por encima del contenido del menú */
     }
 
     .barra {
@@ -635,7 +649,8 @@ input:-webkit-autofill {
         height: 3px;
         background-color: #333;
         margin: 3px 0;
-        transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Agregamos transición para el cambio de color */
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+        /* Agregamos transición para el cambio de color */
         background: #75428f;
         color: #c63671;
     }
@@ -672,7 +687,7 @@ input:-webkit-autofill {
         margin-right: 1rem;
     }
 
-    .publicar:hover img{
+    .publicar:hover img {
 
 
         box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.7);
@@ -684,7 +699,8 @@ input:-webkit-autofill {
 
 
     .hamburguesa-abierto .barra {
-        background-color: #fff; /* Cambiamos el color de la hamburguesa al abrir el menú */
+        background-color: #fff;
+        /* Cambiamos el color de la hamburguesa al abrir el menú */
     }
 
     .hamburguesa-abierto .barra:nth-child(1) {
@@ -701,6 +717,7 @@ input:-webkit-autofill {
         margin-right: -13rem;
     }
 }
+
 @media screen and (max-width: 700px) {
     .menu-desplegable {
         display: block;
@@ -718,7 +735,8 @@ input:-webkit-autofill {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
-    .header-landing{
+
+    .header-landing {
         justify-content: center;
         max-height: 14.5rem;
         min-height: 14.5rem;
@@ -748,6 +766,7 @@ input:-webkit-autofill {
     }
 
 }
+
 @media screen and (max-width: 289px) {
     /* .menu-desplegable {
         display: block;
@@ -764,7 +783,7 @@ input:-webkit-autofill {
         margin-top: 4.3rem;
         padding-top: 5rem;
     } */
-/* 
+    /* 
     .principal {
         min-width: 85%;
         max-width: 85%;
@@ -786,7 +805,8 @@ input:-webkit-autofill {
         margin-top: 13rem;
 
     }
-    .container-register{
+
+    .container-register {
         min-height: 50rem;
     }
 
