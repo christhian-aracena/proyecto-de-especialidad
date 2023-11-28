@@ -28,4 +28,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   
-  
+const publicarMascota = document.querySelector("#adopta");
+
+publicarMascota.addEventListener("click", function () {
+    // alert("asd");
+  getFormMascotas();
+});
+
+function getFormMascotas() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "get-formulario-en-adopcion.php", true);
+  xhttp.send();
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.querySelector("#contenedor-ajax-main").innerHTML = this.responseText;
+      
+    }
+  };
+}

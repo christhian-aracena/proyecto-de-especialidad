@@ -73,7 +73,10 @@ input:-webkit-autofill {
     margin: 0;
     /*MARGIN AUTO EN LOS COSTADOS CENTRA EL CONTENEDOR*/
 }
-
+.main{
+    display: flex;
+    justify-content: center;
+}
 
 
 
@@ -98,9 +101,10 @@ input:-webkit-autofill {
 }
 
 .avatar{
-    width: 4rem;
-    height: 4rem;
-
+    min-width: 4rem;
+    min-height: 4rem;
+    max-width: 4rem;
+    max-height: 4rem;
     position: relative;
     overflow: hidden;
     margin-left: 1rem;
@@ -280,8 +284,10 @@ input:-webkit-autofill {
     left: 0;
     justify-content: space-between;
     min-width: 13%;
+    max-width: 13%;
     margin-top: 2rem;
     flex-wrap: nowrap;
+    margin-left: 1.5rem;
     
 }
 
@@ -306,10 +312,17 @@ input:-webkit-autofill {
 }
 
 .principal{
-    min-width: 85%;
-    overflow-y: auto;
-    max-height: 92vh;
-    padding: 1rem;
+
+        min-width: 85%;
+        max-width: 85%; 
+        overflow-y: auto;
+        max-height: 88vh;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        margin: 0rem auto 1rem auto;
+        padding-top: 2rem;
+        overflow-y: auto;
 }
 
 .flag{
@@ -331,6 +344,240 @@ input:-webkit-autofill {
 }
 
 
+
+
+.container-options {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin: 1rem;
+}
+
+
+.adopt {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border-top-left-radius: 18rem;
+    border-bottom-left-radius: 18rem;
+    height: 18rem;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.circleAdopt {
+    display: flex;
+    margin-left: 2rem;
+    width: 15rem;
+    height: 15rem;
+    background: url('../img/adoptados.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    border: #864089 solid 0.2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+
+.info {
+    display: flex;
+    width: 45rem;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+
+.info button {
+    background: #156886;
+    color: white;
+    height: 3rem;
+    width: 12rem;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    /* Agregar una transición de 0.3 segundos para suavizar el efecto */
+
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.info button:hover {
+    opacity: 0.8;
+    /* Cambiar la opacidad cuando el usuario pasa el cursor sobre el botón */
+}
+
+.info h3 {
+    font-family: 'Raleway', sans-serif;
+    color: #08376b;
+    font-weight: 600;
+}
+
+.lost {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background: transparent;
+    border-top-right-radius: 18rem;
+    border-bottom-right-radius: 18rem;
+    height: 18rem;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.circleLost {
+    display: flex;
+    margin-right: 2.2rem;
+    width: 15rem;
+    height: 15rem;
+    background: url('../img/perdido.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    border: #864089 solid 0.2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+
+
+.foundIt {
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 18rem;
+    border-bottom-left-radius: 18rem;
+    height: 18rem;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.circleFoundIt {
+    display: flex;
+    margin-left: 2.2rem;
+    width: 15rem;
+    height: 15rem;
+    background: url('../img/encontrado.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    border: #08376b solid 0.2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+
+.inAdopt {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border-top-right-radius: 18rem;
+    border-bottom-right-radius: 18rem;
+    height: 18rem;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.circleInAdopt {
+    display: flex;
+    margin-right: 2.2rem;
+    width: 15rem;
+    height: 15rem;
+    background: url('../img/enadopcion.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    border: #2c42a0 solid 0.2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.boxAdopt img,
+.boxAdoptIt img,
+.boxFountIt img,
+.boxLost img {
+    width: 8rem;
+    height: 8rem;
+
+}
+
+.boxAdopt,
+.boxAdoptIt,
+.boxFountIt,
+.boxLost {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+
+}
+.container-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    width: 35rem;
+    text-align: center;
+    overflow: auto;
+    opacity: 0.9;
+    margin: 10rem 1rem;
+}
+
+.container-register input {
+    width: 100%;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    background-color: #f8f8f8;
+    transition: 0.3s;
+    color: #010407;
+}
+.container-register h2{
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.container-register button{
+    background: #167c1a;
+
+    width: 100%;
+    padding: 1.2rem;
+
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: 0.3s;
+}
+
+
+.container-register button:hover {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: #135813;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: 0.3s;
+}
+
 @media screen and (max-width: 1500px) {
     .menu {
         display: none;
@@ -345,12 +592,13 @@ input:-webkit-autofill {
 
     .principal {
         min-width: 85%;
-        max-width: 85%;
+        max-width: 85%; 
         overflow-y: auto;
-        max-height: 88vh;
+        max-height: 95vh;
         display: flex;
+        align-items: stretch;
         margin: 2rem auto 1rem auto;
-        padding-top: 2rem;
+        padding-top: 0rem;
     }
 
     .hamburguesa {
@@ -459,17 +707,26 @@ input:-webkit-autofill {
     }
 
 
-    .principal {
+    /* .principal {
         min-width: 85%;
         max-width: 85%;
         overflow-y: auto;
         max-height: 76vh;
         display: flex;
+        justify-content: center;
         margin: 2rem auto 2rem auto;
         padding-top: 2rem;
         padding-bottom: 2rem;
-    }
+    } */
+    .container-options {
 
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 4rem;
+        margin-top: 4rem;
+
+    }
 
 }
 @media screen and (max-width: 289px) {
@@ -497,4 +754,84 @@ input:-webkit-autofill {
         display: flex;
         margin: 2rem auto 2rem auto;
     } */
+}
+
+
+@media screen and (max-width: 1550px) {
+    .container-options {
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 4rem;
+        margin-top: 13rem;
+
+    }
+
+
+    .adopt {
+        border-top-left-radius: 18rem;
+        border-bottom-left-radius: 18rem;
+        height: 18rem;
+        box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
+    }
+
+}
+
+@media screen and (max-width: 440px) {
+
+    .adopt,
+    .inAdopt,
+    .foundIt,
+    .lost {
+        width: 20rem;
+    }
+
+    .container-options {
+        justify-items: center;
+        margin: 1rem;
+        margin-top: 13rem;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+
+    .contenedor-header {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .circleAdopt,
+    .circleFoundIt,
+    .circleInAdopt,
+    .circleLost {
+        display: none;
+
+    }
+
+    .adopt,
+    .inAdopt,
+    .foundIt,
+    .lost {
+        display: flex;
+        justify-content: center;
+        border-radius: 0rem;
+        border-radius: 0rem;
+
+    }
+
+    .info {
+        width: 33rem;
+        text-align: justify;
+    }
+
+    .content2 textarea {
+        width: 19rem;
+
+    }
+
 }
