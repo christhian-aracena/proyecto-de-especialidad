@@ -560,6 +560,7 @@ input:-webkit-autofill {
     justify-content: center;
     align-items: center;
     background-color: #fff;
+    min-height: 50rem;
     padding: 2rem;
     border-radius: 0.8rem;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
