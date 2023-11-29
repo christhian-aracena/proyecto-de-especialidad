@@ -844,7 +844,8 @@ input:-webkit-autofill {
         justify-items: center;
         margin: 1rem;
         margin-top: 9rem;
-        min-height: 57vh;
+        min-height: 99vh;
+        max-height: 99vh;
     }
 
     .principal {
