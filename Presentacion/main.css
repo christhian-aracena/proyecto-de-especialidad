@@ -843,7 +843,7 @@ input:-webkit-autofill {
     .container-options {
 
 
-        margin-bottom: 2rem;
+        margin-bottom: 5rem;
 
 
     }
@@ -897,7 +897,7 @@ input:-webkit-autofill {
         justify-items: center;
 
         margin-top: 13rem;
-        margin-bottom: 7rem;
+        margin-bottom: 10rem;
         /* min-height: 100%; */
     }
 
