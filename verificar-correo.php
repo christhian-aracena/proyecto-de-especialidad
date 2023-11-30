@@ -12,8 +12,13 @@ if (isset($_POST['correo'])) {
     $consulta = "SELECT email FROM users WHERE email = '$correo'";
     $resultado = $conexion->query($consulta);
 
+
+    // Consulta para verificar si el correo ya existe
+    $consulta2 = "SELECT email FROM social_media WHERE email = '$correo'";
+    $resultado2 = $conexion->query($consulta2);
+
     // Verificar si hay resultados
-    if ($resultado->num_rows > 0) {
+    if ($resultado->num_rows > 0 || $resultado2->num_rows > 0) {
         // El correo ya está registrado
         $respuesta = array('existe' => true);
     } else {
@@ -33,4 +38,3 @@ if (isset($_POST['correo'])) {
     header('Content-Type: application/json');
     echo json_encode($respuesta);
 }
-?>

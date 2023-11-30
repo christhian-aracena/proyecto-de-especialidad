@@ -581,6 +581,33 @@ input:-webkit-autofill {
 
 }
 
+/* Agrega estos estilos a tu hoja de estilos CSS o en línea según tus preferencias */
+
+.error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9rem; /* Ajusta la altura según sea necesario */
+    background-color: #cf0303; /* Color de fondo del mensaje de error */
+    color: #fff; /* Color del texto del mensaje de error */
+    font-size: 1.6rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para resaltar el mensaje */
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding: 1rem;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+
 .don {
     width: 9rem;
     height: 9rem;
@@ -1038,6 +1065,7 @@ input:-webkit-autofill {
     width: 2rem;
     height: 2rem;
     margin-left: 1rem;
+    margin-right: 1rem;
     box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
 }
 
@@ -1268,9 +1296,15 @@ footer form */
         justify-items: center;
         margin: 1rem;
     }
-
+    .error-message {
+        height: 15rem; 
+    }
 }
-
+@media screen and (max-width:466){
+    .error-message {
+        height: 18rem; 
+    }
+}
 @media screen and (max-width: 650px) {
 
     .contenedor-header {
@@ -1309,5 +1343,7 @@ footer form */
         width: 19rem;
 
     }
-
+    .error-message {
+        height: 20rem; 
+    }
 }

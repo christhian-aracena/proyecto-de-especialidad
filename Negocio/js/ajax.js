@@ -1,3 +1,38 @@
+$(document).ready(function() {
+    var errorMessage = $('.error-message');
+
+    // Agrega la clase 'show' al div de error después de un breve retraso
+    errorMessage.delay(100).queue(function() {
+        $(this).addClass('show').dequeue();
+    });
+
+    // Detén el temporizador cuando el puntero entra en el área del mensaje
+    errorMessage.on('mouseenter', function() {
+        clearTimeout(timeoutId);
+    });
+
+    // Reinicia el temporizador cuando el puntero sale del área del mensaje
+    errorMessage.on('mouseleave', function() {
+        reiniciarTemporizador();
+    });
+
+    // Después de 4 segundos, quita la clase 'show'
+    var timeoutId = setTimeout(function() {
+        errorMessage.removeClass('show');
+    }, 4000);
+
+    // Función para reiniciar el temporizador
+    function reiniciarTemporizador() {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(function() {
+            errorMessage.removeClass('show');
+        }, 4000);
+    }
+});
+
+
+
+
 $(document).ready(function () {
   var timeoutId; // Variable para almacenar el ID del temporizador
 
@@ -249,3 +284,9 @@ $(document).ready(function () {
     }, 3000);
   }
 });
+
+
+
+
+
+

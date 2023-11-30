@@ -1,3 +1,6 @@
+<?php
+    include("Datos/logout-implicito.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 

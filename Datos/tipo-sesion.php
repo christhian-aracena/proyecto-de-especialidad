@@ -93,17 +93,30 @@ if (isset($_SESSION['email'])) {
         $consulta = mysqli_query($conexion, $query);
         $array = mysqli_fetch_array($consulta);
 
-        if (!$array['count'] > 0) {
 
-            $query = "INSERT INTO social_media (email, username, picture) VALUES ('$email', '$name', '$profileImage');";
+
+        $query2 = "SELECT COUNT(*) AS count2 FROM users WHERE email = '$email'";
+        $consulta2 = mysqli_query($conexion, $query2);
+        $array2 = mysqli_fetch_array($consulta2);
+
+
+        if (!$array2['count2']) {
+
+            if (!$array['count']) {
+
+                $query = "INSERT INTO social_media (email, username, picture) VALUES ('$email', '$name', '$profileImage');";
+                mysqli_query($conexion, $query);
+            } else {
+                $_SESSION['socialemail'] = $email;
+                $_SESSION['name'] = $name;
+            }
         } else {
-            $_SESSION['socialemail'] = $email;
-            $_SESSION['name'] = $name;
+            $_SESSION['registration_error'] = 'Su correo ya se encuentra en nuestra base de datos, si olvido sus credenciales haga click <a href="#"> Aqui</a>.';
+            header('Location: login');
+            exit;
         }
 
 
-
-        mysqli_query($conexion, $query);
 
 
 

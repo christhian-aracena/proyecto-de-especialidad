@@ -1,8 +1,20 @@
-<!-- // login.php -->
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-session_start();
-session_destroy();
+// Verifica si hay un mensaje de error y muéstralo
+if (isset($_SESSION['registration_error'])) {
+    echo '<div class="error-message">' . $_SESSION['registration_error'] . '</div>';
+    // Limpia la variable de sesión después de mostrar el mensaje
+    unset($_SESSION['registration_error']);
+}
+?>
+
+<?php
+include('Datos/logout-implicito.php');
+
+
 session_reset();
 session_unset();
 session_start();

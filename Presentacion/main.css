@@ -409,7 +409,8 @@ input:-webkit-autofill {
     justify-content: center;
     align-content: flex-start;
     gap: 4rem;
-    margin: 1rem;
+    margin-bottom: 12rem;
+    margin-top: 3rem;
 }
 
 
@@ -711,7 +712,7 @@ input:-webkit-autofill {
         max-height: 99vh;
         display: flex;
         align-items: flex-start;
-        margin: -10rem auto 1rem auto;
+        margin: 0rem auto 1rem auto;
         padding-top: 0rem;
     }
 
@@ -841,11 +842,9 @@ input:-webkit-autofill {
     }
     .container-options {
 
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 4rem;
-        margin-top: 4rem;
+
+        margin-bottom: 2rem;
+
 
     }
 
@@ -883,30 +882,7 @@ input:-webkit-autofill {
 }
 
 
-@media screen and (max-width: 1550px) {
-    .container-options {
 
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        gap: 4rem;
-        margin-top: 13rem;
-        min-height: 100%;
-    }
-
-    .container-register {
-        min-height: 50rem;
-        max-height: 50rem;
-    }
-
-    .adopt {
-        border-top-left-radius: 18rem;
-        border-bottom-left-radius: 18rem;
-        height: 18rem;
-        box-shadow: 0.3rem 0.2rem 1rem rgba(0, 0, 0, 0.7);
-    }
-
-}
 
 @media screen and (max-width: 440px) {
 
@@ -919,23 +895,21 @@ input:-webkit-autofill {
 
     .container-options {
         justify-items: center;
-        margin: 1rem;
+
         margin-top: 13rem;
-        min-height: 100%;
+        margin-bottom: 7rem;
+        /* min-height: 100%; */
     }
 
     .principal {
-
-        min-width: 84%;
-        max-width: 84%;
+        min-width: 85%;
+        max-width: 85%;
         overflow-y: auto;
-        max-height: 80vh;
+        max-height: 99vh;
         display: flex;
         align-items: flex-start;
-        justify-content: center;
-    
-        padding-top: 2rem;
-        overflow-y: auto;
+        margin: -10rem auto 1rem auto;
+        padding-top: 0rem;
     }
 
 }
@@ -980,3 +954,4 @@ input:-webkit-autofill {
     }
 
 }
+
