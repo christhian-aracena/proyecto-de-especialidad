@@ -9,8 +9,10 @@
         if (!empty($fila['avatar'])) {
             $filaAvatar = base64_encode($fila['avatar']);
         } else {
-            include("Negocios/get-iniciales.php");
-            echo "<p class= centrar-texto iniciales></p>";
+            
+            $iniciales = include("get-nombre-app.php");;
         }
     }
+
+    
 ?>

@@ -8,7 +8,9 @@ $correo = mysqli_real_escape_string($conexion, $_SESSION['email']);
 $resultados = mysqli_query($conexion, "SELECT user FROM users WHERE email = '$correo'");
 if ($consulta = mysqli_fetch_array($resultados)) {
 
-    $nombre = $consulta['user'];
+
+    $nombre  = $consulta['user'];
+
 
 
 }

@@ -95,6 +95,32 @@ $(document).ready(function () {
       return;
     }
 
+    var correo = $("input[name='correo']").val();
+
+    // Verificar si el correo ya existe
+    $.ajax({
+      type: "POST",
+      url: "verificar-correo.php", // Reemplaza con la ruta correcta
+      data: { correo: correo },
+      dataType: "json",
+      success: function (response) {
+        if (response.existe) {
+          // Si el correo ya existe, muestra un mensaje de error con fondo rojo
+          mostrarMensaje("¡El correo ya está registrado!", "error");
+        } else {
+          // Si el correo no existe, procede con el registro
+          registrarUsuario();
+        }
+      },
+      error: function (error) {
+        console.log(error);
+        // Maneja los errores si es necesario
+        mostrarMensaje("Error al verificar el correo", "error");
+      },
+    });
+  });
+
+  function registrarUsuario() {
     var formData = new FormData();
     formData.append("nombre", $("input[name='nombre']").val());
     formData.append("apellido", $("input[name='apellido']").val());
@@ -129,7 +155,7 @@ $(document).ready(function () {
         mostrarMensaje("Error al enviar el formulario", "error");
       },
     });
-  });
+  }
 
   function mostrarMensaje(mensaje, tipo) {
     var colorFondo = tipo === "success" ? "green" : "red";
@@ -149,6 +175,7 @@ $(document).ready(function () {
     }, 3000);
   }
 });
+
 
 // AJAX DE INICIO DE SESION de app
 
@@ -190,7 +217,7 @@ $(document).ready(function () {
         if (response.success) {
           // Muestra el mensaje antes de enviar el correo
           mostrarMensaje("Bienvenido a su sesión", "success");
-          window.location.href = "main.php";
+          window.location.href = "main";
         } else {
           // Muestra un mensaje de error al usuario
           mostrarMensaje(response.message, "error");
