@@ -919,6 +919,8 @@ input:-webkit-autofill {
 
 .policy {
     display: flex;
+    margin-top: 15rem;
+    margin-bottom: 15rem;
 
 }
 

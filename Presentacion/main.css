@@ -376,9 +376,9 @@ input:-webkit-autofill {
     min-width: 84%;
     max-width: 84%;
     overflow-y: auto;
-    max-height: 87vh;
+    max-height: 105vh;
     display: flex;
-    align-items: stretch;
+    align-items: flex-start;
     justify-content: center;
 
     padding-top: 2rem;
@@ -698,7 +698,12 @@ input:-webkit-autofill {
 
 
 
-  
+  .policy {
+    display: flex;
+    margin-top: 5rem;
+    margin-bottom: 25rem;
+
+}
 
 
 .policy section {
@@ -708,6 +713,7 @@ input:-webkit-autofill {
     padding: 2rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     margin: 1rem;
+    
 }
 
 .policy h1 {
@@ -767,7 +773,12 @@ input:-webkit-autofill {
         z-index: 2;
         /* Asegura que el icono esté por encima del contenido del menú */
     }
-
+    .policy {
+        display: flex;
+        margin-top: 5rem;
+        margin-bottom: 15rem;
+    
+    }
     .barra {
         width: 25px;
         height: 3px;
@@ -882,7 +893,12 @@ input:-webkit-autofill {
 
 
     }
-
+    .policy {
+        display: flex;
+        margin-top: 5rem;
+        margin-bottom: 15rem;
+    
+    }
 }
 
 @media screen and (max-width: 289px) {
@@ -948,6 +964,13 @@ input:-webkit-autofill {
     }
 .logo{
     display: none;
+}
+
+.policy {
+    display: flex;
+    margin-top: 15rem;
+    margin-bottom: 15rem;
+
 }
 }
 

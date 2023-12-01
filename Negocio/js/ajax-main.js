@@ -54,10 +54,10 @@ const privacidad = document.querySelector("#privacidad");
 
 privacidad.addEventListener("click", function () {
     // alert("asd");
-  getFormMascotas();
+  getFormMascotas2();
 });
 
-function getFormMascotas() {
+function getFormMascotas2() {
   const xhttp = new XMLHttpRequest();
   xhttp.open("GET", "get-privacidad.php", true);
   xhttp.send();
