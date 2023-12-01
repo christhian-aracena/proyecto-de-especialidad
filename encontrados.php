@@ -138,11 +138,11 @@ include("Datos/tipo-sesion.php");
 
 
 
-        <div class="footer flex-wrap">
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="privacy-policy">Privacidad</a> </p>
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas</a> </p>
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Nosotros</a> </p>
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos</a> </p>
+    <div class="footer flex-wrap">
+            <p id="privacidad" class="cursor-pointer hov"><a class="cursor-pointer hov">Privacidad</a> </p>
+            <p id="preguntas" class="cursor-pointer hov"><a class="cursor-pointer hov">Preguntas</a> </p>
+            <p id="nosotros" class="cursor-pointer hov"><a class="cursor-pointer hov">Nosotros</a> </p>
+            <p id="terminos" class="cursor-pointer hov"><a class="cursor-pointer hov">Términos</a> </p>
         </div>
 
 

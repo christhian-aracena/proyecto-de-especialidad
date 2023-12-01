@@ -28,16 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   
-const publicarMascota = document.querySelector("#adopcion");
 
-publicarMascota.addEventListener("click", function () {
+
+
+const privacidad = document.querySelector("#privacidad");
+
+privacidad.addEventListener("click", function () {
     // alert("asd");
-  getFormMascotas();
+  getPrivacidad();
 });
 
-function getFormMascotas() {
+function getPrivacidad() {
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "get-formulario-en-adopcion.php", true);
+  xhttp.open("GET", "get-privacidad.php", true);
   xhttp.send();
 
   xhttp.onreadystatechange = function () {
@@ -50,16 +53,81 @@ function getFormMascotas() {
 
 
 
-const privacidad = document.querySelector("#privacidad");
+const preguntas = document.querySelector("#preguntas");
 
-privacidad.addEventListener("click", function () {
+preguntas.addEventListener("click", function () {
     // alert("asd");
-  getFormMascotas2();
+  getPreguntas();
 });
 
-function getFormMascotas2() {
+function getPreguntas() {
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "get-privacidad.php", true);
+  xhttp.open("GET", "get-preguntas.php", true);
+  xhttp.send();
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.querySelector("#contenedor-ajax-main").innerHTML = this.responseText;
+      
+    }
+  };
+}
+
+
+
+const nosotros = document.querySelector("#nosotros");
+
+nosotros.addEventListener("click", function () {
+    // alert("asd");
+    getnosotros();
+});
+
+function getnosotros() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "get-sobrenosotros.php", true);
+  xhttp.send();
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.querySelector("#contenedor-ajax-main").innerHTML = this.responseText;
+      
+    }
+  };
+}
+
+
+const terminos = document.querySelector("#terminos");
+
+terminos.addEventListener("click", function () {
+    // alert("asd");
+    getterminos();
+});
+
+function getterminos() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "get-terminos.php", true);
+  xhttp.send();
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.querySelector("#contenedor-ajax-main").innerHTML = this.responseText;
+      
+    }
+  };
+}
+
+
+
+const publicarMascota = document.querySelector("#adopcion");
+
+publicarMascota.addEventListener("click", function () {
+    // alert("asd");
+  getFormMascotas();
+});
+
+function getFormMascotas() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "get-formulario-en-adopcion.php", true);
   xhttp.send();
 
   xhttp.onreadystatechange = function () {

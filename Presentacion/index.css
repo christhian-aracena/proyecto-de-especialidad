@@ -1227,13 +1227,13 @@ input:-webkit-autofill {
     background: url('../img/questions-amico.svg');
 }
 
-.faqcontainer {
+/* .faqcontainer {
     margin-top: 5rem;
     margin-bottom: 5rem;
-}
+} */
 
 
-
+/* 
 .update {
     max-width: 80rem;
     margin: 2rem auto;
@@ -1241,7 +1241,7 @@ input:-webkit-autofill {
     background-color: #fff;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 
-}
+} */
 
 
 

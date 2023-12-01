@@ -189,9 +189,9 @@ include("Datos/tipo-sesion.php");
 
         <div class="footer flex-wrap">
             <p id="privacidad" class="cursor-pointer hov"><a class="cursor-pointer hov">Privacidad</a> </p>
-            <p id="preguntas" class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas</a> </p>
-            <p id="nosotros" class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Nosotros</a> </p>
-            <p id="terminos" class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos</a> </p>
+            <p id="preguntas" class="cursor-pointer hov"><a class="cursor-pointer hov">Preguntas</a> </p>
+            <p id="nosotros" class="cursor-pointer hov"><a class="cursor-pointer hov">Nosotros</a> </p>
+            <p id="terminos" class="cursor-pointer hov"><a class="cursor-pointer hov">Términos</a> </p>
         </div>
 
 
@@ -210,7 +210,7 @@ include("Datos/tipo-sesion.php");
         <a href="donar"><div class="publicar"><img src="img/donacion.png" alt="" srcset="">Donar</div></a>
     </div>
     <script src="Negocio/js/ajax-main.js"></script>
-
+    <script src="Negocio/js/faq.js"></script>
 
 </body>
 

@@ -413,6 +413,8 @@ input:-webkit-autofill {
     gap: 4rem;
     margin-bottom: 18rem;
     margin-top: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 
@@ -729,6 +731,102 @@ input:-webkit-autofill {
 .policy h2,
 .policy p {
     margin-bottom: 2rem;
+}
+
+
+
+
+
+/* PREGUNTAS FRECUENTES */
+
+.faq {
+
+    width: 100%;
+    margin: 0 auto;
+
+
+
+    /* margin: 2rem auto; */
+    background: linear-gradient(to left, white, rgb(207, 230, 76));
+    padding: 0rem;
+    box-shadow: 0 0 30rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+
+}
+
+.question h2 {
+    font-size: 1.9rem;
+}
+
+.question {
+    background: #175a91;
+    color: white;
+    border: 1rem thick #ddd;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.8rem;
+}
+
+.question h2 {
+    cursor: pointer;
+}
+
+.answer {
+    display: none;
+    padding: 1rem;
+}
+
+/* Estilo para hacer que las respuestas se desplieguen al hacer clic en la pregunta */
+.question.active .answer {
+    display: block;
+}
+
+
+.faq2,
+.faq3,
+.faq4,
+.faq5,
+.faq6,
+.faq7,
+.faq8 {
+    background: #175a91;
+    color: white;
+}
+
+
+.containertitle {
+    margin-top: 5rem;
+}
+
+/* .titlefaq {
+    text-align: center;
+    color: #425699;
+    font-size: 2.6rem;
+
+} */
+.main{
+    margin-top: 0rem;
+}
+
+::-webkit-scrollbar {
+    width: 0rem;
+  }
+
+
+/* .faqcontainer {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+} */
+
+
+
+.update {
+    max-width: 80rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+
 }
 @media screen and (max-width: 1500px) {
     .container-options{
