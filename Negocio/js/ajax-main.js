@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   
-const publicarMascota = document.querySelector("#adopta");
+const publicarMascota = document.querySelector("#adopcion");
 
 publicarMascota.addEventListener("click", function () {
     // alert("asd");
@@ -38,6 +38,28 @@ publicarMascota.addEventListener("click", function () {
 function getFormMascotas() {
   const xhttp = new XMLHttpRequest();
   xhttp.open("GET", "get-formulario-en-adopcion.php", true);
+  xhttp.send();
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.querySelector("#contenedor-ajax-main").innerHTML = this.responseText;
+      
+    }
+  };
+}
+
+
+
+const privacidad = document.querySelector("#privacidad");
+
+privacidad.addEventListener("click", function () {
+    // alert("asd");
+  getFormMascotas();
+});
+
+function getFormMascotas() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "get-privacidad.php", true);
   xhttp.send();
 
   xhttp.onreadystatechange = function () {

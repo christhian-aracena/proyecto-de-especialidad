@@ -142,7 +142,7 @@ include("Datos/tipo-sesion.php");
                     <div class="info">
                         <h3>En adopcion</h3>
                         <p>Publica una mascota, de este modo la gente podrá enviarte solicitudes de adopcion y podrás aceptar a quién desees.</p>
-                        <button>Da en adopcion</button>
+                        <button id="adopcion">Da en adopcion</button>
                     </div>
                     <div class="circleInAdopt">
 
@@ -188,10 +188,10 @@ include("Datos/tipo-sesion.php");
 
 
         <div class="footer flex-wrap">
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="privacy-policy">Privacidad</a> </p>
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas</a> </p>
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Nosotros</a> </p>
-            <p class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos</a> </p>
+            <p id="privacidad" class="cursor-pointer hov"><a class="cursor-pointer hov">Privacidad</a> </p>
+            <p id="preguntas" class="cursor-pointer hov"><a class="cursor-pointer hov" href="faq">Preguntas</a> </p>
+            <p id="nosotros" class="cursor-pointer hov"><a class="cursor-pointer hov" href="aboutus">Nosotros</a> </p>
+            <p id="terminos" class="cursor-pointer hov"><a class="cursor-pointer hov" href="terms-conditions">Términos</a> </p>
         </div>
 
 

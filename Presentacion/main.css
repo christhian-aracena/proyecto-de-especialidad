@@ -120,14 +120,15 @@ input:-webkit-autofill {
     margin-left: 1rem;
     border-radius: 50%;
     z-index: 100;
+    background: #370d44;
 }
 
 .avatar::before{
     content: "";
     display: inline-block;
     position: absolute;
-    width: 1rem;
-    height: 1rem;
+    width: 1.1rem;
+    height: 1.1rem;
     background: #24df2a;
     border-radius: 50%;
     bottom: 0;
@@ -138,6 +139,7 @@ input:-webkit-autofill {
 
 .avatar img {
     border-radius: 50%;
+
 }
 
 
@@ -409,7 +411,7 @@ input:-webkit-autofill {
     justify-content: center;
     align-content: flex-start;
     gap: 4rem;
-    margin-bottom: 12rem;
+    margin-bottom: 18rem;
     margin-top: 3rem;
 }
 
@@ -692,6 +694,36 @@ input:-webkit-autofill {
 .menu-desplegable div {
     font-size: 1.6rem; /* Ajusta el tamaño de fuente según sea necesario */
   }
+
+
+
+
+  
+
+
+.policy section {
+    /* max-width: 80rem; */
+    /* margin: 2rem auto; */
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+}
+
+.policy h1 {
+    color: #425699;
+    text-align: center;
+}
+
+.policy h2 {
+    color: #333;
+}
+
+.policy h1,
+.policy h2,
+.policy p {
+    margin-bottom: 2rem;
+}
 @media screen and (max-width: 1500px) {
     .menu {
         display: none;
@@ -843,7 +875,7 @@ input:-webkit-autofill {
     .container-options {
 
 
-        margin-bottom: 5rem;
+        margin-bottom: 8rem;
 
 
     }
@@ -911,7 +943,9 @@ input:-webkit-autofill {
         margin: -10rem auto 1rem auto;
         padding-top: 0rem;
     }
-
+.logo{
+    display: none;
+}
 }
 
 @media screen and (max-width: 850px) {
