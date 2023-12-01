@@ -725,6 +725,9 @@ input:-webkit-autofill {
     margin-bottom: 2rem;
 }
 @media screen and (max-width: 1500px) {
+    .container-options{
+        margin-bottom: 15rem;
+    }
     .menu {
         display: none;
         position: relative;
@@ -875,7 +878,7 @@ input:-webkit-autofill {
     .container-options {
 
 
-        margin-bottom: 8rem;
+        margin-bottom: 12rem;
 
 
     }
