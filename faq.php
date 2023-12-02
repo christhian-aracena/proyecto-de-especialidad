@@ -49,148 +49,208 @@
         </div>
 
     </header>
+    <div class="policy">
+        <main class="contenedor">
 
-    <main class="contenedor">
 
 
-        <div class="flex-row flex-centrar-item containertitle">
 
-            <h1 class="titlefaq">Preguntas Frecuentes</h1>
+            <h1>Preguntas Frecuentes</h1>
 
+  <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cómo puedo adoptar una mascota?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
         </div>
 
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
 
-        <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question"><span class="arrow">▼</span> Pregunta 1</div>
-        <div class="faq-answer">Respuesta 1</div>
-      </div>
-
-      <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
     </div>
 
 
-        <div class="faqcontainer">
-            <div class="faq">
-                <div class="question">
-                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
-                    <div class="answer">
-                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
-                    </div>
-                </div>
 
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
             </div>
-
-
-
-
-
-            <div class="faq">
-                <div class="question faq2">
-                    <h2 class="toggle sombra">¿Cuántas mascotas puedo publicar?</h2>
-                    <div class="answer">
-                        <p>No hay un límite de publicaciones, puedes publicar cuantas quieras.</p>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-            <div class="faq">
-                <div class="question faq3">
-                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
-                    <div class="answer">
-                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-            <div class="faq">
-                <div class="question faq4">
-                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
-                    <div class="answer">
-                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
-            <div class="faq">
-                <div class="question faq5">
-                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
-                    <div class="answer">
-                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="faq">
-                <div class="question faq6">
-                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
-                    <div class="answer">
-                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-            <div class="faq">
-                <div class="question faq7">
-                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
-                    <div class="answer">
-                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
-
-            <div class="faq">
-                <div class="question faq8">
-                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
-                    <div class="answer">
-                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
-            <div class="faq">
-                <div class="question faq9">
-                    <h2 class="toggle sombra">¿Cómo puedo adoptar una mascota?</h2>
-                    <div class="answer">
-                        <p>Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.</p>
-                    </div>
-                </div>
-
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
             </div>
         </div>
 
-        <div class="gotoback">
-            <a href="https://www.rescatamigos.cl/index">Volver</a>
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
         </div>
 
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
 
 
-    </main>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
 
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
+
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
+
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
+
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
+
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
+
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
+
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
+
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
+
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="arrow">▼</span> ¿Cuántas mascotas puedo publicar?
+            </div>
+            <div class="faq-answer">
+                Para adoptar una mascota, primero debes navegar por nuestras listas de mascotas disponibles. Cuando encuentres una que te guste, sigue los pasos indicados en la página de esa mascota para iniciar el proceso de adopción.
+            </div>
+        </div>
+
+        <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+
+    </div>
+
+            <div class="gotoback">
+                <a href="https://www.rescatamigos.cl/index">Volver</a>
+            </div>
+
+
+
+        </main>
+    </div>
 
     <footer class="footer">
         <div class="footer-container contenedor">
