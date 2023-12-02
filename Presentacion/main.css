@@ -1,11 +1,11 @@
 /*CONFIGURACION INICIAL*/
 
 a {
-    text-decoration: none; 
-    color: inherit; 
-    font-size: 1.6rem; 
-    
-  }
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.6rem;
+
+}
 
 * {
     text-decoration: none;
@@ -23,25 +23,31 @@ html {
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
 .principal {
-    height: 100vh; /* Establece la altura del contenedor de desplazamiento */
-    overflow-y: scroll; /* Hace que el contenedor tenga un scroll vertical */
-    scrollbar-width: thin; /* Establece el grosor de la barra de desplazamiento en navegadores compatibles */
-    scrollbar-color: transparent transparent; /* Establece el color de la barra de desplazamiento en navegadores compatibles */
-  }
-  
-  /* Estiliza la barra de desplazamiento para navegadores compatibles con el estándar */
-  .principal::-webkit-scrollbar {
+    height: 100vh;
+    /* Establece la altura del contenedor de desplazamiento */
+    overflow-y: scroll;
+    /* Hace que el contenedor tenga un scroll vertical */
+    scrollbar-width: thin;
+    /* Establece el grosor de la barra de desplazamiento en navegadores compatibles */
+    scrollbar-color: transparent transparent;
+    /* Establece el color de la barra de desplazamiento en navegadores compatibles */
+}
+
+/* Estiliza la barra de desplazamiento para navegadores compatibles con el estándar */
+.principal::-webkit-scrollbar {
     width: 12px;
-  }
-  
-  .principal::-webkit-scrollbar-thumb {
+}
+
+.principal::-webkit-scrollbar-thumb {
     background-color: transparent;
-  }
-  
-  .principal::-webkit-scrollbar-track {
+}
+
+.principal::-webkit-scrollbar-track {
     background-color: transparent;
-  }
+}
+
 *,
 *:before,
 *:after {
@@ -52,7 +58,7 @@ body {
     font-family: "Raleway";
     font-size: 1.6rem;
     line-height: 1.5;
-    
+
 }
 
 /* GLOBALES */
@@ -141,7 +147,7 @@ input:-webkit-autofill {
     background: #370d44;
 }
 
-.avatar::before{
+.avatar::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -151,7 +157,8 @@ input:-webkit-autofill {
     border-radius: 50%;
     bottom: 0;
     right: 0;
-    overflow: hidden; /* Mover overflow aquí */
+    overflow: hidden;
+    /* Mover overflow aquí */
 
 }
 
@@ -663,7 +670,7 @@ input:-webkit-autofill {
     transition: 0.3s;
 }
 
-.inicial{
+.inicial {
     background: #2c42a0;
     position: relative;
     color: rgb(210, 223, 236);
@@ -680,17 +687,21 @@ input:-webkit-autofill {
 
 .inicial::before {
     content: "";
-    display: inline-block; /* Agregado para que afecte al tamaño */
+    display: inline-block;
+    /* Agregado para que afecte al tamaño */
     position: absolute;
-    width: 1rem; /* Puedes ajustar el tamaño según sea necesario */
-    height: 1rem; /* Puedes ajustar el tamaño según sea necesario */
+    width: 1rem;
+    /* Puedes ajustar el tamaño según sea necesario */
+    height: 1rem;
+    /* Puedes ajustar el tamaño según sea necesario */
     background: #24df2a;
-    border-radius: 50%; /* Añadido para hacer un círculo */
+    border-radius: 50%;
+    /* Añadido para hacer un círculo */
     bottom: 0;
     right: 0;
 }
 
-.a{
+.a {
     background: #f2f2f2;
     border-radius: 0.8rem;
     text-shadow: 0 1rem 2rem rgba(0, 0, 0, .5);
@@ -698,7 +709,7 @@ input:-webkit-autofill {
     font-size: 1.6rem;
 }
 
-.b{
+.b {
     background: #b4b3b3;
     border-radius: 0.8rem;
     text-shadow: 0 1rem 2rem rgba(0, 0, 0, .5);
@@ -706,19 +717,21 @@ input:-webkit-autofill {
     font-size: 1.6rem;
 }
 
-.as a{
-    text-decoration: none; /* Quitar subrayado predeterminado */
+.as a {
+    text-decoration: none;
+    /* Quitar subrayado predeterminado */
 
 }
 
 .menu-desplegable div {
-    font-size: 1.6rem; /* Ajusta el tamaño de fuente según sea necesario */
-  }
+    font-size: 1.6rem;
+    /* Ajusta el tamaño de fuente según sea necesario */
+}
 
 
 
 
-  .policy {
+.policy {
     display: flex;
     margin-top: 5rem;
     margin-bottom: 25rem;
@@ -733,7 +746,7 @@ input:-webkit-autofill {
     padding: 2rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     margin: 1rem;
-    
+
 }
 
 .policy h1 {
@@ -754,26 +767,26 @@ input:-webkit-autofill {
 
 
 .faq-container {
-    min-width: 84vw;
+    min-width: 80vw;
     margin-bottom: 2rem;
     border: 0.1rem solid #ccc;
     border-left: 1rem solid #426bb3;
     border-radius: 0.7rem;
     overflow: hidden;
-    
-  }
-  
-  .faq-item {
+
+}
+
+.faq-item {
     display: flex;
     flex-direction: column;
-  
+    width: 80vw;
     justify-content: center;
     border-bottom: 1px solid #ccc;
     transition: height 0.3s ease-in-out;
-  }
-  
-  .faq-question {
-    padding: 10px;
+}
+
+.faq-question {
+    padding: 1rem;
     cursor: pointer;
     background-color: #f5f5f5;
     user-select: none;
@@ -782,18 +795,19 @@ input:-webkit-autofill {
     align-items: center;
     justify-content: space-between;
     flex-direction: row-reverse;
-    
-  }
-  
-  .faq-answer {
-    padding: 10px;
+
+}
+
+.faq-answer {
+    padding: 1rem;
     display: none;
     background-color: #fff;
     transition: opacity 0.3s ease-in-out;
     height: 100%;
-  }
-  
-  .arrow {
+    width: 100%;
+}
+
+.arrow {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -805,29 +819,30 @@ input:-webkit-autofill {
     width: 2rem;
     height: 2rem;
     margin: 1rem;
-  }
-  
-  .faq-item.active .faq-answer {
+}
+
+.faq-item.active .faq-answer {
     display: block;
     opacity: 1;
-  }
-  
-  .faq-item.active .faq-question {
+}
+
+.faq-item.active .faq-question {
     background-color: #e0e0e0;
-  }
-  
-  .faq-item.active .arrow {
+}
+
+.faq-item.active .arrow {
     transform: rotateX(-360deg);
-  }
+}
 
 
 
 
 
 @media screen and (max-width: 1500px) {
-    .container-options{
+    .container-options {
         margin-bottom: 15rem;
     }
+
     .menu {
         display: none;
         position: relative;
@@ -835,14 +850,16 @@ input:-webkit-autofill {
         overflow: auto;
 
     }
+
     .faq-container {
-        min-width: 85vw;
+        min-width: 80vw;
         margin-bottom: 2rem;
         border: 0.1rem solid #ccc;
         border-left: 1rem solid #426bb3;
         border-radius: 0.7rem;
         overflow: hidden;
-      }
+    }
+
     .hr {
         display: none;
     }
@@ -874,12 +891,14 @@ input:-webkit-autofill {
         z-index: 2;
         /* Asegura que el icono esté por encima del contenido del menú */
     }
+
     .policy {
         display: flex;
         margin-top: 5rem;
         margin-bottom: 15rem;
-    
+
     }
+
     .barra {
         width: 25px;
         height: 3px;
@@ -971,11 +990,13 @@ input:-webkit-autofill {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
-    .faq-answer{
-        max-width: 60vw;
-        min-width: 60vw;
-        
+
+    .faq-answer {
+        max-width: 80vw;
+        min-width: 80vw;
+
     }
+
     .header-landing {
         justify-content: center;
         max-height: 14.5rem;
@@ -991,6 +1012,7 @@ input:-webkit-autofill {
         justify-content: center;
 
     }
+
     .container-options {
 
 
@@ -998,11 +1020,12 @@ input:-webkit-autofill {
 
 
     }
+
     .policy {
         display: flex;
         margin-top: 5rem;
         margin-bottom: 15rem;
-    
+
     }
 }
 
@@ -1022,7 +1045,7 @@ input:-webkit-autofill {
         margin-top: 4.3rem;
         padding-top: 5rem;
     } */
-    
+
     .principal {
         min-width: 84%;
         max-width: 84%;
@@ -1031,10 +1054,10 @@ input:-webkit-autofill {
         display: flex;
         align-items: stretch;
         justify-content: center;
-    
+
         padding-top: 2rem;
         overflow-y: auto;
-    } 
+    }
 }
 
 
@@ -1067,16 +1090,21 @@ input:-webkit-autofill {
         margin: -10rem auto 1rem auto;
         padding-top: 0rem;
     }
-.logo{
-    display: none;
-}
 
-.policy {
-    display: flex;
-    margin-top: 15rem;
-    margin-bottom: 15rem;
+    .faq-container{
+        min-width: 80vw;
+        max-width: 80vw;
+    }
+    .logo {
+        display: none;
+    }
 
-}
+    .policy {
+        display: flex;
+        margin-top: 15rem;
+        margin-bottom: 15rem;
+
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -1119,4 +1147,3 @@ input:-webkit-autofill {
     }
 
 }
-
