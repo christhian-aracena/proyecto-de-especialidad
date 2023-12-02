@@ -153,7 +153,7 @@ include("Datos/tipo-sesion.php");
     </div>
     <!-- Menú desplegable -->
     <div class="menu-desplegable" id="menu-desplegable">
-    <a href="main"><div class="publicar flex-nowrap "><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div></a>
+        <a href="main"><div class="publicar flex-nowrap "><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div></a>
         <a href="mis-publicaciones"><div class="publicar flex-nowrap"><img src="img/nariz-de-perro.png" alt="Img/" srcset="">Mis publicaciones</div></a>
         <a href="en-adopcion"><div class="publicar flex-nowrap"><img src="img/en adopcion.png" alt="" srcset="">En Adopción</div></a>
         <a href="perdidos"><div class="publicar flex-nowrap"><img src="img/perdidos.png" alt="" srcset="">Perdidos</div></a>

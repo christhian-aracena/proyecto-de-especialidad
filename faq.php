@@ -8,7 +8,7 @@
 
 
 
-    <script src="Negocio/js/faq.js"></script>
+
 
 
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -60,7 +60,14 @@
         </div>
 
 
+        <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question"><span class="arrow">▼</span> Pregunta 1</div>
+        <div class="faq-answer">Respuesta 1</div>
+      </div>
 
+      <!-- Repite el bloque .faq-item para cada pregunta y respuesta -->
+    </div>
 
 
         <div class="faqcontainer">
@@ -287,7 +294,7 @@
 
     </div>
 
-
+    <script src="Negocio/js/faq.js"></script>
 </body>
 
 </html>

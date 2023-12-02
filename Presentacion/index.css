@@ -1147,85 +1147,69 @@ input:-webkit-autofill {
 
 
 
-/* PREGUNTAS FRECUENTES */
-
-.faq {
-
-    width: 100%;
-    margin: 0 auto;
-
-
-
-    /* margin: 2rem auto; */
-    background: linear-gradient(to left, white, rgb(207, 230, 76));
-    padding: 0rem;
-    box-shadow: 0 0 30rem rgba(0, 0, 0, 0.1);
-    border-radius: 1rem;
-
-}
-
-.question h2 {
-    font-size: 1.9rem;
-}
-
-.question {
-    background: #175a91;
-    color: white;
-    border: 1rem thick #ddd;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 0.8rem;
-}
-
-.question h2 {
-    cursor: pointer;
-}
-
-.answer {
-    display: none;
-    padding: 1rem;
-}
-
-/* Estilo para hacer que las respuestas se desplieguen al hacer clic en la pregunta */
-.question.active .answer {
-    display: block;
-}
-
-
-.faq2,
-.faq3,
-.faq4,
-.faq5,
-.faq6,
-.faq7,
-.faq8 {
-    background: #175a91;
-    color: white;
-}
-
-
-.containertitle {
-    margin-top: 5rem;
-}
-
-.titlefaq {
-    text-align: center;
-    color: #425699;
-    font-size: 2.6rem;
-
-}
-
-
-
-.imgfaq {
+.faq-container {
+    width: 50rem;
+    margin: 2rem;
+    border: 0.1rem solid #ccc;
+    border-left: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .faq-item {
     display: flex;
-    width: 10rem;
-    height: 10rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background: url('../img/questions-amico.svg');
-}
+    flex-direction: column;
+  
+    justify-content: center;
+    border-bottom: 0.1rem solid #ccc;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  .faq-question {
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    user-select: none;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  
+  .faq-answer {
+    padding: 1rem;
+    display: none;
+    background-color: #fff;
+    transition: opacity 0.3s ease-in-out;
+    height: 4rem;
+  }
+  
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    transition: transform 0.3s ease-in-out;
+    background: rgb(21, 21, 24);
+    border-radius: 50%;
+    color: #f5f5f5;
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .faq-item.active .faq-answer {
+    display: block;
+    opacity: 1;
+  }
+  
+  .faq-item.active .faq-question {
+    background-color: #e0e0e0;
+  }
+  
+  .faq-item.active .arrow {
+    transform: rotateX(-360deg);
+  }
 
 /* .faqcontainer {
     margin-top: 5rem;

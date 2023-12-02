@@ -23,7 +23,25 @@ html {
     overflow-y: hidden;
     overflow-x: hidden;
 }
-
+.principal {
+    height: 100vh; /* Establece la altura del contenedor de desplazamiento */
+    overflow-y: scroll; /* Hace que el contenedor tenga un scroll vertical */
+    scrollbar-width: thin; /* Establece el grosor de la barra de desplazamiento en navegadores compatibles */
+    scrollbar-color: transparent transparent; /* Establece el color de la barra de desplazamiento en navegadores compatibles */
+  }
+  
+  /* Estiliza la barra de desplazamiento para navegadores compatibles con el estándar */
+  .principal::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .principal::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+  .principal::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 *,
 *:before,
 *:after {
@@ -34,7 +52,7 @@ body {
     font-family: "Raleway";
     font-size: 1.6rem;
     line-height: 1.5;
-
+    
 }
 
 /* GLOBALES */
@@ -735,99 +753,77 @@ input:-webkit-autofill {
 
 
 
-
-
-/* PREGUNTAS FRECUENTES */
-
-.faq {
-
-    width: 100%;
-    margin: 0 auto;
-
-
-
-    /* margin: 2rem auto; */
-    background: linear-gradient(to left, white, rgb(207, 230, 76));
-    padding: 0rem;
-    box-shadow: 0 0 30rem rgba(0, 0, 0, 0.1);
-    border-radius: 1rem;
-
-}
-
-.question h2 {
-    font-size: 1.9rem;
-}
-
-.question {
-    background: #175a91;
-    color: white;
-    border: 1rem thick #ddd;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 0.8rem;
-}
-
-.question h2 {
+.faq-container {
+    min-width: 84vw;
+    margin-bottom: 2rem;
+    border: 0.1rem solid #ccc;
+    border-left: 1rem solid #426bb3;
+    border-radius: 0.7rem;
+    overflow: hidden;
+    
+  }
+  
+  .faq-item {
+    display: flex;
+    flex-direction: column;
+  
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  .faq-question {
+    padding: 10px;
     cursor: pointer;
-}
-
-.answer {
+    background-color: #f5f5f5;
+    user-select: none;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    
+  }
+  
+  .faq-answer {
+    padding: 10px;
     display: none;
-    padding: 1rem;
-}
-
-/* Estilo para hacer que las respuestas se desplieguen al hacer clic en la pregunta */
-.question.active .answer {
+    background-color: #fff;
+    transition: opacity 0.3s ease-in-out;
+    height: 100%;
+  }
+  
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    transition: transform 0.3s ease-in-out;
+    background: rgb(154, 154, 201);
+    border-radius: 50%;
+    color: #f5f5f5;
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+  }
+  
+  .faq-item.active .faq-answer {
     display: block;
-}
-
-
-.faq2,
-.faq3,
-.faq4,
-.faq5,
-.faq6,
-.faq7,
-.faq8 {
-    background: #175a91;
-    color: white;
-}
-
-
-.containertitle {
-    margin-top: 5rem;
-}
-
-/* .titlefaq {
-    text-align: center;
-    color: #425699;
-    font-size: 2.6rem;
-
-} */
-.main{
-    margin-top: 0rem;
-}
-
-::-webkit-scrollbar {
-    width: 0rem;
+    opacity: 1;
+  }
+  
+  .faq-item.active .faq-question {
+    background-color: #e0e0e0;
+  }
+  
+  .faq-item.active .arrow {
+    transform: rotateX(-360deg);
   }
 
 
-/* .faqcontainer {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-} */
 
 
 
-.update {
-    max-width: 80rem;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #fff;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-
-}
 @media screen and (max-width: 1500px) {
     .container-options{
         margin-bottom: 15rem;
@@ -839,7 +835,14 @@ input:-webkit-autofill {
         overflow: auto;
 
     }
-
+    .faq-container {
+        min-width: 85vw;
+        margin-bottom: 2rem;
+        border: 0.1rem solid #ccc;
+        border-left: 1rem solid #426bb3;
+        border-radius: 0.7rem;
+        overflow: hidden;
+      }
     .hr {
         display: none;
     }
@@ -968,7 +971,11 @@ input:-webkit-autofill {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
-
+    .faq-answer{
+        max-width: 60vw;
+        min-width: 60vw;
+        
+    }
     .header-landing {
         justify-content: center;
         max-height: 14.5rem;

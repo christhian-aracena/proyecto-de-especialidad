@@ -51,27 +51,53 @@ function getPrivacidad() {
   };
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Código que se ejecuta cuando se carga la página
 
+    // Ejemplo de evento delegado para manejar clics en un contenedor
+    document.body.addEventListener("click", function (event) {
+        const target = event.target;
+
+        // Verifica si el clic ocurrió en un elemento específico, por ejemplo, un botón en tu formulario
+        if (target.classList.contains("faq-question") || target.classList.contains("arrow")) {
+            const item = target.closest(".faq-item");
+            if (item) {
+                item.classList.toggle("active");
+                const arrow = item.querySelector(".arrow");
+                arrow.textContent = item.classList.contains("active") ? "▲" : "▼";
+            }
+        }
+    });
+});
+
+// Función que se llama después de cargar preguntas dinámicamente por AJAX
+function handleDynamicContent() {
+    // Código que se ejecutará después de cargar el contenido dinámicamente
+}
 
 const preguntas = document.querySelector("#preguntas");
 
 preguntas.addEventListener("click", function () {
     // alert("asd");
-  getPreguntas();
+    getPreguntas();
 });
 
 function getPreguntas() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "get-preguntas.php", true);
-  xhttp.send();
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "get-preguntas.php", true);
+    xhttp.send();
 
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.querySelector("#contenedor-ajax-main").innerHTML = this.responseText;
-      
-    }
-  };
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector("#contenedor-ajax-main").innerHTML = this.responseText;
+
+            // Llama a la función para manejar el contenido dinámico
+            handleDynamicContent();
+        }
+    };
 }
+
+
 
 
 

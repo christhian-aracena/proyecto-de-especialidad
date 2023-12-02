@@ -282,6 +282,7 @@
     </div>
 
     <script src="Negocio/js/ajax.js"></script>
+    <script src="Negocio/js/faq.js"></script>
 </body>
 
 </html>
