@@ -8,11 +8,8 @@
             <input type="text" name="raza" required placeholder="raza">
         </div>
         <div class="form-group">
-            <input type="text" name="descripcion" required placeholder="Descripcion">
-        </div>
-        <div class="form-group">
             <input type="text" name="vacunas" required placeholder="Vacunas">
-        </div>
+        </div>       
         <div class="form-group">
             <?php include("Negocio/get-combox-especie.php"); ?>
         </div>
@@ -20,7 +17,16 @@
             <?php include("Negocio/get-combox-salud.php"); ?>
         </div>
         <div class="form-group">
-            <?php include("Negocio/get-combox-especie.php"); ?>
+            <?php include("Negocio/get-combox-sexo.php"); ?>
+        </div>
+        <div class="form-group">
+            <?php include("Negocio/get-combox-dimension.php"); ?>
+        </div>
+        <div class="form-group">
+            <?php include("Negocio/get-combox-edad.php"); ?>
+        </div>
+        <div class="form-group">
+            <textarea type="text" name="vacunas" required placeholder="Incluye todos los detalles relevantes como requisitos de adopcion y descripcion completa acerca de la personalidad de la mascota."></textarea>
         </div>
         <div class="form-group">
             <label for="avatar">Foto de Perfil (opcional):</label>

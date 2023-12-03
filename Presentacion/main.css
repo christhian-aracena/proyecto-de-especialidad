@@ -624,9 +624,10 @@ input:-webkit-autofill {
     overflow: initial;
     opacity: 0.9;
     margin: 10rem 1rem;
+    margin-bottom: 13rem;
 }
 
-.container-register input {
+.container-register input, .container-register select {
     width: 100%;
     padding: 1.2rem;
     margin: 1rem 0;
@@ -635,8 +636,28 @@ input:-webkit-autofill {
     border-radius: 0.4rem;
     background-color: #f8f8f8;
     transition: 0.3s;
-    color: #010407;
+    color: #474b4e;
 }
+.container-register textarea{
+    width: 100%;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    background-color: #f8f8f8;
+    transition: 0.3s;
+    color: #474b4e;
+    max-width: 31rem;
+    min-width: 31rem;
+    min-height: 12rem;
+}
+
+.container-register select{
+    height: 4.1rem;
+    margin-bottom: 2rem;
+}
+
 
 .container-register h2 {
     color: #333;
@@ -648,7 +669,7 @@ input:-webkit-autofill {
 
     width: 100%;
     padding: 1.2rem;
-
+    margin-bottom: 1rem;
     color: #fff;
     border: none;
     border-radius: 0.4rem;
@@ -917,8 +938,8 @@ input:-webkit-autofill {
     }
 
     .container-register {
-        min-height: 50rem;
-        max-height: 60rem;
+        min-height: 90rem;
+        max-height: 65rem;
     }
 
     .hamburguesa {
@@ -1119,6 +1140,22 @@ input:-webkit-autofill {
         margin-top: 13rem;
         margin-bottom: 15rem;
         /* min-height: 100%; */
+        width: 100%;
+    }
+    .container-register input, .container-register select{
+        width: 75%;
+    }
+
+    .container-register textarea{
+        min-width: 70%;
+    }
+    .container-register select{
+        margin-left: 3.2rem;
+    }
+    .container-options h2 {
+
+        margin-bottom: -3rem;
+
     }
 
     .principal {
@@ -1146,6 +1183,8 @@ input:-webkit-autofill {
         margin-bottom: 15rem;
 
     }
+
+
 }
 
 @media screen and (max-width: 850px) {

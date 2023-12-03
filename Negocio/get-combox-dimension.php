@@ -1,18 +1,18 @@
 <select class='cBEspecie cursor-pointer'  name="especieMascota" id="especieMascota" required>
   <?php
   include('Datos/conexion.php');
-  $ejecutarConsulta = $conexion->query('SELECT * FROM salud');
+  $ejecutarConsulta = $conexion->query('SELECT * FROM dimension');
 
   $null = null;
 
-  echo "<option value='$null'>Selecciona un estado de salud</option>";
+  echo "<option value='$null'>Seleccione un tamaño</option>";
 
   while ($fila1 = mysqli_fetch_assoc($ejecutarConsulta)) {
       $id = $fila1['id'];
-      $salud = $fila1['estado_salud'];
+      $dimension = $fila1['dimension_mascota'];
 
       // Imprimir la opción dentro del elemento <select>
-      echo "<option value='$id'>$salud</option>";
+      echo "<option value='$id'>$dimension</option>";
   }
   ?>
 </select>
