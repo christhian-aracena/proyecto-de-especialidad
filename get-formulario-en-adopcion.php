@@ -11,20 +11,9 @@
             <input type="text" name="vacunas" required placeholder="Vacunas">
         </div>       
         <div class="form-group">
-            <?php include("Negocio/get-combox-especie.php"); ?>
+            <?php include("../Negocio/get-combox-especie.php"); ?>
         </div>
-        <div class="form-group">
-            <?php include("Negocio/get-combox-salud.php"); ?>
-        </div>
-        <div class="form-group">
-            <?php include("Negocio/get-combox-sexo.php"); ?>
-        </div>
-        <div class="form-group">
-            <?php include("Negocio/get-combox-dimension.php"); ?>
-        </div>
-        <div class="form-group">
-            <?php include("Negocio/get-combox-edad.php"); ?>
-        </div>
+
         <div class="form-group">
             <textarea type="text" name="vacunas" required placeholder="Incluye la mayor cantidad de detalles."></textarea>
         </div>
