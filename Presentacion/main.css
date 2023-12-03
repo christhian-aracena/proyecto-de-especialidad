@@ -619,16 +619,16 @@ input:-webkit-autofill {
     padding: 2rem;
     border-radius: 0.8rem;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
-    width: 35rem;
+    width: 80vw;
     text-align: center;
     overflow: initial;
     opacity: 0.9;
-    margin: 10rem 1rem;
+    margin: 3rem 1rem;
     margin-bottom: 13rem;
 }
 
 .container-register input, .container-register select {
-    width: 100%;
+    min-width: 78vw;
     padding: 1.2rem;
     margin: 1rem 0;
     box-sizing: border-box;
@@ -648,7 +648,7 @@ input:-webkit-autofill {
     background-color: #f8f8f8;
     transition: 0.3s;
     color: #474b4e;
-    max-width: 31rem;
+    /* max-width: 31rem; */
     min-width: 31rem;
     min-height: 12rem;
 }
@@ -1142,16 +1142,17 @@ input:-webkit-autofill {
         /* min-height: 100%; */
         width: 100%;
     }
+    .container-register{
+        width: 79vw;
+    }
     .container-register input, .container-register select{
-        width: 75%;
+        width: 72vw;
     }
 
     .container-register textarea{
-        min-width: 70%;
+        min-width: 75vw;
     }
-    .container-register select{
-        margin-left: 3.2rem;
-    }
+
     .container-options h2 {
 
         margin-bottom: -3rem;
