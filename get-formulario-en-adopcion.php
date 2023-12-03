@@ -29,7 +29,7 @@
             <textarea type="text" name="vacunas" required placeholder="Incluye la mayor cantidad de detalles."></textarea>
         </div>
         <div class="form-group">
-            <label for="avatar">Foto de Perfil (opcional):</label>
+            <label for="avatar">Foto de Perfil (Por el momento solo puedes subir 1 imagen):</label>
             <input type="file" id="avatar" name="avatar" accept="image/*">
         </div>
         <button id="btnRegister">Dar en adopción</button>
