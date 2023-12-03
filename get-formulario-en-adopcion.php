@@ -11,26 +11,20 @@
             <input type="text" name="vacunas" required placeholder="Vacunas">
         </div>       
         <div class="form-group">
-        <select class='cBEspecie cursor-pointer'  name="especieMascota" id="especieMascota" required>
-  <?php
-  include('Datos/conexion.php');
-  $ejecutarConsulta = $conexion->query('SELECT * FROM especies');
-
-  $null = null;
-
-  echo "<option value='$null'>Selecciona especie</option>";
-
-  while ($fila1 = mysqli_fetch_assoc($ejecutarConsulta)) {
-      $idEspecie = $fila1['idEspecie'];
-      $especie = $fila1['tipoEspecie'];
-
-      // Imprimir la opción dentro del elemento <select>
-      echo "<option value='$idEspecie'>$especie</option>";
-  }
-  ?>
-</select>
+            <?php include("Negocio/get-combox-especie.php"); ?>
         </div>
-
+        <div class="form-group">
+            <?php include("Negocio/get-combox-salud.php"); ?>
+        </div>
+        <div class="form-group">
+            <?php include("Negocio/get-combox-sexo.php"); ?>
+        </div>
+        <div class="form-group">
+            <?php include("Negocio/get-combox-dimension.php"); ?>
+        </div>
+        <div class="form-group">
+            <?php include("Negocio/get-combox-edad.php"); ?>
+        </div>
         <div class="form-group">
             <textarea type="text" name="vacunas" required placeholder="Incluye la mayor cantidad de detalles."></textarea>
         </div>
