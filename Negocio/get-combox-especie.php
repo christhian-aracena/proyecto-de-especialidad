@@ -8,7 +8,7 @@
   echo "<option value='$null'>Selecciona especie</option>";
 
   while ($fila1 = mysqli_fetch_assoc($ejecutarConsulta)) {
-      $idEspecie = $fila1['idEspecie'];
+      $idEspecie = $fila1['id'];
       $especie = $fila1['tipoEspecie'];
 
       // Imprimir la opción dentro del elemento <select>
