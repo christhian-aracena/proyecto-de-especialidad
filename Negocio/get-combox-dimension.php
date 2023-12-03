@@ -7,9 +7,9 @@
 
   echo "<option value='$null'>Seleccione un tamaño</option>";
 
-  while ($fila1 = mysqli_fetch_assoc($ejecutarConsulta)) {
-      $id = $fila1['id'];
-      $dimension = $fila1['dimension_mascota'];
+  while ($fila5 = mysqli_fetch_assoc($ejecutarConsulta)) {
+      $id = $fila5['id'];
+      $dimension = $fila5['dimension_mascota'];
 
       // Imprimir la opción dentro del elemento <select>
       echo "<option value='$id'>$dimension</option>";
