@@ -1,26 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburguesa = document.getElementById('hamburguesa');
-    const menuDesplegable = document.getElementById('menu-desplegable');
-
-    hamburguesa.addEventListener('click', function () {
-        // Cambia la posición del menú desplegable al hacer clic en la hamburguesa
-        if (menuDesplegable.style.left === '0rem') {
-            menuDesplegable.style.left = '-26rem';
-            hamburguesa.classList.remove('hamburguesa-abierto');
-        } else {
-            menuDesplegable.style.left = '0rem';
-            hamburguesa.classList.add('hamburguesa-abierto');
-        }
-    });
-
-    document.addEventListener('click', function (event) {
-        // Cierra el menú si se hace clic fuera de él
-        if (!menuDesplegable.contains(event.target) && !hamburguesa.contains(event.target)) {
-            menuDesplegable.style.left = '-26rem';
-            hamburguesa.classList.remove('hamburguesa-abierto');
-        }
-    });
-});
 
 
 
@@ -51,24 +28,24 @@ function getPrivacidad() {
   };
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Código que se ejecuta cuando se carga la página
+// document.addEventListener("DOMContentLoaded", function () {
+//     // Código que se ejecuta cuando se carga la página
 
-    // Ejemplo de evento delegado para manejar clics en un contenedor
-    document.body.addEventListener("click", function (event) {
-        const target = event.target;
+//     // Ejemplo de evento delegado para manejar clics en un contenedor
+//     document.body.addEventListener("click", function (event) {
+//         const target = event.target;
 
-        // Verifica si el clic ocurrió en un elemento específico, por ejemplo, un botón en tu formulario
-        if (target.classList.contains("faq-question") || target.classList.contains("arrow")) {
-            const item = target.closest(".faq-item");
-            if (item) {
-                item.classList.toggle("active");
-                const arrow = item.querySelector(".arrow");
-                arrow.textContent = item.classList.contains("active") ? "▲" : "▼";
-            }
-        }
-    });
-});
+//         // Verifica si el clic ocurrió en un elemento específico, por ejemplo, un botón en tu formulario
+//         if (target.classList.contains("faq-question") || target.classList.contains("arrow")) {
+//             const item = target.closest(".faq-item");
+//             if (item) {
+//                 item.classList.toggle("active");
+//                 const arrow = item.querySelector(".arrow");
+//                 arrow.textContent = item.classList.contains("active") ? "▲" : "▼";
+//             }
+//         }
+//     });
+// });
 
 // Función que se llama después de cargar preguntas dinámicamente por AJAX
 function handleDynamicContent() {
