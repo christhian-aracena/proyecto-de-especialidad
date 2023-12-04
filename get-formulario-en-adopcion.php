@@ -1,6 +1,6 @@
 <div class="container-register container-options">
     <h2>En adopción</h2>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="Negocio/publicar-adopcion.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <input type="text" name="nombre" required placeholder="Nombre de mascota">
         </div>
@@ -26,12 +26,12 @@
             <?php include("Negocio/get-combox-edad.php"); ?>
         </div>
         <div class="form-group">
-            <textarea type="text" name="vacunas" required placeholder="Incluye la mayor cantidad de detalles."></textarea>
+            <textarea type="text" name="descripcion" required placeholder="Incluye la mayor cantidad de detalles."></textarea>
         </div>
         <div class="form-group">
             <label for="avatar">Foto de Perfil (Por el momento solo puedes subir 1 imagen):</label>
-            <input type="file" id="avatar" name="avatar" accept="image/*">
+            <input type="file" id="avatar" name="imagen_mascota" accept="image/*" required>
         </div>
-        <button id="btnRegister">Dar en adopción</button>
+        <button type="submit" id="btnRegister">Dar en adopción</button>
     </form>
 </div>

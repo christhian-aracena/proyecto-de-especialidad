@@ -33,6 +33,7 @@ html {
     /* Establece el grosor de la barra de desplazamiento en navegadores compatibles */
     scrollbar-color: transparent transparent;
     /* Establece el color de la barra de desplazamiento en navegadores compatibles */
+    
 }
 
 /* Estiliza la barra de desplazamiento para navegadores compatibles con el estándar */
@@ -405,7 +406,7 @@ input:-webkit-autofill {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
+    flex-wrap: wrap;
     padding-top: 2rem;
     overflow-y: auto;
 }
@@ -865,7 +866,10 @@ input:-webkit-autofill {
     border-radius: 0.5rem;
 
 }
-
+.titulo-publicacion {
+    color: white;
+    background: linear-gradient(to right, #ffffff, #e0e0e0,#959e95, #959e95, #959e95, #959e95, #e0e0e0, #ffffff);
+}
 .cap {
     min-height: 9.6rem;
 }
@@ -887,7 +891,8 @@ input:-webkit-autofill {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+    padding-bottom: 16rem;
+    padding-top: 3rem;
     gap: 1rem;
 }
 .cBEspecie {
@@ -900,6 +905,110 @@ input:-webkit-autofill {
     margin-left: -0.1rem;
 
 }
+
+.fondo{
+    position: relative;
+    background: url('../img/fondo.jpg');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(10rem);
+    overflow: hidden;
+}
+
+.mascota{
+    overflow: hidden;
+}
+
+
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 12rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12rem;
+
+}
+.container img{
+    display: flex;
+    max-width: 15rem;
+    max-height: 15rem;
+    min-width: 15rem;
+    min-height: 15rem;
+    align-self: center;
+    border-radius: 50%;
+    background: #156886;
+    margin: 1rem;
+    margin-top: -9rem;
+}
+.raza{
+    display: flex;
+    align-items: baseline;
+}
+.raza p{
+    padding-left: 1rem;
+}
+.container h2{
+    align-self: center;
+}
+.descripcion{
+    color: #08376b;
+}
+.get img{
+    display: flex;
+    justify-content: center;
+
+}
+
+.container h2 {
+    color: #086b56;
+}
+.container h3{
+    color: #08376b;
+}
+
+.details {
+    margin-top: 20px;
+}
+
+.details p {
+    margin: 10px 0;
+}
+
+#btnBack {
+    display: flex;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background-color: #4CAF50;
+    justify-content: center;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+#btnBack:hover {
+    background-color: #45a049;
+}
+
+.contenedor-info p,
+.contenedor-info h4 {
+    margin: 0.5rem;
+}
+
+.descripcion {
+    flex-wrap: wrap;
+}
+
+
 @media screen and (max-width: 1500px) {
     .container-options {
         margin-bottom: 15rem;
@@ -933,8 +1042,8 @@ input:-webkit-autofill {
         max-height: 99vh;
         display: flex;
         align-items: flex-start;
-        margin: 0rem auto 1rem auto;
-        padding-top: 0rem;
+        margin: 2rem auto 1rem auto;
+        padding-top: 2rem;
     }
 
     .container-register {
@@ -956,8 +1065,8 @@ input:-webkit-autofill {
 
     .policy {
         display: flex;
-        margin-top: 5rem;
-        margin-bottom: 15rem;
+        /* margin-top: 5rem;
+        margin-bottom: 15rem; */
 
     }
 
@@ -1107,7 +1216,13 @@ input:-webkit-autofill {
         margin-top: 4.3rem;
         padding-top: 5rem;
     } */
-
+    .container img{
+        max-width: 9rem;
+        max-width: 9rem;
+        min-width: 9rem;
+        min-width: 9rem;
+        margin-top: -6rem;
+    }
     .principal {
         min-width: 84%;
         max-width: 84%;
@@ -1133,7 +1248,14 @@ input:-webkit-autofill {
     .lost {
         width: 20rem;
     }
+    .container {
+        max-width: 94%;
+        margin-top: 21rem;
 
+    }
+    .container h3{
+        font-size: 1.5rem;
+    }
     .container-options {
         justify-items: center;
 
@@ -1167,7 +1289,7 @@ input:-webkit-autofill {
         display: flex;
         align-items: flex-start;
         margin: -10rem auto 1rem auto;
-        padding-top: 0rem;
+        padding-top: 14rem;
     }
 
     .faq-container{

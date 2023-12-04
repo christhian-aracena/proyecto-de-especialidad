@@ -1,4 +1,4 @@
-<select class='cBEspecie cursor-pointer'  name="especieMascota" id="especieMascota" required>
+<select class='cBEspecie cursor-pointer'  name="sexo" id="especieMascota" required>
   <?php
   include('Datos/conexion.php');
   $ejecutarConsulta = $conexion->query('SELECT * FROM sexo');

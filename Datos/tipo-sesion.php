@@ -106,7 +106,23 @@ if (isset($_SESSION['email'])) {
 
                 $query = "INSERT INTO social_media (email, username, picture) VALUES ('$email', '$name', '$profileImage');";
                 mysqli_query($conexion, $query);
+
+                $_SESSION['socialemail'] = $email;
+
+
+                $resultados = mysqli_query($conexion, "SELECT idSocialMedia FROM social_media WHERE email = '$email'");
+                if ($consulta = mysqli_fetch_array($resultados)) {
+                    $_SESSION['id_gmail'] = $consulta['idSocialMedia'];
+                }
+
+                $_SESSION['name'] = $name;
+
             } else {
+
+                $resultados = mysqli_query($conexion, "SELECT idSocialMedia FROM social_media WHERE email = '$email'");
+                if ($consulta = mysqli_fetch_array($resultados)) {
+                    $_SESSION['id_gmail'] = $consulta['idSocialMedia'];
+                }
                 $_SESSION['socialemail'] = $email;
                 $_SESSION['name'] = $name;
             }

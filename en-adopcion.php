@@ -121,15 +121,15 @@ include("Datos/tipo-sesion.php");
 
         <hr class="hr">
 
-        <div class="principal" id="contenedor-ajax-main">
+        <div class="contenedor-publicaciones principal2 principal " id="contenedor-ajax-main">
+<?php
+            include('Negocio/get-publicacion.php');
+           ?>
 
-           <h1>
-            En adopcion
-           </h1>
+           
 
 
 
-        </div>
 
 
 

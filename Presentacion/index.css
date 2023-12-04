@@ -919,7 +919,7 @@ input:-webkit-autofill {
 
 .policy {
     display: flex;
-    margin-top: 5rem;
+    margin-top: 0rem;
     margin-bottom: 25rem;
 
 }
