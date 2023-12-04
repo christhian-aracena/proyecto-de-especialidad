@@ -1061,6 +1061,8 @@ input:-webkit-autofill {
         /* Posiciona el icono hamburguesa de manera absoluta sobre el menú */
         z-index: 2;
         /* Asegura que el icono esté por encima del contenido del menú */
+        background: #312d3838;
+        border-radius: 50%;
     }
 
     .policy {
@@ -1077,7 +1079,7 @@ input:-webkit-autofill {
         margin: 3px 0;
         transition: transform 0.3s ease-in-out, background-color 0.3s ease;
         /* Agregamos transición para el cambio de color */
-        background: #75428f;
+        background: #0000007a;
         color: #c63671;
     }
 
