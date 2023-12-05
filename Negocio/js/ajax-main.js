@@ -1,3 +1,22 @@
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var publicaciones = document.querySelectorAll(".contenedor-publicacion");
+
+        publicaciones.forEach(function(publicacion) {
+            var spinner = publicacion.querySelector(".loading-spinner");
+
+            // Simula una demora de 2 segundos (ajusta según sea necesario)
+            setTimeout(function() {
+                // Oculta el spinner de carga
+                spinner.style.display = "none";
+            }, 2000); // Ajusta el tiempo de espera según sea necesario
+        });
+    });
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const hamburguesa = document.getElementById('hamburguesa');
     const menuDesplegable = document.getElementById('menu-desplegable');
@@ -21,6 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+
+
 
 
 
