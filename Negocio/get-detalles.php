@@ -31,6 +31,8 @@
                     // Mostrar más detalles según sea necesario
                 } else {
                     echo "<p>No se encontraron detalles para la mascota con ID: $identificador_mascota</p>";
+                    echo "<style>.container { display: none; }</style>";
+
                 }
 
                 // Cerrar la conexión a la base de datos

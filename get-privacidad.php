@@ -1,6 +1,6 @@
 
 
-            <section class="policy flex-col">
+            <section class="policy flex-col ajuste2">
                 <h1>Politicas de Privacidad rescatamigos 2023</h1>
                 <h2>1. Información General:</h2>
                 <p>Esta página informa a los usuarios sobre nuestras políticas con respecto a la recopilación, uso y divulgación de información personal si alguien decide utilizar nuestro Servicio.</p>

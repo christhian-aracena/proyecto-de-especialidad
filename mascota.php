@@ -133,9 +133,9 @@ $identificador_mascota = $_GET['id'];
 
         <hr class="hr">
 
-        <div class="principal get" id="contenedor-ajax-main">
+        <div class="principal get " id="contenedor-ajax-main">
 
-            <div class="container">
+            <div class="container ajuste ajuste2">
 
                 <?php include('Negocio/get-detalles.php') ?>
                 <?php echo '<img src="data:image/jpeg;base64,' . $imagen_mascota . '" alt="imagen de perfil">' ?>
@@ -161,8 +161,13 @@ $identificador_mascota = $_GET['id'];
 
 
                 </div>
-
-                <a href="formulario_publicacion.php" class="centrar-texto" id="btnBack">Adoptar</a>
+                <br>
+                <small style="color: red">*Debes estar atento a las notificaciones para saber si fuiste aprobado, ademas te enviaremos un correo para avisarte el estado de tu solicitud</small>
+                <br>
+                <hr>
+                <br>
+                <h2 class="sombra centrar-texto">Formulario de adopcion</h2>
+                <a href="formulario_publicacion.php" class="centrar-texto" id="btnBack">Enviar solicitud de adopcion.</a>
             </div>
 
         

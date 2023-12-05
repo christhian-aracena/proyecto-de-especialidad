@@ -134,7 +134,7 @@ include("Datos/tipo-sesion.php");
                     <div class="info">
                         <h3>Adoptar</h3>
                         <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
-                        <button id="adopta">Adopta</button>
+                        <a href="en-adopcion.php"><button  id="adopta">Adopta</button></a>
                     </div>
 
                 </div>
@@ -143,7 +143,7 @@ include("Datos/tipo-sesion.php");
                     <div class="info">
                         <h3>En adopcion</h3>
                         <p>Publica una mascota, de este modo la gente podrá enviarte solicitudes de adopcion y podrás aceptar a quién desees.</p>
-                        <button id="adopcion">Da en adopcion</button>
+                        <button id="adopcion">Publicar</button>
                     </div>
                     <div class="circleInAdopt">
 

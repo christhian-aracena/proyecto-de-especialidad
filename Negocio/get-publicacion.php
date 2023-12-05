@@ -33,7 +33,11 @@ while ($publicacion = $resultado->fetch_array(MYSQLI_ASSOC)) {
 
 
 
-    $descripcion_cortada = strlen($descripcion) > 50 ? substr($descripcion, 0, 120) . '...' : $descripcion;
+    $descripcion_recortada = mb_strlen($descripcion, 'UTF-8') > 6 ? mb_substr($descripcion, 0, 70, 'UTF-8') . '...' : $descripcion;
+    $salud_recortada = mb_strlen($salud, 'UTF-8') > 6 ? mb_substr($salud, 0, 11, 'UTF-8') . '...' : $salud;
+    $raza = mb_strlen($raza, 'UTF-8') > 6 ? mb_substr($raza, 0, 11, 'UTF-8') . '...' : $raza;
+    $nombre_mascota = mb_strlen($nombre_mascota, 'UTF-8') > 10 ? mb_substr($nombre_mascota, 0, 15, 'UTF-8') . '...' : $nombre_mascota;
+
     // $colorRecortado = strlen($color) > 19 ? substr($color, 0, 22) . '...' : $color;
 
     // Obtener la imagen en formato base64
@@ -53,20 +57,20 @@ while ($publicacion = $resultado->fetch_array(MYSQLI_ASSOC)) {
    
         <div class="contenedor-info">
             <div class="flex-row">
-                <h4>Nombre:</h4>
-                <p>' . $nombre_mascota . '</p>
+                <h4>Sexo:</h4>
+                <p>' . $sexo_mascota . '</p>
             </div>
             <div class="flex-row">
                 <h4>Raza:</h4>
                 <p>' . $raza . '</p>
             </div>
             <div class="flex-row">
-                <h4>Color:</h4>
-                <p>' . $salud . '</p>
+                <h4>Salud:</h4>
+                <p>' . $salud_recortada . '</p>
             </div>
             <div class="flex-col">
                 <h4>Descripcion:</h4>
-                <p class="cap">' . $descripcion_cortada . '</p>
+                <p class="cap">' . $descripcion_recortada . '</p>
             </div>
         </div>
         <a href="mascota?id=' . $id . '" class="centrar-texto btn_postular" id="btnBack">Postular</a>
