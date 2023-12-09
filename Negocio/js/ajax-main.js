@@ -1,40 +1,3 @@
-
-
-function actualizarNotificaciones() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-          var elemento = document.getElementById("bellnoti");
-          var numeroNotificaciones = parseInt(this.responseText);
-
-          // Muestra u oculta el elemento según el valor recibido
-          elemento.style.display = numeroNotificaciones === 0 ? 'none' : 'block';
-
-          // Aplica estilos al contenido del elemento
-          elemento.style.fontSize = '1.5rem';
-          elemento.style.textAlign = 'center';
-          elemento.style.paddingTop = '0.4rem';
-          elemento.style.fontWeight = '600';
-          elemento.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
-
-          // Actualiza el contenido del elemento
-          elemento.textContent = numeroNotificaciones;
-      }
-  };
-  xhttp.open("GET", "get-numero-notificaciones.php", true);
-  xhttp.send();
-}
-
-// Llamada a la función una vez para inicializar
-actualizarNotificaciones();
-
-// Llamada a la función cada 500 milisegundos (medio segundo)
-setInterval(actualizarNotificaciones, 500);
-
-
-
-
-
 $(document).ready(function () {
   $("form").on("submit", function (e) {
 
@@ -227,6 +190,38 @@ function getFormMascotas() {
   };
 }
 
+
+
+function actualizarNotificaciones() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+          var elemento = document.getElementById("bellnoti");
+          var numeroNotificaciones = parseInt(this.responseText);
+
+          // Muestra u oculta el elemento según el valor recibido
+          elemento.style.display = numeroNotificaciones === 0 ? 'none' : 'block';
+
+          // Aplica estilos al contenido del elemento
+          elemento.style.fontSize = '1.5rem';
+          elemento.style.textAlign = 'center';
+          elemento.style.paddingTop = '0.4rem';
+          elemento.style.fontWeight = '600';
+          elemento.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+
+          // Actualiza el contenido del elemento
+          elemento.textContent = numeroNotificaciones;
+      }
+  };
+  xhttp.open("GET", "get-numero-notificaciones.php", true);
+  xhttp.send();
+}
+
+// Llamada a la función una vez para inicializar
+actualizarNotificaciones();
+
+// Llamada a la función cada 500 milisegundos (medio segundo)
+setInterval(actualizarNotificaciones, 500);
 
 
 
