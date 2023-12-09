@@ -74,23 +74,21 @@ include("Datos/tipo-sesion.php");
         </div>
 
         <div class="flex-row noty">
-        <i class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
-    <div id="bellnoti" class="bellnoti" style="font-size: 1.5rem;">
-        <?php include('get-numero-notificaciones.php'); ?>
-    </div>
-</i>
- <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
+            <i class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
+                <div id="bellnoti" class="bellnoti" style="font-size: 1.4rem; padding-top: 0.5rem; font-weight: 100;">
+                    <?php include('get-numero-notificaciones.php'); ?>
+                </div>
+            </i>
+            <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
             <?php if (isset($_SESSION['email'])) {
                 if (!empty($filaAvatar)) {
                     // Si hay una imagen de perfil, mostrarla
                     echo '<div class="avatar cursor-pointer"><img src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
-
                 } else {
                     // Si no hay imagen de perfil, mostrar las iniciales del nombre
                     include("Negocio/get-nombre-app.php");
 
                     echo '<div class="inicial cursor-pointer">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
-
                 }
             } else {
 
@@ -106,18 +104,30 @@ include("Datos/tipo-sesion.php");
         <div class="barra"></div>
     </div>
     <main class="contenedor flex-row main">
-            
+
 
         <div>
             <div class="menu flex-col">
 
                 <div class="flex-col as">
-                    <a href="main"><div class="publicar flex-nowrap a"><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div></a>
-                    <a href="mis-publicaciones"><div class="publicar flex-nowrap "><img src="img/nariz-de-perro.png" alt="Img/" srcset="">Mis publicaciones</div></a>
-                    <a href="en-adopcion"><div class="publicar flex-nowrap "><img src="img/en adopcion.png" alt="" srcset="">En Adopción</div></a>
-                    <a href="perdidos"><div class="publicar flex-nowrap "><img src="img/perdidos.png" alt="" srcset="">Perdidos</div></a>
-                    <a href="encontrados"><div class="publicar flex-nowrap "><img src="img/encontrados.png" alt="" srcset="">Encontrados</div></a>
-                    <a href="donar"><div class="publicar"><img src="img/donacion.png" alt="" srcset="">Donar</div></a>
+                    <a href="main">
+                        <div class="publicar flex-nowrap a"><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
+                    </a>
+                    <a href="mis-publicaciones">
+                        <div class="publicar flex-nowrap "><img src="img/nariz-de-perro.png" alt="Img/" srcset="">Mis publicaciones</div>
+                    </a>
+                    <a href="en-adopcion">
+                        <div class="publicar flex-nowrap "><img src="img/en adopcion.png" alt="" srcset="">En Adopción</div>
+                    </a>
+                    <a href="perdidos">
+                        <div class="publicar flex-nowrap "><img src="img/perdidos.png" alt="" srcset="">Perdidos</div>
+                    </a>
+                    <a href="encontrados">
+                        <div class="publicar flex-nowrap "><img src="img/encontrados.png" alt="" srcset="">Encontrados</div>
+                    </a>
+                    <a href="donar">
+                        <div class="publicar"><img src="img/donacion.png" alt="" srcset="">Donar</div>
+                    </a>
                 </div>
 
 
@@ -141,8 +151,8 @@ include("Datos/tipo-sesion.php");
 
                     <div class="info">
                         <h3>Adoptar</h3>
-                        <p>Escoge una mascota, rellena  el formulario de solicitud y se pondrán en contacto contigo para informate si calificas.</p>
-                        <a href="en-adopcion.php"><button  id="adopta">Adopta</button></a>
+                        <p>Escoge una mascota, rellena el formulario de solicitud y se pondrán en contacto contigo para informate si calificas.</p>
+                        <a href="en-adopcion.php"><button id="adopta">Adopta</button></a>
                     </div>
 
                 </div>
@@ -182,10 +192,10 @@ include("Datos/tipo-sesion.php");
                     </div>
 
                 </div>
-             </div>
+            </div>
 
 
-            
+
         </div>
 
 
@@ -195,12 +205,12 @@ include("Datos/tipo-sesion.php");
 
 
 
-        <div class="footer flex-wrap">
-            <p id="privacidad" class="cursor-pointer hov"><a class="cursor-pointer hov">Privacidad</a> </p>
-            <p id="preguntas" class="cursor-pointer hov"><a class="cursor-pointer hov">Preguntas</a> </p>
-            <p id="nosotros" class="cursor-pointer hov"><a class="cursor-pointer hov">Nosotros</a> </p>
-            <p id="terminos" class="cursor-pointer hov"><a class="cursor-pointer hov">Términos</a> </p>
-        </div>
+    <div class="footer flex-wrap">
+        <p id="privacidad" class="cursor-pointer hov"><a class="cursor-pointer hov">Privacidad</a> </p>
+        <p id="preguntas" class="cursor-pointer hov"><a class="cursor-pointer hov">Preguntas</a> </p>
+        <p id="nosotros" class="cursor-pointer hov"><a class="cursor-pointer hov">Nosotros</a> </p>
+        <p id="terminos" class="cursor-pointer hov"><a class="cursor-pointer hov">Términos</a> </p>
+    </div>
 
 
 
@@ -210,12 +220,24 @@ include("Datos/tipo-sesion.php");
     </div>
     <!-- Menú desplegable -->
     <div class="menu-desplegable as" id="menu-desplegable">
-        <a href="main"><div class="publicar flex-nowrap b"><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div></a>
-        <a href="mis-publicaciones"><div class="publicar flex-nowrap"><img src="img/nariz-de-perro.png" alt="Img/" srcset="">Mis publicaciones</div></a>
-        <a href="en-adopcion"><div class="publicar flex-nowrap"><img src="img/en adopcion.png" alt="" srcset="">En Adopción</div></a>
-        <a href="perdidos"><div class="publicar flex-nowrap"><img src="img/perdidos.png" alt="" srcset="">Perdidos</div></a>
-        <a href="encontrados"><div class="publicar flex-nowrap"><img src="img/encontrados.png" alt="" srcset="">Encontrados</div></a>
-        <a href="donar"><div class="publicar"><img src="img/donacion.png" alt="" srcset="">Donar</div></a>
+        <a href="main">
+            <div class="publicar flex-nowrap b"><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
+        </a>
+        <a href="mis-publicaciones">
+            <div class="publicar flex-nowrap"><img src="img/nariz-de-perro.png" alt="Img/" srcset="">Mis publicaciones</div>
+        </a>
+        <a href="en-adopcion">
+            <div class="publicar flex-nowrap"><img src="img/en adopcion.png" alt="" srcset="">En Adopción</div>
+        </a>
+        <a href="perdidos">
+            <div class="publicar flex-nowrap"><img src="img/perdidos.png" alt="" srcset="">Perdidos</div>
+        </a>
+        <a href="encontrados">
+            <div class="publicar flex-nowrap"><img src="img/encontrados.png" alt="" srcset="">Encontrados</div>
+        </a>
+        <a href="donar">
+            <div class="publicar"><img src="img/donacion.png" alt="" srcset="">Donar</div>
+        </a>
     </div>
     <script src="Negocio/js/ajax-main.js"></script>
     <script src="Negocio/js/faq.js"></script>
