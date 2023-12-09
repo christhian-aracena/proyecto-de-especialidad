@@ -74,8 +74,9 @@ include("Datos/tipo-sesion.php");
         </div>
 
         <div class="flex-row noty">
-        <i class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()"><div id="bellnoti" class="bellnoti"><?php include('get-numero-notificaciones.php'); ?></div></i>
-   <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
+        <div id="bellnoti" class="bellnoti" style="font-size: 1.5rem;">
+    <?php include('get-numero-notificaciones.php'); ?>
+</div> <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
             <?php if (isset($_SESSION['email'])) {
                 if (!empty($filaAvatar)) {
                     // Si hay una imagen de perfil, mostrarla

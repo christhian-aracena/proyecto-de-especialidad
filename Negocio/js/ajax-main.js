@@ -8,13 +8,6 @@ function actualizarNotificaciones() {
           // Muestra u oculta el elemento según el valor recibido
           elemento.style.display = numeroNotificaciones === 0 ? 'none' : 'block';
 
-          // Aplica estilos al contenido del elemento
-          elemento.style.fontSize = '1.5rem';
-          elemento.style.textAlign = 'center';
-          elemento.style.paddingTop = '0.4rem';
-          elemento.style.fontWeight = '600';
-          elemento.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
-
           // Actualiza el contenido del elemento
           elemento.textContent = numeroNotificaciones;
       }
@@ -23,11 +16,10 @@ function actualizarNotificaciones() {
   xhttp.send();
 }
 
-// Llamada a la función una vez para inicializar
-actualizarNotificaciones();
-
 // Llamada a la función cada 500 milisegundos (medio segundo)
 setInterval(actualizarNotificaciones, 500);
+
+
 $(document).ready(function () {
   $("form").on("submit", function (e) {
 
