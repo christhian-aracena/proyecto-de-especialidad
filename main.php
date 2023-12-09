@@ -8,6 +8,11 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 include("Datos/tipo-sesion.php");
+// include('get-numero-notificaciones.php');
+// if(!isset($_SESSION['socialemail'])){
+//     header("Location: login.php");
+// }
+
 ?>
 
 
@@ -69,8 +74,9 @@ include("Datos/tipo-sesion.php");
         </div>
 
         <div class="flex-row noty">
-            <i class="fa-solid fa-comments cursor-pointer"></i>
-            <i class="fa-solid fa-bell cursor-pointer"></i>
+            <!-- <i class="fa-solid fa-comments cursor-pointer bell" onclick="actualizarNotificaciones()"><div id="commentsnoti" class="commentsnoti"><p><?php include('get-numero-notificaciones.php'); ?></p></div></i> -->
+            <i class="fa-solid fa-bell cursor-pointer bell" onclick="actualizarNotificaciones()"><div id="bellnoti" class="bellnoti"><?php include('get-numero-notificaciones.php'); ?></div></i>
+            
             <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
             <?php if (isset($_SESSION['email'])) {
                 if (!empty($filaAvatar)) {
@@ -133,7 +139,7 @@ include("Datos/tipo-sesion.php");
 
                     <div class="info">
                         <h3>Adoptar</h3>
-                        <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
+                        <p>Escoge una mascota, rellena  el formulario de solicitud y se pondrán en contacto contigo para informate si calificas.</p>
                         <a href="en-adopcion.php"><button  id="adopta">Adopta</button></a>
                     </div>
 

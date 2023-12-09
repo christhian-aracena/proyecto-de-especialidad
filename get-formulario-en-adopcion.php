@@ -1,4 +1,4 @@
-<div class="container-register container-options">
+<div class="container-register ajuste-adopcion container-options">
     <h2>En adopción</h2>
     <form action="Negocio/publicar-adopcion.php" method="post" enctype="multipart/form-data">
         <div class="form-group">

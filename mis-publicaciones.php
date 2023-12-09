@@ -69,8 +69,9 @@ include("Datos/tipo-sesion.php");
         </div>
 
         <div class="flex-row noty">
-            <i class="fa-solid fa-comments cursor-pointer"></i>
-            <i class="fa-solid fa-bell cursor-pointer"></i>
+            <!-- <i class="fa-solid fa-comments cursor-pointer"></i> -->
+            <i class="fa-solid fa-bell cursor-pointer bell" onclick="actualizarNotificaciones()"><div id="bellnoti" class="bellnoti"><?php include('get-numero-notificaciones.php'); ?></div></i>
+            
             <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
             <?php if (isset($_SESSION['email'])) {
                 if (!empty($filaAvatar)) {

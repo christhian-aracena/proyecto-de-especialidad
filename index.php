@@ -121,7 +121,7 @@
 
         <div class="flex-row flex-wrap contenedor stadistics flex-centrar-item">
             <div class="boxAdopt">
-                <img src="img/adoptados.png" alt="" srcset="">
+                <img src="img/donacion.png" alt="" srcset="">
                 <div class="flex-row">
                     <h2 class="count1 sombra">0</h2>
                     <h2>+</h2>

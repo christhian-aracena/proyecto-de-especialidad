@@ -10,6 +10,7 @@ if ($consulta = mysqli_fetch_array($resultados)) {
 
 
     $nombre  = $consulta['user'];
+    $_SESSION['nombre_app'] = $nombre;
 
 
 

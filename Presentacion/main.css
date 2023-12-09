@@ -120,12 +120,13 @@ input:-webkit-autofill {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to left, #c63671, #9d3a7b, #864089, #75428f, #684595);
+    background: linear-gradient(to left, #9d3a7b, #9d3a7b, #864089, #75428f, #684595);
     user-select: none;
     flex-wrap: wrap;
     position: sticky;
     top: 0;
     max-height: 13.5rem;
+    z-index: 20;
 }
 
 
@@ -169,9 +170,9 @@ input:-webkit-autofill {
 }
 
 
-.logomain {
-    margin: 1rem;
-}
+/* .logomain {
+    display: flex;
+} */
 
 .noty {
     margin: 1rem;
@@ -183,7 +184,8 @@ input:-webkit-autofill {
 
 .noty i {
     margin: 1rem;
-    font-size: 2rem;
+    font-size: 2.3rem;
+    margin-right: 2rem;
 }
 
 .counts,
@@ -210,6 +212,7 @@ input:-webkit-autofill {
 
 
 .logo {
+    display: none;
     max-width: 16.1rem;
     max-height: 4.8rem;
 }
@@ -220,6 +223,7 @@ input:-webkit-autofill {
     font-family: 'Freehand', cursive;
     font-size: 3rem;
     color: whitesmoke;
+    margin-left: 5rem;
 }
 
 
@@ -238,7 +242,9 @@ input:-webkit-autofill {
     text-align: center;
 }
 
-
+.margen-b{
+    padding-bottom: 2rem;
+}
 .flex-row {
     display: flex;
 }
@@ -363,13 +369,18 @@ input:-webkit-autofill {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    position: absolute;
+    position: sticky;
     width: 100%;
-
+    z-index: 120;
     bottom: 0;
     background: #333;
     margin-bottom: 0rem;
 
+}
+
+.flex-form-adopt{
+    display: flex;
+    justify-content: center;
 }
 
 .hr {
@@ -626,6 +637,7 @@ input:-webkit-autofill {
     opacity: 0.9;
     margin: 3rem 1rem;
     margin-bottom: 13rem;
+    z-index: 2;
 }
 
 .container-register input, .container-register select {
@@ -671,6 +683,7 @@ input:-webkit-autofill {
     width: 100%;
     padding: 1.2rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     color: #fff;
     border: none;
     border-radius: 0.4rem;
@@ -759,8 +772,81 @@ input:-webkit-autofill {
     margin-bottom: 25rem;
 
 }
+.bellnoti{
+    background:#ff1818;
+    min-width: 2.8rem;
+    min-height: 2.8rem;
+    max-width: 2.8rem;
+    max-height: 2.8rem;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.1rem;
+    margin-right: -1rem;
+    margin-top: -0.3rem;
+    border: 0.20rem solid #9d3a7b;
+}
+
+.commentsnoti{
+    background:#ff1818;
+    min-width: 2.8rem;
+    min-height: 2.8rem;
+    max-width: 2.8rem;
+    max-height: 2.8rem;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.1rem;
+    margin-right: -1rem;
+    margin-top: -0.3rem;
+    border: 0.20rem solid #9d3a7b;
+}
+.commentsnoti p{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0.4rem;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bell{
+    position: relative;
+    text-align: center;
+    padding-top: 0.2rem ;
+}
+.bellnoti p{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0.4rem;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fa-bell, .fa-comments{
+    display: flex;
+
+    font-size: 2rem;
+    /* background: #6e99da; */
+    border-radius: 50%;
+    min-width: 3.8rem;
+    min-height: 3.8rem;
+    padding-top: 0.5rem;
+    transition: background 0.3s ease;
+
+}
+
+.fa-bell:hover, .fa-comments:hover{
+    background: rgba(59, 120, 212, 0.5);
 
 
+}
+
+
+.fa-bell:hover .bellnoti, .fa-comments:hover .commentsnoti{
+
+    background:#d10e0e;
+
+}
 .policy section {
     /* max-width: 80rem; */
     /* margin: 2rem auto; */
@@ -1050,7 +1136,9 @@ input:-webkit-autofill {
     margin: 10px auto;
     display: none; /* Ocultar inicialmente */
 }
-
+.terminos{
+    margin-bottom: 2rem;
+}
 @media screen and (max-width: 1500px) {
     .container-options {
         margin-bottom: 15rem;
@@ -1101,7 +1189,7 @@ input:-webkit-autofill {
         padding: 1rem;
         position: fixed;
         /* Posiciona el icono hamburguesa de manera absoluta sobre el menú */
-        z-index: 2;
+        z-index: 350;
         /* Asegura que el icono esté por encima del contenido del menú */
         background: #312d3838;
         border-radius: 50%;
@@ -1140,6 +1228,7 @@ input:-webkit-autofill {
         transition: left 0.3s ease-in-out;
         margin-top: 7.5rem;
         padding-top: 5rem;
+        z-index: 300;
     }
 
     .menu-desplegable a {
@@ -1216,6 +1305,7 @@ input:-webkit-autofill {
         justify-content: center;
         max-height: 14.5rem;
         min-height: 14.5rem;
+
         flex-direction: column;
     }
 
@@ -1241,6 +1331,9 @@ input:-webkit-autofill {
         margin-top: 5rem;
         margin-bottom: 15rem;
 
+    }
+    .title{
+        margin-left: 0rem;
     }
 }
 
@@ -1365,7 +1458,7 @@ input:-webkit-autofill {
     .contenedor-publicacion{
         max-width: 33rem;
     }
-    
+
 }
 
 @media screen and (max-width: 850px) {

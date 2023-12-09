@@ -84,6 +84,7 @@ if (isset($_SESSION['email'])) {
         $profileImage = $google_account_info->picture;
         // $_SESSION['socialemail'] = $email;
         $nombre = explode(" ", $name);
+        $_SESSION['nombre_gmail']= $name;
         $nombreCorto = implode(" ", array_slice($nombre, 0, 1));
 
 

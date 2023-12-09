@@ -47,7 +47,7 @@ while ($publicacion = $resultado->fetch_array(MYSQLI_ASSOC)) {
     echo '<!-- ESTA ES LA PUBLICACION -->
 
     <div class="contenedor-publicacion sombra ">
-    <div class="loading-spinner"></div>
+
         <div class="titulo-publicacion">
             <h3 class="centrar-texto sombra">'.$nombre_mascota.'</h3>
         </div>

@@ -1,25 +1,74 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var contenedores = document.querySelectorAll('.contenedor-publicacion');
 
-  contenedores.forEach(function (contenedor) {
-      var spinner = contenedor.querySelector('.loading-spinner');
 
-      // Oculta el contenido de la publicación al principio
-      contenedor.style.visibility = 'hidden';
+function actualizarNotificaciones() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+          var elemento = document.getElementById("bellnoti");
+          var numeroNotificaciones = parseInt(this.responseText);
 
-      // Muestra el spinner antes de hacer la petición AJAX (o carga de datos)
-      spinner.style.display = 'block';
+          // Muestra u oculta el elemento según el valor recibido
+          elemento.style.display = numeroNotificaciones === 0 ? 'none' : 'block';
 
-      // Simula la carga de datos (reemplaza esto con tu lógica de carga de datos)
-      setTimeout(function () {
-          // Oculta el spinner cuando los datos están listos
-          spinner.style.display = 'none';
+          // Aplica estilos al contenido del elemento
+          elemento.style.fontSize = '1.5rem';
+          elemento.style.textAlign = 'center';
+          elemento.style.paddingTop = '0.4rem';
+          elemento.style.fontWeight = '600';
+          elemento.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
 
-          // Muestra el contenido de la publicación
-          contenedor.style.visibility = 'visible';
-      }, 10); // Ajusta el tiempo según sea necesario
+          // Actualiza el contenido del elemento
+          elemento.textContent = numeroNotificaciones;
+      }
+  };
+  xhttp.open("GET", "get-numero-notificaciones.php", true);
+  xhttp.send();
+}
+
+// Llamada a la función una vez para inicializar
+actualizarNotificaciones();
+
+// Llamada a la función cada 500 milisegundos (medio segundo)
+setInterval(actualizarNotificaciones, 500);
+
+
+
+
+
+$(document).ready(function () {
+  $("form").on("submit", function (e) {
+
+    // Obtener los datos del formulario
+    var formData = new FormData($("form")[0]);
+
+    // Enviar el formulario a través de AJAX
+    $.ajax({
+      type: "POST",
+      url: "Negocio/publicar-adopcion.php",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (response) {
+        // Verificar si la respuesta indica éxito
+        if (response.success) {
+          // Si es exitoso, mostrar el modal y comenzar la cuenta regresiva
+          mostrarModal();
+          iniciarCuentaRegresiva();
+        } else {
+          // Manejar el caso en que el envío del formulario no fue exitoso
+          console.error("Error en el envío del formulario");
+        }
+      },
+      error: function () {
+        // Manejar errores de AJAX
+        console.error("Error de conexión");
+      },
+    });
   });
 });
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const hamburguesa = document.getElementById("hamburguesa");
@@ -177,3 +226,11 @@ function getFormMascotas() {
     }
   };
 }
+
+
+
+
+
+
+
+
