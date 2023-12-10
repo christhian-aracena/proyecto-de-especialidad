@@ -112,6 +112,65 @@ input:-webkit-autofill {
     justify-content: center;
 }
 
+.dropdown-content{
+    margin-top: 0rem;
+    color: black;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    width: 30rem;
+    background: #b4b3b3;
+    
+    position: absolute;
+    top: 100%;
+    right:1%;
+    
+    display: none;
+    background-color: #fff;
+    border: 0.1rem solid #ccccccd2;
+    padding: 1rem;
+    z-index: 9999;
+
+    /* Añade la propiedad para hacer el contenido scrollable */
+    overflow-y: auto; /* O puedes usar "scroll" si siempre quieres que aparezca el scrollbar */
+    max-height: 50rem; /* Ajusta la altura máxima según tus necesidades */
+}
+
+.contenedor-data-noti{
+    margin-left: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    height: 13rem;
+    
+}
+
+.contenedor-data-noti p{
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.contenedor-data-noti:hover p{
+    
+    color: #747574;
+    
+}
+
+.aa{
+    margin-top: 0rem;
+    color: black;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    width: 5rem;
+
+
+
+    position: absolute;
+    top: 100%;
+
+    display: none;
+    background-color: #fff;
+    border: 0.1rem solid #fff;
+    padding: 1rem;
+    z-index: 9999;
+    padding-right: 22rem;
+}
 
 
 
@@ -840,6 +899,29 @@ input:-webkit-autofill {
 
 
 }
+
+
+
+
+
+
+
+
+
+#dropdown {
+    display: none;
+    position: absolute;
+    /* Agrega otros estilos según tus necesidades */
+}
+
+
+
+
+
+
+
+
+
 
 
 .fa-bell:hover .bellnoti, .fa-comments:hover .commentsnoti{

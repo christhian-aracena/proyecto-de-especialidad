@@ -1,5 +1,64 @@
 <?php
+include('Datos/conexion.php');
+    $identificador_notificacion = $_GET['id_notificacion'];
+    echo $identificador_notificacion;
 
+
+    $result = $conexion->query("SELECT 
+    n.id_notificacion,
+    n.descripcion_notificacion,
+    n.user_id,
+    n.gmail_id,
+    n.numer_notificaciones,
+    n.solicitud_id,
+    s.id_solicitud,
+    s.solicitante_user_id,
+    s.solicitante_gmail_id,
+    s.destinatario_user_id,
+    s.destinatario_gmail_id,
+    raz.razon AS razon,
+    vet.disposicion AS veterinario_disposicion,
+    viv.vivienda AS vivienda,
+    sol.tiempo AS solo_tiempo,
+    s.carta,
+    s.otros_animales,
+    u_sender.id AS sender_id,
+    u_sender.user AS sender_user,
+    u_sender.last_name AS sender_last_name,
+    u_sender.email AS sender_email,
+    u_sender.pass_user AS sender_pass_user,
+    u_sender.avatar AS sender_avatar,
+    u_receiver.id AS receiver_id,
+    u_receiver.user AS receiver_user,
+    u_receiver.last_name AS receiver_last_name,
+    u_receiver.email AS receiver_email,
+    u_receiver.pass_user AS receiver_pass_user,
+    u_receiver.avatar AS receiver_avatar
+FROM notificaciones n
+INNER JOIN solicitud s ON n.solicitud_id = s.id_solicitud
+LEFT JOIN users u_sender ON s.solicitante_user_id = u_sender.id
+LEFT JOIN users u_receiver ON s.destinatario_user_id = u_receiver.id
+LEFT JOIN razones raz ON s.razones_id = raz.idRazones
+LEFT JOIN veterinario vet ON s.veterinario_id = vet.id
+LEFT JOIN vivienda viv ON s.vivienda_id = viv.id_vivienda
+LEFT JOIN solo sol ON s.solo_id = sol.id_solo 
+WHERE n.id_notificacion = $identificador_notificacion");
+
+
+
+$publicacion = $result->fetch_array(MYSQLI_ASSOC);
+$sender = $publicacion['sender_id'];
+$razones = $publicacion['razon'];
+$veterinario = $publicacion['veterinario_disposicion'];
+$vivienda = $publicacion['vivienda'];
+echo $razones;
+echo '<br>';
+echo $vivienda;
+echo '<br>';
+echo $veterinario;
+echo '<br>';
+echo 'SOLICITUD_ID '.$identificador_notificacion;
+$result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`= 0 WHERE id_notificacion = $identificador_notificacion");
 // echo uniqid();
 require_once 'vendor/autoload.php';
 require_once 'config.php';
@@ -121,7 +180,7 @@ if (isset($_SESSION['email'])) {
 
                 <div class="flex-col as">
                     <a href="main">
-                        <div class="publicar flex-nowrap a"><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
+                        <div class="publicar flex-nowrap "><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
                     </a>
                     <a href="mis-publicaciones">
                         <div class="publicar flex-nowrap "><img src="img/nariz-de-perro.png" alt="Img/" srcset="">Mis publicaciones</div>
@@ -152,57 +211,9 @@ if (isset($_SESSION['email'])) {
         <div class="principal " id="contenedor-ajax-main">
 
 
-            <div class="container-options flex-wrap ">
+           <?php
 
-                <div class="adopt flex-row">
-                    <div class="circleAdopt">
-
-                    </div>
-
-                    <div class="info">
-                        <h3>Adoptar</h3>
-                        <p>Escoge una mascota, rellena el formulario de solicitud y se pondrán en contacto contigo para informate si calificas.</p>
-                        <a href="en-adopcion.php"><button id="adopta">Adopta</button></a>
-                    </div>
-
-                </div>
-
-                <div class="inAdopt ">
-                    <div class="info">
-                        <h3>En adopcion</h3>
-                        <p>Publica una mascota, de este modo la gente podrá enviarte solicitudes de adopcion y podrás aceptar a quién desees.</p>
-                        <button id="adopcion">Publicar</button>
-                    </div>
-                    <div class="circleInAdopt">
-
-                    </div>
-
-                </div>
-
-                <div class="foundIt  flex-row">
-                    <div class="circleFoundIt">
-
-                    </div>
-                    <div class="info">
-                        <h3>Encontrados</h3>
-                        <p>Si has encontrado una mascota con collar, identificación o consideras que está perdido, toma fotos y publica.</p>
-                        <button>Publicar</button>
-                    </div>
-
-                </div>
-
-                <div class="lost">
-                    <div class="info">
-                        <h3>Perdidos</h3>
-                        <p>Si has extraviado a tu mascota, detalla información y realiza una publicación que ayude en su busqueda.</p>
-                        <button>Publicar</button>
-                    </div>
-                    <div class="circleLost">
-
-                    </div>
-
-                </div>
-            </div>
+           ?>
 
 
 
@@ -231,7 +242,7 @@ if (isset($_SESSION['email'])) {
     <!-- Menú desplegable -->
     <div class="menu-desplegable as" id="menu-desplegable">
         <a href="main">
-            <div class="publicar flex-nowrap b"><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
+            <div class="publicar flex-nowrap "><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
         </a>
         <a href="mis-publicaciones">
             <div class="publicar flex-nowrap"><img src="img/nariz-de-perro.png" alt="Img/" srcset="">Mis publicaciones</div>

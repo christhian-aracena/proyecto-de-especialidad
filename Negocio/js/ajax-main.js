@@ -1,3 +1,4 @@
+
 function actualizarNotificaciones() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -8,6 +9,11 @@ function actualizarNotificaciones() {
           // Muestra u oculta el elemento según el valor recibido
           elemento.style.display = numeroNotificaciones === 0 ? 'none' : 'block';
 
+          // Aplica estilos al contenido del elemento
+          elemento.style.fontSize = '1.4rem';
+          elemento.style.paddingTop = '0.5rem';
+          elemento.style.fontWeight = '100';
+
           // Actualiza el contenido del elemento
           elemento.textContent = numeroNotificaciones;
       }
@@ -16,8 +22,51 @@ function actualizarNotificaciones() {
   xhttp.send();
 }
 
+// Llamada a la función una vez para inicializar
+actualizarNotificaciones();
+
 // Llamada a la función cada 500 milisegundos (medio segundo)
 setInterval(actualizarNotificaciones, 500);
+
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdown");
+  dropdown.style.display = (dropdown.style.display === "none" || dropdown.style.display === "") ? "block" : "none";
+}
+
+// Cierra el dropdown si se hace clic fuera de él
+document.addEventListener("click", function (event) {
+  var dropdown = document.getElementById("dropdown");
+  var bellnoti = document.getElementById("bell");
+
+  if (!event.target.matches('.bell')) {
+      dropdown.style.display = 'none';
+  }
+});
+
+
+
+function toggleDropdown2() {
+  var dropdown2 = document.getElementById("dropdown2");
+  dropdown2.style.display = (dropdown2.style.display === "none" || dropdown2.style.display === "") ? "block" : "none";
+}
+
+
+
+// Cierra el segundo dropdown si se hace clic fuera de él
+document.addEventListener("click", function (event) {
+  var dropdown2 = document.getElementById("dropdown2");
+  var avatar = document.getElementById("avatar");
+
+  // Verifica si el clic no fue en el avatar o en el segundo dropdown
+  if (!event.target.matches('#avatar') && !event.target.closest('#dropdown2')) {
+      dropdown2.style.display = 'none';
+  }
+});
+
+
+
+
+
 
 
 $(document).ready(function () {

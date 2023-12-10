@@ -71,11 +71,21 @@ echo $razones;
 echo '<br>';
 echo $nombreCorto;
 echo '<br>';
-// echo $suma_final;
 
-$ejecutarConsulta = $conexion->query("INSERT INTO `solicitud`(`solicitante_user_id`, `solicitante_gmail_id`, `destinatario_user_id`, `destinatario_gmail_id`, `razones_id`, `veterinario_id`, `vivienda_id`, `solo_id`, `carta`, `otros_animales`) VALUES ('$id_solicitante','$id_solicitante_gmail','$usuario_id','$gmail_id','$razones','$veterinario','$vivienda','$solo','$carta','$otros_animales')");
 
-$ejecutarConsulta2 = $conexion->query("INSERT INTO `notificaciones`(`descripcion_notificacion`, `user_id`, `gmail_id`, `numer_notificaciones`) VALUES ('".$nombreCorto." Te ha enviado una solicitud de adopción','$usuario_id','$gmail_id', 1)");
+
+$ejecutarConsulta = $conexion->query("INSERT INTO `solicitud`( `solicitante_user_id`, `solicitante_gmail_id`, `destinatario_user_id`, `destinatario_gmail_id`, `razones_id`, `veterinario_id`, `vivienda_id`, `solo_id`, `carta`, `otros_animales`) VALUES ('$id_solicitante','$id_solicitante_gmail','$usuario_id','$gmail_id','$razones','$veterinario','$vivienda','$solo','$carta','$otros_animales')");
+
+
+
+// Obtener el id generado
+$generar_id = $conexion->insert_id;
+
+
+
+
+$ejecutarConsulta2 = $conexion->query("INSERT INTO `notificaciones`(`descripcion_notificacion`, `user_id`, `gmail_id`, `numer_notificaciones` , `solicitud_id`) VALUES ('".$nombreCorto." te ha enviado una solicitud de adopción','$usuario_id','$gmail_id', 1, '$generar_id')");
+
 
 
 
