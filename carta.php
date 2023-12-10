@@ -1,7 +1,7 @@
 <?php
 include('Datos/conexion.php');
     $identificador_notificacion = $_GET['id_notificacion'];
-    echo $identificador_notificacion;
+    // echo $identificador_notificacion;
 
 
     $result = $conexion->query("SELECT 
@@ -46,19 +46,7 @@ WHERE n.id_notificacion = $identificador_notificacion");
 
 
 
-$publicacion = $result->fetch_array(MYSQLI_ASSOC);
-$sender = $publicacion['sender_id'];
-$razones = $publicacion['razon'];
-$veterinario = $publicacion['veterinario_disposicion'];
-$vivienda = $publicacion['vivienda'];
-echo $razones;
-echo '<br>';
-echo $vivienda;
-echo '<br>';
-echo $veterinario;
-echo '<br>';
-echo 'SOLICITUD_ID '.$identificador_notificacion;
-$result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`= 0 WHERE id_notificacion = $identificador_notificacion");
+
 // echo uniqid();
 require_once 'vendor/autoload.php';
 require_once 'config.php';
@@ -72,6 +60,7 @@ include("Datos/tipo-sesion.php");
 //     header("Location: login.php");
 // }
 
+$result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`= 0 WHERE id_notificacion = $identificador_notificacion");
 ?>
 
 
@@ -212,7 +201,7 @@ if (isset($_SESSION['email'])) {
 
 
            <?php
-
+                include('Negocio/get-carta.php');
            ?>
 
 
