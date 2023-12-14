@@ -63,7 +63,12 @@ include("Datos/tipo-sesion.php");
 </head>
 
 <body>
-    
+<div id="spinner" style="display: none;">
+  <!-- Aquí puedes agregar el código o el gif del spinner -->
+  Loading...
+</div>
+
+
     <header class="header-landing">
         <div class="flex-row logomain">
 
