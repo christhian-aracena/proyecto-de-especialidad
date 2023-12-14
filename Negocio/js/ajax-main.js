@@ -43,24 +43,31 @@ setInterval(actualizarNotificaciones, 500);
 
 
 function toggleDropdown() {
-  
   var dropdown = document.getElementById("dropdown");
   dropdown.style.display = (dropdown.style.display === "none" || dropdown.style.display === "") ? "block" : "none";
 
   // Llama a la función para obtener las notificaciones detalladas
   if (dropdown.style.display === "block") {
+    // Agrega el spinner antes de realizar la solicitud AJAX
+    var spinner = document.createElement("div");
+    spinner.className = "spinner"; // Estilo del spinner, puedes personalizarlo según tus necesidades
+    dropdown.appendChild(spinner);
+
     // Realiza una solicitud AJAX para cargar los datos
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+        // Elimina el spinner una vez que la solicitud se completa
+        dropdown.removeChild(spinner);
         dropdown.innerHTML = this.responseText;
       }
     };
-    
+
     xhttp.open("GET", "get-datos-notificacion.php", true);
     xhttp.send();
   }
 }
+
 
 
 

@@ -63,6 +63,7 @@ include("Datos/tipo-sesion.php");
 </head>
 
 <body>
+    
     <header class="header-landing">
         <div class="flex-row logomain">
 

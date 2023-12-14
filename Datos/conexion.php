@@ -1,7 +1,7 @@
 <?php
 $nombreServidor = "localhost";
-$nombreUsuario = "christhian"; 
-$contrasenia = "Reincidentes86!";
+$nombreUsuario = "root"; 
+$contrasenia = "";
 $nombreBD = "adopcionesv2";
 
 
