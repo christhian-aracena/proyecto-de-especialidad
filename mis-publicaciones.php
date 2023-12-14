@@ -80,7 +80,7 @@ include("Datos/tipo-sesion.php");
                 </div>
             </i>
             <div id="dropdown" class="dropdown-content">
-                <?php  include('Negocio/get-datos-notificacion.php'); ?>
+                <?php include('Negocio/get-datos-notificacion.php'); ?>
             </div>
             <div id="dropdown2" class="dropdown-content2 aa" style="display: none;">
 
@@ -90,20 +90,20 @@ include("Datos/tipo-sesion.php");
             <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
 
             <?php
-if (isset($_SESSION['email'])) {
-    if (!empty($filaAvatar)) {
-        // Si hay una imagen de perfil, mostrarla
-        echo '<div  class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
-    } else {
-        // Si no hay imagen de perfil, mostrar las iniciales del nombre
-        include("Negocio/get-nombre-app.php");
-        echo '<div id="avatar" class="inicial cursor-pointer" onclick="toggleDropdown2()">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
-    }
-} else {
-    // Si es una sesión de Google, mostrar la imagen directamente
-    echo '<div id="avatar" class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="' . $profileImage . '" alt="" srcset=""></div>';
-}
-?>
+            if (isset($_SESSION['email'])) {
+                if (!empty($filaAvatar)) {
+                    // Si hay una imagen de perfil, mostrarla
+                    echo '<div  class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
+                } else {
+                    // Si no hay imagen de perfil, mostrar las iniciales del nombre
+                    include("Negocio/get-nombre-app.php");
+                    echo '<div id="avatar" class="inicial cursor-pointer" onclick="toggleDropdown2()">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
+                }
+            } else {
+                // Si es una sesión de Google, mostrar la imagen directamente
+                echo '<div id="avatar" class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="' . $profileImage . '" alt="" srcset=""></div>';
+            }
+            ?>
 
 
 
@@ -152,7 +152,7 @@ if (isset($_SESSION['email'])) {
         <div class="principal " id="contenedor-ajax-main">
 
 
-          
+
 
 
 
@@ -181,10 +181,10 @@ if (isset($_SESSION['email'])) {
     <!-- Menú desplegable -->
     <div class="menu-desplegable as" id="menu-desplegable">
         <a href="main">
-            <div class="publicar flex-nowrap b"><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
+            <div class="publicar flex-nowrap "><img src="img/agregar-archivo.png" alt="" srcset=""></i>Publicar</div>
         </a>
         <a href="mis-publicaciones">
-            <div class="publicar flex-nowrap"><img src="img/nariz-de-perro.png" alt="Img/" srcset="">Mis publicaciones</div>
+            <div class="publicar flex-nowrap b"><img src="img/nariz-de-perro.png" alt="Img/" srcset="">Mis publicaciones</div>
         </a>
         <a href="en-adopcion">
             <div class="publicar flex-nowrap"><img src="img/en adopcion.png" alt="" srcset="">En Adopción</div>
