@@ -1,3 +1,15 @@
+// Cierra el segundo dropdown si se hace clic fuera de él
+document.addEventListener("click", function (event) {
+  var dropdown = document.getElementById("dropdown");
+
+
+  if (!(event.target.matches('#bell') || event.target.closest('#dropdown')) && !(event.target.matches('#bellnoti') || event.target.closest('#dropdown'))) {
+    dropdown.style.display = 'none';
+  }
+  
+  
+});
+
 
 function actualizarNotificaciones() {
   var xhttp = new XMLHttpRequest();
@@ -49,6 +61,10 @@ function toggleDropdown() {
     xhttp.send();
   }
 }
+
+
+
+
 
 
 

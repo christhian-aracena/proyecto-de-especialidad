@@ -74,7 +74,7 @@ include("Datos/tipo-sesion.php");
         </div>
 
         <div class="flex-row noty">
-            <i class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
+            <i id="bell" class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
                 <div id="bellnoti" class="bellnoti" style="font-size: 1.4rem; padding-top: 0.5rem; font-weight: 100;">
                     <?php include('get-numero-notificaciones.php'); ?>
                 </div>
