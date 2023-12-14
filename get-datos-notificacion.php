@@ -31,30 +31,12 @@ $id_gmail = isset($_SESSION['id_gmail']) ? $_SESSION['id_gmail'] : 1;
 if ($id_app == 1) {
     $id = $id_gmail;
     $result = $conexion->query("SELECT * FROM `notificaciones` 
-    INNER JOIN solicitud ON solicitud.id_solicitud = notificaciones.solicitud_id
-    INNER JOIN users ON users.id = notificaciones.user_id
-    INNER JOIN social_media ON social_media.idSocialMedia = notificaciones.gmail_id WHERE gmail_id = $id ORDER BY id_notificacion DESC");
+    INNER JOIN solicitud ON solicitud.id_solicitud = notificaciones.solicitud_id WHERE gmail_id = $id ORDER BY id_notificacion DESC");
 } else {
     $id = $id_app;
     $result = $conexion->query("SELECT * FROM `notificaciones` 
-    INNER JOIN solicitud ON solicitud.id_solicitud = notificaciones.solicitud_id
-    INNER JOIN users ON users.id = notificaciones.user_id
-    INNER JOIN social_media ON social_media.idSocialMedia = notificaciones.gmail_id WHERE user_id = $id ORDER BY id_notificacion DESC");
+    INNER JOIN solicitud ON solicitud.id_solicitud = notificaciones.solicitud_id WHERE user_id = $id ORDER BY id_notificacion DESC");
 }
-
-
-
-if ($fila = mysqli_fetch_array($result)) {
-    // Si se ha obtenido una fila, mostrar la imagen de perfil
-    if (!empty($fila['avatar'])) {
-        $avatar_solicitante = base64_encode($fila['avatar']);
-    } else {
-        
-        $iniciales = include("get-nombre-app.php");;
-    }
-}
-
-
 
 if ($result) {
     while ($publicacion = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -88,7 +70,6 @@ if ($result) {
             // Agrega un enlace alrededor del contenido con el ID de la notificación como parámetro
             echo '<a href="carta.php?id_notificacion=' . $id_notificacion . '" class="cursor-pointer contenedor-data-noti" style="background: ' . $color . '; font-weight: ' . $fuente . ';">';
             echo '<p style="margin-bottom: 2rem;">' . $descripcion . '</p><div>' . $carta . '</div>';
-            echo '<img id="avatar" src="data:image/jpeg;base64,' . $avatar_solicitante . '" alt="imagen de perfil">';
             echo '</a>';
     
             echo '</div>';
