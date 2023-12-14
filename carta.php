@@ -84,14 +84,14 @@ $result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`=
 
         </div>
 
-        <div class="flex-row noty">
-            <i class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
+               <div class="flex-row noty">
+            <i id="bell" class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
                 <div id="bellnoti" class="bellnoti" style="font-size: 1.4rem; padding-top: 0.5rem; font-weight: 100;">
                     <?php include('get-numero-notificaciones.php'); ?>
                 </div>
             </i>
             <div id="dropdown" class="dropdown-content">
-                <?php include('get-datos-notificacion.php'); ?>
+                <?php include('Negocio/get-datos-notificacion.php'); ?>
             </div>
             <div id="dropdown2" class="dropdown-content2 aa" style="display: none;">
 
