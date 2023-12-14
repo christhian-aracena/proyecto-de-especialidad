@@ -203,7 +203,7 @@ $identificador_mascota = $_GET['id'];
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Redacta una carta de solicitud (escribe con detalle tu solicitud)</label>
-                                <textarea type="text" name="descripcion" placeholder="Ej: 'Hola, por medio de esta carta doy a conocer mi interes por la adopcion de su mascota, en mi casa somos adultos responsables y nos encanta los animales... '" required></textarea>
+                                <textarea type="text" name="descripcion" placeholder="Ej: 'Hola, por medio de esta carta doy a conocer mi interes por la adopcion de su mascota...(ESTA ES LA PARTE MAS IMPORTANTE, YA QUE POR MEDIO DE ESTA CARTA PRESENTARAS TU REAL INTERES DONDE PODRAS SER ACEPTADO O RECHAZADO). '" required></textarea>
                             </div>
 
 

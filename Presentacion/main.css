@@ -1196,6 +1196,56 @@ input:-webkit-autofill {
     background-color: #45a049;
 }
 
+.btn_solicitud_aceptar{
+    display: flex;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background-color: #1cb81e;
+    min-width: 12rem;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border: 1px solid #e0e0e0;
+}
+.btn_solicitud_espera{
+    display: flex;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background-color: #b6b81c;
+    min-width: 12rem;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border: 1px solid #e0e0e0;
+}
+.btn_solicitud_espera:hover{
+    background-color: #636413;
+}
+.btn_solicitud_aceptar:hover{
+    background-color: #206d23;
+}
+.btn_solicitud_rechazar{
+    display: flex;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background-color: #ca1010;
+    min-width: 12rem;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border: 1px solid #e0e0e0;
+
+}
+.btn_solicitud_rechazar:hover{
+    background-color: #691616;
+}
+
 .contenedor-info p,
 .contenedor-info h4 {
     margin: 0.5rem;
@@ -1221,7 +1271,34 @@ input:-webkit-autofill {
 .terminos{
     margin-bottom: 2rem;
 }
+.register2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    min-height: 20rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    width: 50vw;
+    text-align: center;
+    overflow: initial;
+    opacity: 0.9;
+    margin: 3rem 1rem;
+    margin-bottom: 13rem;
+    z-index: 2;
+}
+.contenedor-botones{
+    gap: 2rem;
+    margin-top: 2rem;
+    
+}
+.h3-ask{
+    margin-top: 2rem;
+}
 @media screen and (max-width: 1500px) {
+
     .container-options {
         margin-bottom: 15rem;
     }
@@ -1259,8 +1336,8 @@ input:-webkit-autofill {
     }
 
     .container-register {
-        min-height: 90rem;
-        max-height: 65rem;
+        min-height: 90%;
+        max-height: 90%;
     }
 
     .hamburguesa {
@@ -1357,6 +1434,7 @@ input:-webkit-autofill {
         transform: rotate(45deg) translate(-5px, -6px);
         margin-right: -13rem;
     }
+
 }
 
 @media screen and (max-width: 700px) {
@@ -1595,3 +1673,4 @@ input:-webkit-autofill {
 
     }
 }
+

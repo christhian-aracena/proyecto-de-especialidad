@@ -80,7 +80,7 @@ include("Datos/tipo-sesion.php");
                 </div>
             </i>
             <div id="dropdown" class="dropdown-content">
-                <?php  include('get-datos-notificacion.php'); ?>
+                <?php  include('Negocio/get-datos-notificacion.php'); ?>
             </div>
             <div id="dropdown2" class="dropdown-content2 aa" style="display: none;">
 
@@ -151,58 +151,8 @@ if (isset($_SESSION['email'])) {
 
         <div class="principal " id="contenedor-ajax-main">
 
-
-            <div class="container-options flex-wrap ">
-
-                <div class="adopt flex-row">
-                    <div class="circleAdopt">
-
-                    </div>
-
-                    <div class="info">
-                        <h3>Adoptar</h3>
-                        <p>Escoge una mascota, rellena el formulario de solicitud y se pondrán en contacto contigo para informate si calificas.</p>
-                        <a href="en-adopcion.php"><button id="adopta">Adopta</button></a>
-                    </div>
-
-                </div>
-
-                <div class="inAdopt ">
-                    <div class="info">
-                        <h3>En adopcion</h3>
-                        <p>Publica una mascota, de este modo la gente podrá enviarte solicitudes de adopcion y podrás aceptar a quién desees.</p>
-                        <button id="adopcion">Publicar</button>
-                    </div>
-                    <div class="circleInAdopt">
-
-                    </div>
-
-                </div>
-
-                <div class="foundIt  flex-row">
-                    <div class="circleFoundIt">
-
-                    </div>
-                    <div class="info">
-                        <h3>Encontrados</h3>
-                        <p>Si has encontrado una mascota con collar, identificación o consideras que está perdido, toma fotos y publica.</p>
-                        <button>Publicar</button>
-                    </div>
-
-                </div>
-
-                <div class="lost">
-                    <div class="info">
-                        <h3>Perdidos</h3>
-                        <p>Si has extraviado a tu mascota, detalla información y realiza una publicación que ayude en su busqueda.</p>
-                        <button>Publicar</button>
-                    </div>
-                    <div class="circleLost">
-
-                    </div>
-
-                </div>
-            </div>
+            <img src="img/404.png" alt="" srcset="">
+           
 
 
 

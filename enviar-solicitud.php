@@ -28,10 +28,10 @@ if(!$id_solicitante_gmail){
 
 
 if($id_solicitante_gmail==1){
-    // $nombre_soli = $conexion->query('SELECT * FROM users WHERE id = "'.$id_solicitante.'"');
-    // $fila2 = mysqli_fetch_assoc($nombre_soli);
+    $nombre_soli = $conexion->query('SELECT * FROM users WHERE id = "'.$id_solicitante.'"');
+    $fila2 = mysqli_fetch_assoc($nombre_soli);
 
-    // $nombre_solicitante = $fila2['user'];
+    $nombre_solicitante = $fila2['user'];
     $nombre = $_SESSION['nombre_app'];
 }
 else{
@@ -74,7 +74,7 @@ echo '<br>';
 
 
 
-$ejecutarConsulta = $conexion->query("INSERT INTO `solicitud`( `solicitante_user_id`, `solicitante_gmail_id`, `destinatario_user_id`, `destinatario_gmail_id`, `razones_id`, `veterinario_id`, `vivienda_id`, `solo_id`, `carta`, `otros_animales`) VALUES ('$id_solicitante','$id_solicitante_gmail','$usuario_id','$gmail_id','$razones','$veterinario','$vivienda','$solo','$carta','$otros_animales')");
+$ejecutarConsulta = $conexion->query("INSERT INTO `solicitud`( `solicitante_user_id`, `solicitante_gmail_id`, `destinatario_user_id`, `destinatario_gmail_id`, `razones_id`, `veterinario_id`, `vivienda_id`, `solo_id`, `carta`, `otros_animales`, `adopcion_id`, `estado_solicitud_id`) VALUES ('$id_solicitante','$id_solicitante_gmail','$usuario_id','$gmail_id','$razones','$veterinario','$vivienda','$solo','$carta','$otros_animales', '$identificador_mascota', 1)");
 
 
 

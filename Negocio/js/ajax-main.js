@@ -28,20 +28,28 @@ actualizarNotificaciones();
 // Llamada a la función cada 500 milisegundos (medio segundo)
 setInterval(actualizarNotificaciones, 500);
 
+
+
 function toggleDropdown() {
+  
   var dropdown = document.getElementById("dropdown");
   dropdown.style.display = (dropdown.style.display === "none" || dropdown.style.display === "") ? "block" : "none";
+
+  // Llama a la función para obtener las notificaciones detalladas
+  if (dropdown.style.display === "block") {
+    // Realiza una solicitud AJAX para cargar los datos
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        dropdown.innerHTML = this.responseText;
+      }
+    };
+    
+    xhttp.open("GET", "get-datos-notificacion.php", true);
+    xhttp.send();
+  }
 }
 
-// Cierra el dropdown si se hace clic fuera de él
-document.addEventListener("click", function (event) {
-  var dropdown = document.getElementById("dropdown");
-  var bellnoti = document.getElementById("bell");
-
-  if (!event.target.matches('.bell')) {
-      dropdown.style.display = 'none';
-  }
-});
 
 
 
@@ -260,8 +268,6 @@ function getFormMascotas() {
     }
   };
 }
-
-
 
 
 

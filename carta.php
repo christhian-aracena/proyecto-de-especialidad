@@ -1,50 +1,13 @@
 <?php
 include('Datos/conexion.php');
-    $identificador_notificacion = $_GET['id_notificacion'];
-    // echo $identificador_notificacion;
+$identificador_notificacion = $_GET['id_notificacion'];
 
+// if(empty($identificador_notificacion)){
+//     header('Location: error.php');
+// }
 
-    $result = $conexion->query("SELECT 
-    n.id_notificacion,
-    n.descripcion_notificacion,
-    n.user_id,
-    n.gmail_id,
-    n.numer_notificaciones,
-    n.solicitud_id,
-    s.id_solicitud,
-    s.solicitante_user_id,
-    s.solicitante_gmail_id,
-    s.destinatario_user_id,
-    s.destinatario_gmail_id,
-    raz.razon AS razon,
-    vet.disposicion AS veterinario_disposicion,
-    viv.vivienda AS vivienda,
-    sol.tiempo AS solo_tiempo,
-    s.carta,
-    s.otros_animales,
-    u_sender.id AS sender_id,
-    u_sender.user AS sender_user,
-    u_sender.last_name AS sender_last_name,
-    u_sender.email AS sender_email,
-    u_sender.pass_user AS sender_pass_user,
-    u_sender.avatar AS sender_avatar,
-    u_receiver.id AS receiver_id,
-    u_receiver.user AS receiver_user,
-    u_receiver.last_name AS receiver_last_name,
-    u_receiver.email AS receiver_email,
-    u_receiver.pass_user AS receiver_pass_user,
-    u_receiver.avatar AS receiver_avatar
-FROM notificaciones n
-INNER JOIN solicitud s ON n.solicitud_id = s.id_solicitud
-LEFT JOIN users u_sender ON s.solicitante_user_id = u_sender.id
-LEFT JOIN users u_receiver ON s.destinatario_user_id = u_receiver.id
-LEFT JOIN razones raz ON s.razones_id = raz.idRazones
-LEFT JOIN veterinario vet ON s.veterinario_id = vet.id
-LEFT JOIN vivienda viv ON s.vivienda_id = viv.id_vivienda
-LEFT JOIN solo sol ON s.solo_id = sol.id_solo 
-WHERE n.id_notificacion = $identificador_notificacion");
-
-
+// IMPORTANTE ACTIVAR EN PRODUCCION
+// ini_set('display_errors', 0);
 
 
 // echo uniqid();
@@ -128,7 +91,7 @@ $result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`=
                 </div>
             </i>
             <div id="dropdown" class="dropdown-content">
-                <?php  include('Negocio/get-datos-notificacion.php'); ?>
+                <?php include('get-datos-notificacion.php'); ?>
             </div>
             <div id="dropdown2" class="dropdown-content2 aa" style="display: none;">
 
@@ -138,20 +101,20 @@ $result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`=
             <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
 
             <?php
-if (isset($_SESSION['email'])) {
-    if (!empty($filaAvatar)) {
-        // Si hay una imagen de perfil, mostrarla
-        echo '<div  class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
-    } else {
-        // Si no hay imagen de perfil, mostrar las iniciales del nombre
-        include("Negocio/get-nombre-app.php");
-        echo '<div id="avatar" class="inicial cursor-pointer" onclick="toggleDropdown2()">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
-    }
-} else {
-    // Si es una sesión de Google, mostrar la imagen directamente
-    echo '<div id="avatar" class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="' . $profileImage . '" alt="" srcset=""></div>';
-}
-?>
+            if (isset($_SESSION['email'])) {
+                if (!empty($filaAvatar)) {
+                    // Si hay una imagen de perfil, mostrarla
+                    echo '<div  class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
+                } else {
+                    // Si no hay imagen de perfil, mostrar las iniciales del nombre
+                    include("Negocio/get-nombre-app.php");
+                    echo '<div id="avatar" class="inicial cursor-pointer" onclick="toggleDropdown2()">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
+                }
+            } else {
+                // Si es una sesión de Google, mostrar la imagen directamente
+                echo '<div id="avatar" class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="' . $profileImage . '" alt="" srcset=""></div>';
+            }
+            ?>
 
 
 
@@ -200,11 +163,155 @@ if (isset($_SESSION['email'])) {
         <div class="principal " id="contenedor-ajax-main">
 
 
-           <?php
-                include('Negocio/get-carta.php');
-           ?>
+            <?php
+
+            include('Negocio/get-carta.php');
 
 
+
+
+            ?>
+
+            <div class="container ajuste ajuste2">
+
+
+                <h3 class="sombra centrar-texto"> <?php echo $nombre_solicitante . ' quiere adoptar a ' . $nombre_mascota  ?> </h3>
+
+                <div class="details">
+
+                    <?php echo '<div class="flex-row raza"><h3>Motivo: </h3><p>  ' . $razones . '   </p></div>' ?>
+
+                    <?php echo '<div class="flex-row raza"><h3>Tipo de vivienda: </h3><p>   ' . $vivienda . '  </p></div>' ?>
+
+                    <?php echo '<div class="flex-row raza"><h3>Atención veterinaria: </h3><p>  ' . $veterinario . '   </p></div>' ?>
+
+                    <?php echo '<div class="flex-row raza"><h3>Tiempo que pasará solo: </h3><p> ' . $solo_tiempo . '    </p></div>' ?>
+
+                    <?php echo '<div class="flex-row raza"><h3>Otros animales: </h3><p>  ' . $otros_animales . '   </p></div>' ?>
+
+
+
+                    <?php echo '<div class="sombra descripcion flex-row raza"><p>     </p></div>' ?>
+
+
+                </div>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <?php
+                                        $ejecutarConsulta22 = $conexion->query("SELECT * FROM `notificaciones` 
+                                        INNER JOIN solicitud ON solicitud.id_solicitud = notificaciones.solicitud_id
+                                        INNER JOIN estado_solicitud ON estado_solicitud.id_estado_solicitud = solicitud.estado_solicitud_id WHERE id_notificacion = $identificador_notificacion");
+                                            $publicacion33 = $ejecutarConsulta22->fetch_array(MYSQLI_ASSOC);
+                                            $display_aceptar = 'flex';
+                                            $display_espera = 'flex';
+                                            $display_rechazar = 'flex';
+                                            
+                                            $estado_solicitud = $publicacion33['estado_solicitud'];
+                                            
+                                            if ($estado_solicitud == 'Solicitud aceptada.') {
+                                                $display_aceptar = 'none';
+                                                $display_espera = 'flex';
+                                                $display_rechazar = 'flex';
+                                            } elseif ($estado_solicitud == 'Solicitud Rechazada.') {
+                                                $display_aceptar = 'flex';
+                                                $display_espera = 'flex';
+                                                $display_rechazar = 'none';
+                                            } elseif ($estado_solicitud == 'Solicitud en espera de confirmación.') {
+                                                $display_aceptar = 'flex';
+                                                $display_espera = 'none';
+                                                $display_rechazar = 'flex';
+                                            }
+                                            
+                                            echo "Estado Solicitud: $estado_solicitud<br>";
+                                            echo "Display Aceptar: $display_aceptar<br>";
+                                            echo "Display Espera: $display_espera<br>";
+                                            echo "Display Rechazar: $display_rechazar<br>";
+                                            
+                                ?>
+
+                <div class="flex-form-adopt">
+
+
+                    <div class="register2 container-options" id="solicitud-ajax">
+
+                        <form method="POST">
+                            <div class="form-group">
+                                            
+                                <h3 class="margen-b">Carta de solicitud</h3>
+                                                <hr> 
+                                <?php echo '<div class="flex-row raza carta"><p>   ' . $carta . '  </p></div>' ?>
+                                <hr style="margin-top: 1rem;">
+
+                                                                <h2 style="background: aliceblue; padding: 1.5rem 0;"><?php echo 'Estado: '. $estado_solicitud ?></h2>
+                                                                <hr>
+                                <h3 class="h3-ask">¿Qué desea hacer con esta solicitud?</h3>
+
+                                <div class="flex-row flex-centrar-item flex-wrap contenedor-botones">
+
+
+
+
+
+                                <button style="display: <?= $display_aceptar ?>;" type="button" class="btn_solicitud_aceptar cursor-pointer" id="btn_solicitud_aceptar"
+    data-sender="<?= htmlspecialchars($sender); ?>"
+    data-razones="<?= htmlspecialchars($razones); ?>"
+    data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>"
+    data-veterinario="<?= htmlspecialchars($veterinario); ?>"
+    data-vivienda="<?= htmlspecialchars($vivienda); ?>"
+    data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>"
+    data-otros-animales="<?= htmlspecialchars($otros_animales); ?>"
+    data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>"
+    data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>"
+    data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>"
+    data-carta="<?= htmlspecialchars($carta); ?>"
+>
+    Aceptar
+</button>
+
+
+<button style="display: <?= $display_espera ?>;" type="button" class="btn_solicitud_espera cursor-pointer" id="btn_solicitud_espera"
+    data-sender="<?= htmlspecialchars($sender); ?>"
+    data-razones="<?= htmlspecialchars($razones); ?>"
+    data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>"
+    data-veterinario="<?= htmlspecialchars($veterinario); ?>"
+    data-vivienda="<?= htmlspecialchars($vivienda); ?>"
+    data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>"
+    data-otros-animales="<?= htmlspecialchars($otros_animales); ?>"
+    data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>"
+    data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>"
+    data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>"
+    data-carta="<?= htmlspecialchars($carta); ?>"
+>
+    En espera
+</button>
+<button style="display: <?= $display_rechazar ?>;" type="button" class="btn_solicitud_rechazar cursor-pointer" id="btn_solicitud_rechazar"
+    data-sender="<?= htmlspecialchars($sender); ?>"
+    data-razones="<?= htmlspecialchars($razones); ?>"
+    data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>"
+    data-veterinario="<?= htmlspecialchars($veterinario); ?>"
+    data-vivienda="<?= htmlspecialchars($vivienda); ?>"
+    data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>"
+    data-otros-animales="<?= htmlspecialchars($otros_animales); ?>"
+    data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>"
+    data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>"
+    data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>"
+    data-carta="<?= htmlspecialchars($carta); ?>"
+>
+    Rechazar
+</button>
+
+                                </div>
+                                <br><br>
+                                
+                                <small style="color: red;"> <span style="font-weight: 600;">Importante.</span>  <br> Aceptar: Si acepta, su mascota se quitara del apartado "En adopcion". <br> Rechazar: Si rechaza, le notificaremos al solicitante para que no tenga que esperar. <br>Si desea esperar a mas solicitudes, no haga nada.</small>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
 
         </div>
 
@@ -249,8 +356,12 @@ if (isset($_SESSION['email'])) {
             <div class="publicar"><img src="img/donacion.png" alt="" srcset="">Donar</div>
         </a>
     </div>
+    
+    <script src="Negocio/js/carta.js"></script>
+
     <script src="Negocio/js/ajax-main.js"></script>
     <script src="Negocio/js/faq.js"></script>
+
 
 </body>
 
