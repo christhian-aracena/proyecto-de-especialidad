@@ -69,27 +69,36 @@ include("Datos/tipo-sesion.php");
         </div>
 
         <div class="flex-row noty">
-            <i class="fa-solid fa-comments cursor-pointer"></i>
-            <i class="fa-solid fa-bell cursor-pointer bell" onclick="actualizarNotificaciones()"><div id="bellnoti" class="bellnoti"><?php include('get-numero-notificaciones.php'); ?></div></i>
+            <i id="bell" class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
+                <div id="bellnoti" class="bellnoti" style="font-size: 1.4rem; padding-top: 0.5rem; font-weight: 100;">
+                    <?php include('get-numero-notificaciones.php'); ?>
+                </div>
+            </i>
+            <div id="dropdown" class="dropdown-content">
+                <?php include('Negocio/get-datos-notificacion.php'); ?>
+            </div>
+            <div id="dropdown2" class="dropdown-content2 aa" style="display: none;">
+
+                <a href="logout.php">Salir</a>
+            </div>
+
             <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
-            <?php if (isset($_SESSION['email'])) {
+
+            <?php
+            if (isset($_SESSION['email'])) {
                 if (!empty($filaAvatar)) {
                     // Si hay una imagen de perfil, mostrarla
-                    echo '<div class="avatar cursor-pointer"><img src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
-
+                    echo '<div  class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
                 } else {
                     // Si no hay imagen de perfil, mostrar las iniciales del nombre
                     include("Negocio/get-nombre-app.php");
-
-                    echo '<div class="inicial cursor-pointer">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
-
+                    echo '<div id="avatar" class="inicial cursor-pointer" onclick="toggleDropdown2()">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
                 }
             } else {
-
                 // Si es una sesión de Google, mostrar la imagen directamente
-                echo '<div class="avatar cursor-pointer"><img src="' . $profileImage . '" alt="" srcset=""></div>';
-            } ?>
-        </div>
+                echo '<div id="avatar" class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="' . $profileImage . '" alt="" srcset=""></div>';
+            }
+            ?>
 
     </header>
     <div class="hamburguesa" id="hamburguesa">
