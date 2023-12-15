@@ -68,7 +68,7 @@ if ($result) {
             $descripcion = $publicacion['descripcion_notificacion'];
 
             // Agrega un enlace alrededor del contenido con el ID de la notificación como parámetro
-            echo '<a href="carta.php?id_notificacion=' . $id_notificacion . '" class="cursor-pointer contenedor-data-noti" style="background: ' . $color . '; font-weight: ' . $fuente . ';">';
+            echo '<a href="carta?id_notificacion=' . $id_notificacion . '" class="cursor-pointer contenedor-data-noti" style="background: ' . $color . '; font-weight: ' . $fuente . ';">';
             echo '<p style="margin-bottom: 2rem;">' . $descripcion . '</p><div>' . $carta . '</div>';
             echo '</a>';
     

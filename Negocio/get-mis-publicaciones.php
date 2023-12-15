@@ -1,12 +1,39 @@
 <?php
+
+include('Datos/get-sesion.php');
+// echo $app_id;
+// echo '<br>';
+// echo $gmail_id;
+
 include('Datos/conexion.php');
-$resultado = $conexion->query( "SELECT *
-FROM adopcion
-INNER JOIN salud ON salud.id = adopcion.salud_id
-INNER JOIN sexo ON sexo.id = adopcion.sexo_id
-INNER JOIN dimension ON dimension.id = adopcion.dimension_id
-INNER JOIN edad ON edad.id = adopcion.edad_id
-ORDER BY adopcion.fecha_registro DESC;");
+
+
+if ($app_id == 1) {
+    $resultado = $conexion->query("SELECT *
+        FROM adopcion
+        INNER JOIN salud ON salud.id = adopcion.salud_id
+        INNER JOIN sexo ON sexo.id = adopcion.sexo_id
+        INNER JOIN dimension ON dimension.id = adopcion.dimension_id
+        INNER JOIN edad ON edad.id = adopcion.edad_id
+        INNER JOIN users ON users.id = adopcion.usuario_id
+        INNER JOIN social_media ON social_media.idSocialMedia = adopcion.gmail_id
+        WHERE gmail_id = $gmail_id
+        ORDER BY adopcion.fecha_registro DESC;");
+} else {
+    $resultado = $conexion->query("SELECT *
+        FROM adopcion
+        INNER JOIN salud ON salud.id = adopcion.salud_id
+        INNER JOIN sexo ON sexo.id = adopcion.sexo_id
+        INNER JOIN dimension ON dimension.id = adopcion.dimension_id
+        INNER JOIN edad ON edad.id = adopcion.edad_id
+        INNER JOIN users ON users.id = adopcion.usuario_id
+        INNER JOIN social_media ON social_media.idSocialMedia = adopcion.gmail_id
+        WHERE usuario_id = $app_id
+        ORDER BY adopcion.fecha_registro DESC;");
+}
+
+
+
 
 
 
@@ -21,10 +48,10 @@ while ($publicacion = $resultado->fetch_array(MYSQLI_ASSOC)) {
     $descripcion = $publicacion['descripcion'];
     $fecha_registro = $publicacion['fecha_registro'];
     $vacunas = $publicacion['vacunas'];
-    $sexo_mascota = $publicacion['sexo_id'];
+    $sexo_mascota = $publicacion['sexo_mascota'];
     $edad_mascota = $publicacion['edad_mascota'];
-    $salud = $publicacion['salud_id'];
-    $dimension = $publicacion['dimension_id'];
+    $salud = $publicacion['estado_salud'];
+    $dimension = $publicacion['dimension_mascota'];
 
 
 
@@ -42,7 +69,7 @@ while ($publicacion = $resultado->fetch_array(MYSQLI_ASSOC)) {
     echo '<!-- ESTA ES LA PUBLICACION -->
 
     <div class="contenedor-publicacion sombra ">
-
+    <i class="fa-solid fa-ellipsis-vertical edit"></i>
         <div class="titulo-publicacion">
             <h3 class="centrar-texto sombra">'.$nombre_mascota.'</h3>
         </div>

@@ -84,14 +84,14 @@ $result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`=
 
         </div>
 
-               <div class="flex-row noty">
+        <div class="flex-row noty">
             <i id="bell" class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
                 <div id="bellnoti" class="bellnoti" style="font-size: 1.4rem; padding-top: 0.5rem; font-weight: 100;">
                     <?php include('get-numero-notificaciones.php'); ?>
                 </div>
             </i>
             <div id="dropdown" class="dropdown-content">
-                <?php include('Negocio/get-datos-notificacion.php'); ?>
+                <?php include('get-datos-notificacion.php'); ?>
             </div>
             <div id="dropdown2" class="dropdown-content2 aa" style="display: none;">
 
@@ -125,6 +125,8 @@ $result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`=
         <div class="barra"></div>
     </div>
     <main class="contenedor flex-row main">
+
+
 
 
         <div>
@@ -200,52 +202,54 @@ $result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`=
                 <hr>
                 <br>
                 <?php
-                                        $ejecutarConsulta22 = $conexion->query("SELECT * FROM `notificaciones` 
+                $ejecutarConsulta22 = $conexion->query("SELECT * FROM `notificaciones` 
                                         INNER JOIN solicitud ON solicitud.id_solicitud = notificaciones.solicitud_id
                                         INNER JOIN estado_solicitud ON estado_solicitud.id_estado_solicitud = solicitud.estado_solicitud_id WHERE id_notificacion = $identificador_notificacion");
-                                            $publicacion33 = $ejecutarConsulta22->fetch_array(MYSQLI_ASSOC);
-                                            $display_aceptar = 'flex';
-                                            $display_espera = 'flex';
-                                            $display_rechazar = 'flex';
-                                            
-                                            $estado_solicitud = $publicacion33['estado_solicitud'];
-                                            
-                                            if ($estado_solicitud == 'Solicitud aceptada.') {
-                                                $display_aceptar = 'none';
-                                                $display_espera = 'flex';
-                                                $display_rechazar = 'flex';
-                                            } elseif ($estado_solicitud == 'Solicitud Rechazada.') {
-                                                $display_aceptar = 'flex';
-                                                $display_espera = 'flex';
-                                                $display_rechazar = 'none';
-                                            } elseif ($estado_solicitud == 'Solicitud en espera de confirmación.') {
-                                                $display_aceptar = 'flex';
-                                                $display_espera = 'none';
-                                                $display_rechazar = 'flex';
-                                            }
-                                            
-                                            echo "Estado Solicitud: $estado_solicitud<br>";
-                                            echo "Display Aceptar: $display_aceptar<br>";
-                                            echo "Display Espera: $display_espera<br>";
-                                            echo "Display Rechazar: $display_rechazar<br>";
-                                            
-                                ?>
+                $publicacion33 = $ejecutarConsulta22->fetch_array(MYSQLI_ASSOC);
+                $display_aceptar = 'flex';
+                $display_espera = 'flex';
+                $display_rechazar = 'flex';
+
+                $estado_solicitud = $publicacion33['estado_solicitud'];
+
+                if ($estado_solicitud == 'Solicitud aceptada.') {
+                    $display_aceptar = 'none';
+                    $display_espera = 'flex';
+                    $display_rechazar = 'flex';
+                } elseif ($estado_solicitud == 'Solicitud Rechazada.') {
+                    $display_aceptar = 'flex';
+                    $display_espera = 'flex';
+                    $display_rechazar = 'none';
+                } elseif ($estado_solicitud == 'Solicitud en espera de confirmación.') {
+                    $display_aceptar = 'flex';
+                    $display_espera = 'none';
+                    $display_rechazar = 'flex';
+                }
+
+                echo "Estado Solicitud: $estado_solicitud<br>";
+                echo "Display Aceptar: $display_aceptar<br>";
+                echo "Display Espera: $display_espera<br>";
+                echo "Display Rechazar: $display_rechazar<br>";
+
+                ?>
 
                 <div class="flex-form-adopt">
 
 
                     <div class="register2 container-options" id="solicitud-ajax">
-
+                        <div id="spinner-container" style="display: none;">
+                            <div class="spinner"></div>
+                        </div>
                         <form method="POST">
                             <div class="form-group">
-                                            
+
                                 <h3 class="margen-b">Carta de solicitud</h3>
-                                                <hr> 
+                                <hr>
                                 <?php echo '<div class="flex-row raza carta"><p>   ' . $carta . '  </p></div>' ?>
                                 <hr style="margin-top: 1rem;">
 
-                                                                <h2 style="background: aliceblue; padding: 1.5rem 0;"><?php echo 'Estado: '. $estado_solicitud ?></h2>
-                                                                <hr>
+                                <h2 style="background: aliceblue; padding: 1.5rem 0;"><?php echo 'Estado: ' . $estado_solicitud ?></h2>
+                                <hr>
                                 <h3 class="h3-ask">¿Qué desea hacer con esta solicitud?</h3>
 
                                 <div class="flex-row flex-centrar-item flex-wrap contenedor-botones">
@@ -254,58 +258,22 @@ $result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`=
 
 
 
-                                <button style="display: <?= $display_aceptar ?>;" type="button" class="btn_solicitud_aceptar cursor-pointer" id="btn_solicitud_aceptar"
-    data-sender="<?= htmlspecialchars($sender); ?>"
-    data-razones="<?= htmlspecialchars($razones); ?>"
-    data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>"
-    data-veterinario="<?= htmlspecialchars($veterinario); ?>"
-    data-vivienda="<?= htmlspecialchars($vivienda); ?>"
-    data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>"
-    data-otros-animales="<?= htmlspecialchars($otros_animales); ?>"
-    data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>"
-    data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>"
-    data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>"
-    data-carta="<?= htmlspecialchars($carta); ?>"
->
-    Aceptar
-</button>
+                                    <button style="display: <?= $display_aceptar ?>;" type="button" class="btn_solicitud_aceptar cursor-pointer" id="btn_solicitud_aceptar" data-sender="<?= htmlspecialchars($sender); ?>" data-razones="<?= htmlspecialchars($razones); ?>" data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>" data-veterinario="<?= htmlspecialchars($veterinario); ?>" data-vivienda="<?= htmlspecialchars($vivienda); ?>" data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>" data-otros-animales="<?= htmlspecialchars($otros_animales); ?>" data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>" data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>" data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>" data-carta="<?= htmlspecialchars($carta); ?>">
+                                        Aceptar
+                                    </button>
 
 
-<button style="display: <?= $display_espera ?>;" type="button" class="btn_solicitud_espera cursor-pointer" id="btn_solicitud_espera"
-    data-sender="<?= htmlspecialchars($sender); ?>"
-    data-razones="<?= htmlspecialchars($razones); ?>"
-    data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>"
-    data-veterinario="<?= htmlspecialchars($veterinario); ?>"
-    data-vivienda="<?= htmlspecialchars($vivienda); ?>"
-    data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>"
-    data-otros-animales="<?= htmlspecialchars($otros_animales); ?>"
-    data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>"
-    data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>"
-    data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>"
-    data-carta="<?= htmlspecialchars($carta); ?>"
->
-    En espera
-</button>
-<button style="display: <?= $display_rechazar ?>;" type="button" class="btn_solicitud_rechazar cursor-pointer" id="btn_solicitud_rechazar"
-    data-sender="<?= htmlspecialchars($sender); ?>"
-    data-razones="<?= htmlspecialchars($razones); ?>"
-    data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>"
-    data-veterinario="<?= htmlspecialchars($veterinario); ?>"
-    data-vivienda="<?= htmlspecialchars($vivienda); ?>"
-    data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>"
-    data-otros-animales="<?= htmlspecialchars($otros_animales); ?>"
-    data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>"
-    data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>"
-    data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>"
-    data-carta="<?= htmlspecialchars($carta); ?>"
->
-    Rechazar
-</button>
+                                    <button style="display: <?= $display_espera ?>;" type="button" class="btn_solicitud_espera cursor-pointer" id="btn_solicitud_espera" data-sender="<?= htmlspecialchars($sender); ?>" data-razones="<?= htmlspecialchars($razones); ?>" data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>" data-veterinario="<?= htmlspecialchars($veterinario); ?>" data-vivienda="<?= htmlspecialchars($vivienda); ?>" data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>" data-otros-animales="<?= htmlspecialchars($otros_animales); ?>" data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>" data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>" data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>" data-carta="<?= htmlspecialchars($carta); ?>">
+                                        En espera
+                                    </button>
+                                    <button style="display: <?= $display_rechazar ?>;" type="button" class="btn_solicitud_rechazar cursor-pointer" id="btn_solicitud_rechazar" data-sender="<?= htmlspecialchars($sender); ?>" data-razones="<?= htmlspecialchars($razones); ?>" data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>" data-veterinario="<?= htmlspecialchars($veterinario); ?>" data-vivienda="<?= htmlspecialchars($vivienda); ?>" data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>" data-otros-animales="<?= htmlspecialchars($otros_animales); ?>" data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>" data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>" data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>" data-carta="<?= htmlspecialchars($carta); ?>">
+                                        Rechazar
+                                    </button>
 
                                 </div>
                                 <br><br>
-                                
-                                <small style="color: red;"> <span style="font-weight: 600;">Importante.</span>  <br> Aceptar: Si acepta, su mascota se quitara del apartado "En adopcion". <br> Rechazar: Si rechaza, le notificaremos al solicitante para que no tenga que esperar. <br>Si desea esperar a mas solicitudes, no haga nada.</small>
+
+                                <small style="color: red;"> <span style="font-weight: 600;">Importante.</span> <br> Aceptar: Si acepta, su mascota se quitara del apartado "En adopcion". <br> Rechazar: Si rechaza, le notificaremos al solicitante para que no tenga que esperar. <br>Si desea esperar a mas solicitudes, no haga nada.</small>
                         </form>
                     </div>
                 </div>
@@ -356,7 +324,7 @@ $result4 = $conexion->query("UPDATE `notificaciones` SET `numer_notificaciones`=
             <div class="publicar"><img src="img/donacion.png" alt="" srcset="">Donar</div>
         </a>
     </div>
-    
+
     <script src="Negocio/js/carta.js"></script>
 
     <script src="Negocio/js/ajax-main.js"></script>

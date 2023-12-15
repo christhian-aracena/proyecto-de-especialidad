@@ -68,7 +68,7 @@
                 <div class="info">
                     <h3>Adoptar</h3>
                     <p>Rellena y envia el formulario de solicitud de adopción online y se pondrán en contacto contigo para informate si calificas.</p>
-                    <button>Adopta</button>
+                    <a href="login"><button>Adopta</button></a>
                 </div>
 
             </div>
@@ -77,7 +77,7 @@
                 <div class="info">
                     <h3>En adopcion</h3>
                     <p>Publica una mascota, de este modo la gente podrá enviarte solicitudes de adopcion y podrás aceptar a quién desees.</p>
-                    <button>Da en adopcion</button>
+                    <a href="login"><button>Da en adopcion</button></a>
                 </div>
                 <div class="circleInAdopt">
 
@@ -92,7 +92,7 @@
                 <div class="info">
                     <h3>Encontrados</h3>
                     <p>Si has encontrado una mascota con collar, identificación o consideras que está perdido, toma fotos y publica.</p>
-                    <button>Publicar</button>
+                    <a href="login"><button>Publicar</button></a>
                 </div>
 
             </div>
@@ -101,7 +101,7 @@
                 <div class="info">
                     <h3>Perdidos</h3>
                     <p>Si has extraviado a tu mascota, detalla información y realiza una publicación que ayude en su busqueda.</p>
-                    <button>Publicar</button>
+                    <a href="login"><button>Publicar</button></a>
                 </div>
                 <div class="circleLost">
 

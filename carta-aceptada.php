@@ -1,91 +1,131 @@
 <?php
-
-
-
-$result = $conexion->query("SELECT 
-n.id_notificacion,
-n.descripcion_notificacion,
-n.user_id,
-n.gmail_id,
-n.numer_notificaciones,
-n.solicitud_id,
-s.id_solicitud,
-s.solicitante_user_id,
-s.solicitante_gmail_id,
-s.destinatario_user_id,
-s.destinatario_gmail_id,
-s.razones_id,
-s.veterinario_id,
-s.vivienda_id,
-s.solo_id,
-s.carta,
-s.otros_animales,
-s.adopcion_id,
-raz.razon AS razon,
-vet.disposicion AS veterinario_disposicion,
-viv.vivienda AS vivienda,
-sol.tiempo AS solo_tiempo,
-u_sender.id AS sender_id,
-u_sender.user AS sender_user,
-u_sender.last_name AS sender_last_name,
-u_sender.email AS sender_email,
-u_sender.pass_user AS sender_pass_user,
-u_sender.avatar AS sender_avatar,
-u_receiver.id AS receiver_id,
-u_receiver.user AS receiver_user,
-u_receiver.last_name AS receiver_last_name,
-u_receiver.email AS receiver_email,
-u_receiver.pass_user AS receiver_pass_user,
-u_receiver.avatar AS receiver_avatar,
-a.nombre AS mascota_nombre,
-a.raza AS mascota_raza,
-a.imagen_mascota AS mascota_imagen
-FROM notificaciones n
-INNER JOIN solicitud s ON n.solicitud_id = s.id_solicitud
-LEFT JOIN users u_sender ON s.solicitante_user_id = u_sender.id
-LEFT JOIN users u_receiver ON s.destinatario_user_id = u_receiver.id
-LEFT JOIN razones raz ON s.razones_id = raz.idRazones
-LEFT JOIN veterinario vet ON s.veterinario_id = vet.id
-LEFT JOIN vivienda viv ON s.vivienda_id = viv.id_vivienda
-LEFT JOIN solo sol ON s.solo_id = sol.id_solo
-LEFT JOIN adopcion a ON s.adopcion_id = a.id
-WHERE n.id_notificacion = $identificador_notificacion");
-
-
 include('Datos/conexion.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener datos del formulario
-    echo $sender = $_POST["sender"];
-    echo $razones = $_POST["razones"];
-    echo $veterinario = $_POST["veterinario"];
-    echo $identificador = $_POST["identificador"];
-    echo $solicitante_user = $_POST["id-sender-app"];
-    $solicitante_gmail = $_POST["id-sender-gmail"];
-    $carta = $_POST["data-carta"];
+
+    // echo $app_id;
+    // echo '<br>';
+    // echo $gmail_id;
+    // if ($app_id == 1) {
+    //     $queryUpdate = "UPDATE `solicitud` SET estado_solicitud_id = 2 WHERE solicitante_gmail_id = $gmail_id";
+    //     $querySelect = "SELECT username FROM social_media WHERE idSocialMedia = $gmail_id";
+    //     $ejecutarConsulta = $conexion->query($queryUpdate);
+    // } else {
+    //     $queryUpdate = "UPDATE `solicitud` SET estado_solicitud_id = 2 WHERE solicitante_user_id = $app_id";
+    //     $querySelect = "SELECT user FROM users WHERE id = $app_id";
+    //     $ejecutarConsulta = $conexion->query($queryUpdate);
+    // }
+
+
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Obtener datos del formulario
+        $sender = $_POST["sender"];
+        $razones = $_POST["razones"];
+        $veterinario = $_POST["veterinario"];
+        $identificador = $_POST["identificador"];
+        $solicitante_user = $_POST["id-sender-app"];
+        $solicitante_gmail = $_POST["id-sender-gmail"];
+        $carta = $_POST["data-carta"];
+        
+
+        echo $identificador;
+        if($solicitante_user==1){
+            $ejecutarConsulta = $conexion->query("UPDATE `solicitud` SET estado_solicitud_id = 2 WHERE solicitante_gmail_id= $solicitante_gmail");
+
+
+          
+            
+            $ejecutarConsulta2 = $conexion->query("INSERT INTO `noti_response` (`mensaje`, `solicitante_user`, `solicitante_gmail`, `numer_noti`) 
+            VALUES ('Felicitaciones, tu solicitud ha sido aceptada', '$solicitante_user', '$solicitante_gmail', 1)");
+        }
+        else{
+   
+            $ejecutarConsulta = $conexion->query("UPDATE `solicitud` SET estado_solicitud_id = 2 WHERE solicitante_user_id= $solicitante_user");
+            $ejecutarConsulta3 = $conexion->query("INSERT INTO `noti_response` (`mensaje`, `solicitante_user`, `solicitante_gmail`, `numer_noti`) 
+            VALUES ('Felicitaciones, tu solicitud ha sido aceptada', '$solicitante_user', '$solicitante_gmail', 1)");
+        }
     
-
-
-
-    if($solicitante_user==1){
-        $ejecutarConsulta = $conexion->query("UPDATE `solicitud` SET estado_solicitud_id = 2 WHERE solicitante_gmail_id= $solicitante_gmail");
-        $ejecutarConsultanombre = $conexion->query("SELECT username FROM social_media WHERE idSocialMedia = $solicitante_gmail");
+    
+    
+        $ejecutarConsulta2 = $conexion->query("SELECT * FROM `notificaciones` 
+        INNER JOIN solicitud ON solicitud.id_solicitud = notificaciones.solicitud_id
+        INNER JOIN estado_solicitud ON estado_solicitud.id_estado_solicitud = solicitud.estado_solicitud_id WHERE id_notificacion = $identificador");
+    
+    
+        $publicacion3 = $ejecutarConsulta2->fetch_array(MYSQLI_ASSOC);
+    
+        $estado_solicitud = $publicacion3['estado_solicitud'];
+    
+    
+    
+        // echo "Datos recibidos correctamente";
+    
+    } else {
+        echo "Error: Método de solicitud incorrecto";
     }
-    else{
-        $ejecutarConsulta = $conexion->query("UPDATE `solicitud` SET estado_solicitud_id = 2 WHERE solicitante_user_id= $solicitante_user");
-        $ejecutarConsultanombre = $conexion->query("SELECT user FROM users WHERE id= $solicitante_user");
-    }
+
+    $ejecutarConsulta22 = $conexion->query("SELECT * FROM `notificaciones` 
+                                        INNER JOIN solicitud ON solicitud.id_solicitud = notificaciones.solicitud_id
+                                        INNER JOIN estado_solicitud ON estado_solicitud.id_estado_solicitud = solicitud.estado_solicitud_id WHERE id_notificacion = $identificador");
+                $publicacion33 = $ejecutarConsulta22->fetch_array(MYSQLI_ASSOC);
+                $display_aceptar = 'flex';
+                $display_espera = 'flex';
+                $display_rechazar = 'flex';
+
+                $estado_solicitud = $publicacion33['estado_solicitud'];
+
+                if ($estado_solicitud == 'Solicitud aceptada.') {
+                    $display_aceptar = 'none';
+                    $display_espera = 'flex';
+                    $display_rechazar = 'flex';
+                } elseif ($estado_solicitud == 'Solicitud Rechazada.') {
+                    $display_aceptar = 'flex';
+                    $display_espera = 'flex';
+                    $display_rechazar = 'none';
+                } elseif ($estado_solicitud == 'Solicitud en espera de confirmación.') {
+                    $display_aceptar = 'flex';
+                    $display_espera = 'none';
+                    $display_rechazar = 'flex';
+                }
+
+                ?>
 
 
-    $fila_nombre = mysqli_fetch_assoc($ejecutarConsultanombre);
 
-    $nombre_solicitante = $fila_nombre['user'];
+                        <form method="POST">
+                            <div class="form-group">
 
-    echo '<h3>Solicitud aceptada, con exito, ya puedes contactarte con'.$nombre_solicitante.'</h3>';
+                                <h3 class="margen-b">Carta de solicitud</h3>
+                                <hr>
+                                <?php echo '<div class="flex-row raza carta"><p>   ' . $carta . '  </p></div>' ?>
+                                <hr style="margin-top: 1rem;">
 
-    // echo "Datos recibidos correctamente";
+                                <h2 style="background: aliceblue; padding: 1.5rem 0;"><?php echo 'Estado: ' . $estado_solicitud ?></h2>
+                                <hr>
+                                <h3 class="h3-ask">¿Qué desea hacer con esta solicitud?</h3>
 
-} else {
-    echo "Error: Método de solicitud incorrecto";
-}
-?>
+                                <div class="flex-row flex-centrar-item flex-wrap contenedor-botones">
+
+
+
+
+
+                                    <button style="display: <?= $display_aceptar ?>;" type="button" class="btn_solicitud_aceptar cursor-pointer" id="btn_solicitud_aceptar1" data-sender="<?= htmlspecialchars($sender); ?>" data-razones="<?= htmlspecialchars($razones); ?>" data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>" data-veterinario="<?= htmlspecialchars($veterinario); ?>" data-vivienda="<?= htmlspecialchars($vivienda); ?>" data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>" data-otros-animales="<?= htmlspecialchars($otros_animales); ?>" data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>" data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>" data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>" data-carta="<?= htmlspecialchars($carta); ?>">
+                                        Aceptar
+                                    </button>
+
+
+                                    <button style="display: <?= $display_espera ?>;" type="button" class="btn_solicitud_espera cursor-pointer" id="btn_solicitud_espera1" data-sender="<?= htmlspecialchars($sender); ?>" data-razones="<?= htmlspecialchars($razones); ?>" data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>" data-veterinario="<?= htmlspecialchars($veterinario); ?>" data-vivienda="<?= htmlspecialchars($vivienda); ?>" data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>" data-otros-animales="<?= htmlspecialchars($otros_animales); ?>" data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>" data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>" data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>" data-carta="<?= htmlspecialchars($carta); ?>">
+                                        En espera
+                                    </button>
+                                    <button style="display: <?= $display_rechazar ?>;" type="button" class="btn_solicitud_rechazar cursor-pointer" id="btn_solicitud_rechazar" data-sender="<?= htmlspecialchars($sender); ?>" data-razones="<?= htmlspecialchars($razones); ?>" data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>" data-veterinario="<?= htmlspecialchars($veterinario); ?>" data-vivienda="<?= htmlspecialchars($vivienda); ?>" data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>" data-otros-animales="<?= htmlspecialchars($otros_animales); ?>" data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>" data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>" data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>" data-carta="<?= htmlspecialchars($carta); ?>">
+                                        Rechazar
+                                    </button>
+
+                                </div>
+                                <br><br>
+
+                                <small style="color: red;"> <span style="font-weight: 600;">Importante.</span> <br> Aceptar: Si acepta, su mascota se quitara del apartado "En adopcion". <br> Rechazar: Si rechaza, le notificaremos al solicitante para que no tenga que esperar. <br>Si desea esperar a mas solicitudes, no haga nada.</small>
+                        </form>
+<script src="carta.js"></script>

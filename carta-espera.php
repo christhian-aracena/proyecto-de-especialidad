@@ -54,13 +54,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<form method="POST">
+<?php
+
+
+                $ejecutarConsulta22 = $conexion->query("SELECT * FROM `notificaciones` 
+                                        INNER JOIN solicitud ON solicitud.id_solicitud = notificaciones.solicitud_id
+                                        INNER JOIN estado_solicitud ON estado_solicitud.id_estado_solicitud = solicitud.estado_solicitud_id WHERE id_notificacion = $identificador");
+                $publicacion33 = $ejecutarConsulta22->fetch_array(MYSQLI_ASSOC);
+                $display_aceptar = 'flex';
+                $display_espera = 'flex';
+                $display_rechazar = 'flex';
+
+                $estado_solicitud = $publicacion33['estado_solicitud'];
+
+                if ($estado_solicitud == 'Solicitud aceptada.') {
+                    $display_aceptar = 'none';
+                    $display_espera = 'flex';
+                    $display_rechazar = 'flex';
+                } elseif ($estado_solicitud == 'Solicitud Rechazada.') {
+                    $display_aceptar = 'flex';
+                    $display_espera = 'flex';
+                    $display_rechazar = 'none';
+                } elseif ($estado_solicitud == 'Solicitud en espera de confirmación.') {
+                    $display_aceptar = 'flex';
+                    $display_espera = 'none';
+                    $display_rechazar = 'flex';
+                }
+
+                ?>
+
+
+
+                        <form method="POST">
                             <div class="form-group">
 
                                 <h3 class="margen-b">Carta de solicitud</h3>
-
+                                <hr>
                                 <?php echo '<div class="flex-row raza carta"><p>   ' . $carta . '  </p></div>' ?>
-                                                                <h2><?php echo $estado_solicitud ?></h2>
+                                <hr style="margin-top: 1rem;">
+
+                                <h2 style="background: aliceblue; padding: 1.5rem 0;"><?php echo 'Estado: ' . $estado_solicitud ?></h2>
+                                <hr>
                                 <h3 class="h3-ask">¿Qué desea hacer con esta solicitud?</h3>
 
                                 <div class="flex-row flex-centrar-item flex-wrap contenedor-botones">
@@ -69,45 +103,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-                                <button type="button" class="btn_solicitud_aceptar cursor-pointer" id="btn_solicitud_aceptar"
-    data-sender="<?php echo htmlspecialchars($sender); ?>"
-    data-razones="<?php echo htmlspecialchars($razones); ?>"
-    data-identificador="<?php echo htmlspecialchars($identificador_notificacion); ?>"
-    data-veterinario="<?php echo htmlspecialchars($veterinario); ?>"
-    data-vivienda="<?php echo htmlspecialchars($vivienda); ?>"
-    data-solo-tiempo="<?php echo htmlspecialchars($solo_tiempo); ?>"
-    data-otros-animales="<?php echo htmlspecialchars($otros_animales); ?>"
-    data-id-sender-app="<?php echo htmlspecialchars($id_sender_app); ?>"
-    data-id-sender-gmail="<?php echo htmlspecialchars($id_sender_gmail); ?>"
-    data-receiver-avatar="<?php echo htmlspecialchars($receiver_avatar); ?>"
-    data-carta="<?php echo htmlspecialchars($carta); ?>"
-
->
-    Aceptar
-</button>
-
-<button type="button" class="btn_solicitud_rechazar cursor-pointer" id="btn_solicitud_rechazar"
-    data-sender="<?php echo htmlspecialchars($sender); ?>"
-    data-razones="<?php echo htmlspecialchars($razones); ?>"
-    data-identificador="<?php echo htmlspecialchars($identificador_notificacion); ?>"
-    data-veterinario="<?php echo htmlspecialchars($veterinario); ?>"
-    data-vivienda="<?php echo htmlspecialchars($vivienda); ?>"
-    data-solo-tiempo="<?php echo htmlspecialchars($solo_tiempo); ?>"
-    data-otros-animales="<?php echo htmlspecialchars($otros_animales); ?>"
-    data-id-sender-app="<?php echo htmlspecialchars($id_sender_app); ?>"
-    data-id-sender-gmail="<?php echo htmlspecialchars($id_sender_gmail); ?>"
-    data-receiver-avatar="<?php echo htmlspecialchars($receiver_avatar); ?>"
-    data-carta="<?php echo htmlspecialchars($carta); ?>"
-
->
-    Rechazar
-</button>
+                                    <button style="display: <?= $display_aceptar ?>;" type="button" class="btn_solicitud_aceptar cursor-pointer" id="btn_solicitud_aceptar" data-sender="<?= htmlspecialchars($sender); ?>" data-razones="<?= htmlspecialchars($razones); ?>" data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>" data-veterinario="<?= htmlspecialchars($veterinario); ?>" data-vivienda="<?= htmlspecialchars($vivienda); ?>" data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>" data-otros-animales="<?= htmlspecialchars($otros_animales); ?>" data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>" data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>" data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>" data-carta="<?= htmlspecialchars($carta); ?>">
+                                        Aceptar
+                                    </button>
 
 
-
+                                    <button style="display: <?= $display_espera ?>;" type="button" class="btn_solicitud_espera cursor-pointer" id="btn_solicitud_espera" data-sender="<?= htmlspecialchars($sender); ?>" data-razones="<?= htmlspecialchars($razones); ?>" data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>" data-veterinario="<?= htmlspecialchars($veterinario); ?>" data-vivienda="<?= htmlspecialchars($vivienda); ?>" data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>" data-otros-animales="<?= htmlspecialchars($otros_animales); ?>" data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>" data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>" data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>" data-carta="<?= htmlspecialchars($carta); ?>">
+                                        En espera
+                                    </button>
+                                    <button style="display: <?= $display_rechazar ?>;" type="button" class="btn_solicitud_rechazar cursor-pointer" id="btn_solicitud_rechazar" data-sender="<?= htmlspecialchars($sender); ?>" data-razones="<?= htmlspecialchars($razones); ?>" data-identificador="<?= htmlspecialchars($identificador_notificacion); ?>" data-veterinario="<?= htmlspecialchars($veterinario); ?>" data-vivienda="<?= htmlspecialchars($vivienda); ?>" data-solo-tiempo="<?= htmlspecialchars($solo_tiempo); ?>" data-otros-animales="<?= htmlspecialchars($otros_animales); ?>" data-id-sender-app="<?= htmlspecialchars($id_sender_app); ?>" data-id-sender-gmail="<?= htmlspecialchars($id_sender_gmail); ?>" data-receiver-avatar="<?= htmlspecialchars($receiver_avatar); ?>" data-carta="<?= htmlspecialchars($carta); ?>">
+                                        Rechazar
+                                    </button>
 
                                 </div>
                                 <br><br>
-                                
-                                <small style="color: red;"> <span style="font-weight: 600;">Importante.</span>  <br> Aceptar: Si acepta, su mascota se quitara del apartado "En adopcion". <br> Rechazar: Si rechaza, le notificaremos al solicitante para que no tenga que esperar. <br>Si desea esperar a mas solicitudes, no haga nada.</small>
+
+                                <small style="color: red;"> <span style="font-weight: 600;">Importante.</span> <br> Aceptar: Si acepta, su mascota se quitara del apartado "En adopcion". <br> Rechazar: Si rechaza, le notificaremos al solicitante para que no tenga que esperar. <br>Si desea esperar a mas solicitudes, no haga nada.</small>
                         </form>
