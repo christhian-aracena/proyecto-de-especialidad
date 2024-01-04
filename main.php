@@ -63,7 +63,7 @@ include("Datos/tipo-sesion.php");
 </head>
 
 <body>
-    
+
     <header class="header-landing">
         <div class="flex-row logomain">
 
@@ -81,30 +81,95 @@ include("Datos/tipo-sesion.php");
                 </div>
             </i>
             <div id="dropdown" class="dropdown-content">
-                <?php  include('get-datos-notificacion.php'); ?>
+                <?php include('get-datos-notificacion.php'); ?>
             </div>
-            <div id="dropdown2" class="dropdown-content2 aa" style="display: none;">
 
-                <a href="logout.php">Salir</a>
-            </div>
 
             <p class="nombre seleccionar">Hola, <?php echo $nombreCorto ?></p>
 
             <?php
-if (isset($_SESSION['email'])) {
-    if (!empty($filaAvatar)) {
-        // Si hay una imagen de perfil, mostrarla
-        echo '<div  class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
-    } else {
-        // Si no hay imagen de perfil, mostrar las iniciales del nombre
-        include("Negocio/get-nombre-app.php");
-        echo '<div id="avatar" class="inicial cursor-pointer" onclick="toggleDropdown2()">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
-    }
-} else {
-    // Si es una sesión de Google, mostrar la imagen directamente
-    echo '<div id="avatar" class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="' . $profileImage . '" alt="" srcset=""></div>';
-}
-?>
+            if (isset($_SESSION['email'])) {
+                if (!empty($filaAvatar)) {
+                    // Si hay una imagen de perfil, mostrarla
+                    echo '<div  class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
+                } else {
+                    // Si no hay imagen de perfil, mostrar las iniciales del nombre
+                    include("Negocio/get-nombre-app.php");
+                    echo '<div id="avatar" class="inicial cursor-pointer" onclick="toggleDropdown2()">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
+                }
+            } else {
+                // Si es una sesión de Google, mostrar la imagen directamente
+                echo '<div id="avatar" class="avatar cursor-pointer" onclick="toggleDropdown2()"><img id="avatar" src="' . $profileImage . '" alt="" srcset=""></div>';
+            }
+            ?>
+
+
+
+
+
+            <div id="dropdown2" class="dropdown-content2 aa" style="display: none;">
+
+            <div class="perfil-menu">
+                 <?php
+                if (isset($_SESSION['email'])) {
+                    if (!empty($filaAvatar)) {
+                        // Si hay una imagen de perfil, mostrarla
+                        echo '<div  class="avatar2"><img  src="data:image/jpeg;base64,' . $filaAvatar . '" alt="imagen de perfil"></div>';
+                    } else {
+                        // Si no hay imagen de perfil, mostrar las iniciales del nombre
+                        include("Negocio/get-nombre-app.php");
+                        echo '<div class="inicial2 avatar2">' . strtoupper(substr($consulta['user'], 0, 1)) . '</div>';
+                    }
+                } else {
+                    // Si es una sesión de Google, mostrar la imagen directamente
+                    echo '<div  class="avatar2 "><img  src="' . $profileImage . '" alt="" srcset=""></div>';
+                }
+                if(!isset($email)){
+                    $mail = $correoSesionApp;
+                }
+                else{
+                    $mail = $email;
+                }
+                echo '<div class="flex-col nombre-correo">';
+                echo '<p> '.$nombreCorto.' </p>';
+                echo '<small>' . $mail . '</small>';
+                echo '</div>';
+
+                ?>
+
+            </div>
+               
+                <hr class="lineaDrop">
+                <div class="perfil">
+                    <a class="mi-perfil" href=""><i class="fa-solid fa-user perfilI"></i><p class="mi-perfil2">Mi perfil</p></a>
+                </div>
+
+                <div class="perfil">
+                    <a class="mi-perfil" href=""><i class="fa-solid fa-shield-halved"></i><p class="mi-perfil2">Privacidad</p></a>
+                </div>
+                
+
+                <hr class="lineaDrop">
+                <div class="perfil">
+                    <a class="mi-perfil" href=""><i class="fa-solid fa-gear"></i><p class="mi-perfil2">Configuración</p></a>
+                </div>
+
+                <div class="perfil">
+                    <a class="mi-perfil" href=""><i class="fa-solid fa-moon"></i><p class="mi-perfil2">Tema oscuro</p></a>
+                </div>
+
+
+
+                <hr class="lineaDrop">
+
+
+                <div class="perfil">
+                    <a class="mi-perfil" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><p class="mi-perfil2">Cerrar sesión</p></a>
+                </div>
+
+
+
+            </div>
 
 
 

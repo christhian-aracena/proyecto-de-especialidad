@@ -128,6 +128,7 @@ if (isset($_SESSION['email'])) {
                 $_SESSION['name'] = $name;
             }
         } else {
+
             $_SESSION['registration_error'] = 'Su correo ya se encuentra en nuestra base de datos, si olvido sus credenciales haga click <a href="#"> Aqui</a>.';
             header('Location: login');
             exit;
