@@ -52,6 +52,10 @@ include("Datos/tipo-sesion.php");
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
 
+    
+    <link rel="shortcut icon" href="img/logo1.ico" type="image/x-icon">
+
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
