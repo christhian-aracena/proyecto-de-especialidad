@@ -58,7 +58,7 @@ include("Datos/tipo-sesion.php");
     Cargando...
 </title>
 
-<div id="textoAdicional" style="display: none;"><?php echo "Publicar"; ?></div>
+<div id="textoAdicional" style="display: none;"><?php echo "En adopción"; ?></div>
 </head>
 
 <body>
