@@ -53,7 +53,7 @@ include("Datos/tipo-sesion.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
 
     
-    <link rel="shortcut icon" href="img/descarga.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
 
 
 
