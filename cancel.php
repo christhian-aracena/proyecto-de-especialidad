@@ -24,7 +24,11 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Pago Cancelado</title>
+    <title id="bellnoti2"> 
+    Cargando...
+</title>
+
+<div id="textoAdicional" style="display: none;"><?php echo "Anulado"; ?></div>
 </head>
 
 <body>
