@@ -14,21 +14,39 @@ document.addEventListener("click", function (event) {
 function actualizarNotificaciones() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-          var elemento = document.getElementById("bellnoti");
-          var numeroNotificaciones = parseInt(this.responseText);
+    if (this.readyState == 4 && this.status == 200) {
+      var elemento = document.getElementById("bellnoti");
+      var elemento2 = document.getElementById("bellnoti2");
+      var elemento3 = document.getElementById("titleNoti");
+      var textoAdicional = document.getElementById("textoAdicional").innerText.trim();
+      var numeroNotificaciones = parseInt(this.responseText);
 
-          // Muestra u oculta el elemento según el valor recibido
-          elemento.style.display = numeroNotificaciones === 0 ? 'none' : 'block';
+      // Muestra u oculta el elemento según el valor recibido
+      elemento.style.display = numeroNotificaciones === 0 ? 'none' : 'block';
+      elemento2.style.display = numeroNotificaciones === 0 ? 'none' : 'block';
 
-          // Aplica estilos al contenido del elemento
-          elemento.style.fontSize = '1.4rem';
-          elemento.style.paddingTop = '0.5rem';
-          elemento.style.fontWeight = '100';
+      // Aplica estilos al contenido del elemento
+      elemento.style.fontSize = '1.4rem';
+      elemento.style.paddingTop = '0.5rem';
+      elemento.style.fontWeight = '100';
 
-          // Actualiza el contenido del elemento
-          elemento.textContent = numeroNotificaciones;
-      }
+      // Actualiza el contenido del elemento
+      elemento.textContent = numeroNotificaciones;
+      
+      // Muestra u oculta el elemento2 (bellnoti2)
+      elemento2.style.display = numeroNotificaciones === 0 ? 'none' : 'block';
+
+      // Aplica estilos al contenido del elemento2 (bellnoti2)
+      elemento2.style.fontSize = '1.4rem';
+      elemento2.style.paddingTop = '0.5rem';
+      elemento2.style.fontWeight = '100';
+
+      // Actualiza el contenido del elemento2 (bellnoti2) con el texto adicional y el número de notificaciones
+      elemento2.textContent = numeroNotificaciones > 0 ? textoAdicional + " (" + numeroNotificaciones + ")" : textoAdicional;
+
+      // Actualiza el contenido del elemento3 (titleNoti) con el texto adicional y el número de notificaciones
+      elemento3.textContent = numeroNotificaciones > 0 ? textoAdicional + " (" + numeroNotificaciones + ")" : textoAdicional;
+    }
   };
   xhttp.open("GET", "get-numero-notificaciones.php", true);
   xhttp.send();
@@ -39,6 +57,7 @@ actualizarNotificaciones();
 
 // Llamada a la función cada 500 milisegundos (medio segundo)
 setInterval(actualizarNotificaciones, 500);
+
 
 
 

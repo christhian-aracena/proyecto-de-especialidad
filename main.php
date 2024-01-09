@@ -59,7 +59,17 @@ include("Datos/tipo-sesion.php");
 
 
     <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Principal</title>
+    <title id="bellnoti2"> 
+    <?php echo include('get-numero-notificaciones.php'); ?>
+</title>
+
+<div id="textoAdicional" style="display: none;"><?php echo "Publicar"; ?></div>
+
+
+
+
+
+
 </head>
 
 <body>
@@ -75,9 +85,9 @@ include("Datos/tipo-sesion.php");
         </div>
 
         <div class="flex-row noty">
-            <i id="bell" class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
-                <div id="bellnoti" class="bellnoti" style="font-size: 1.4rem; padding-top: 0.5rem; font-weight: 100;">
-                    <?php include('get-numero-notificaciones.php'); ?>
+            <i id="bell"  class="fa-solid fa-bell cursor-pointer bell" onclick="toggleDropdown()">
+                <div id="bellnoti" class="bellnoti" style="font-size: 1.4rem; padding-top: 0.5rem; font-weight: 100; display: none;">
+                    <?php include('get-numero-notificaciones.php');?>
                 </div>
             </i>
             <div id="dropdown" class="dropdown-content">

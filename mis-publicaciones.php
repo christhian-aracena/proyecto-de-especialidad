@@ -59,7 +59,11 @@ include("Datos/tipo-sesion.php");
 
 
     <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Principal</title>
+    <title id="bellnoti2"> 
+    <?php echo include('get-numero-notificaciones.php'); ?>
+</title>
+
+<div id="textoAdicional" style="display: none;"><?php echo "Mis publicaciones"; ?></div>
 </head>
 
 <body>
