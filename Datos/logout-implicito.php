@@ -6,12 +6,12 @@ if (session_status() == PHP_SESSION_NONE) {
 foreach ($_COOKIE as $key => $value) {
     setcookie($key, '', time() - 3600, '/');
 }
-// Obtén el token de acceso de la sesión
+// Obtenerr el token de acceso de la sesión
 $googleAccessToken = isset($_SESSION['access_token']) ? $_SESSION['access_token'] : null;
 
-// Si hay un token de acceso, revócalo
+// Si hay un token de acceso, revocarlo
 if ($googleAccessToken) {
-    // Configura los datos para la solicitud de revocación
+    // Configurar los datos para la solicitud de revocación
     $revocationUrl = 'https://accounts.google.com/o/oauth2/revoke';
     $params = [
         'token' => $googleAccessToken,
