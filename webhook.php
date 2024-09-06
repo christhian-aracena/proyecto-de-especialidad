@@ -14,10 +14,7 @@
     $oEmail->Port="587";
     $oEmail->SMTPSecure="tls";
     $oEmail->SMTPAuth=true;
-    $oEmail->Username="nevermind.tian@gmail.com";
-    $oEmail->Password="ubiv cvbr ekei lvob";
-    $oEmail->setFrom("nevermind.tian@gmail.com","holii");
-    $oEmail->addAddress("christhian.aracena@correoaiep.cl");
+
     $oEmail->Subject="Tu solicitud de adopcion ha sido aceptada, felicitaciones!";
     $oEmail->CharSet = "UTF-8"; // Configurar la codificación de caracteres de PHPMailer
 $oEmail->Encoding = "base64"; // Opción de codificación
