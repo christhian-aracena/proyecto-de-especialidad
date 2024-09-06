@@ -25,9 +25,7 @@ if($validar){
     $oEmail->Port="587";
     $oEmail->SMTPSecure="tls";
     $oEmail->SMTPAuth=true;
-    $oEmail->Username="nevermind.tian@gmail.com";
-    $oEmail->Password="ubiv cvbr ekei lvob";
-    $oEmail->setFrom("nevermind.tian@gmail.com","Rescatamigos.cl");
+    
     $oEmail->addAddress($correo);
     $oEmail->Subject="Mensaje Enviado, Rescatamigos.cl";
     $oEmail->CharSet = "UTF-8"; // Configurar la codificación de caracteres de PHPMailer
